@@ -3,14 +3,14 @@
         "nom": "Michaël Plichart",
         "metier": "Psychologue - Psychothérapeute TCC",
         "categorie": "psy",
-        "photo": "Michaël-Plichart.jpg",
+        "photo": "michael-plichart-psychologue-tcc-binche.jpg",
         "statut": "actif",
         "tags": [
             "TCC",
             "Burnout",
             "Anxiété"
         ],
-        "link": "/nos-services/psychologie/psychologie-cognitive-et-comportementale/therapie-cognitivo-comportementale-binche-plichart",
+        "link": "/michael-plichart-psychologue-tcc",
         "description": "En tant que psychologue clinicien et psychothérapeute TCC, je vous accompagne dans un cadre pragmatique et bienveillant.\n\nNous identifierons ensemble les schémas de pensée qui vous bloquent, pour mettre en place des stratégies concrètes face à l'anxiété, au burn-out ou aux difficultés relationnelles.\n\nMon approche se veut collaborative : vous êtes l'expert de votre vie, je vous apporte les outils cliniques pour retrouver votre équilibre."
     },
     {
@@ -20,7 +20,7 @@
         "categorie": "bienetre",
         "specialite_schema": "DietaryTherapy",
         "email": "michael.plichart@gmail.com",
-        "photo": "clementine.jpg",
+        "photo": "clementine-delbruyere-dieteticienne.jpg",
         "telephone": "0486 26 19 79",
         "link": "/clementine-delbruyere-dieteticienne",
         "tags": [
@@ -29,7 +29,7 @@
             "Poids"
         ],
         "statut": "absent",
-        "message_statut": "Clémentine est actuellement en congé maternité. Elle ne prend plus de nouveaux rendez-vous pour le moment.",
+        "message_statut": "Clémentine est actuellement en congé maternité.",
         "redirection_texte": "Voir nos autres spécialistes en nutrition",
         "redirection_url": "/nos-services/dietetique"
     },
@@ -40,9 +40,9 @@
         "categorie": "psy",
         "specialite_schema": "PsychologicalTreatment",
         "email": "holvoet.aurelie@gmail.com",
-        "photo": "Mahieux-Celine.jpg",
+        "photo": "celine-mahieu-psychologue-tcc.jpg",
         "telephone": "0486 26 19 79",
-        "link": "/nos-services/psychologie/psychologie-cognitive-et-comportementale/mahieux-celine-psychologue-tcc",
+        "link": "/celine-mahieu-psychologue-tcc",
         "tags": [
             "Adultes",
             "Anxiété",
@@ -57,9 +57,9 @@
         "categorie": "paramedical",
         "specialite_schema": "MedicalTherapy",
         "email": "centrelesoranges@gmail.com",
-        "photo": "Mathieu-Gregoire.jpg",
+        "photo": "mathieu-gregoire-osteopathe.jpg",
         "telephone": "0486 26 19 79",
-        "link": "/osteopathe-d-o",
+        "link": "/mathieu-gregoire-osteopathe",
         "tags": [
             "Nourrissons",
             "Sportifs",

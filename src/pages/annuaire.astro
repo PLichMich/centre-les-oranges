@@ -64,13 +64,13 @@ const equipeTriee = equipe.sort((a, b) => a.nom.localeCompare(b.nom));
               )}
               
               {images[`/src/assets/equipe/${pro.photo}`] ? (
-                <Image 
-                  src={images[`/src/assets/equipe/${pro.photo}`]()} 
-                  alt={pro.nom}
-                  width={150} 
-                  height={150}
-                  class={`w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-lg border border-slate-100 shadow-sm transition-transform duration-300 group-hover:scale-105 ${pro.statut === 'absent' ? 'grayscale opacity-60' : ''}`}
-                />
+              <Image 
+                src={images[`/src/assets/equipe/${pro.photo}`]()} 
+                alt={`Portrait de ${pro.nom}, ${pro.metier} à Péronnes-lez-Binche`}
+                width={150} 
+                height={150}
+                class={`w-16 relative z-10 h-16 sm:w-20 sm:h-20 object-cover rounded-lg border border-slate-100 shadow-sm transition-transform duration-300 group-hover:scale-105 ${pro.statut === 'absent' ? 'grayscale opacity-60' : ''}`}
+              />
               ) : (
                 <div class="w-16 h-16 sm:w-20 sm:h-20 bg-slate-100 rounded-lg flex items-center justify-center text-[10px] text-slate-400 border border-slate-200">
                   Pas de photo
@@ -137,7 +137,7 @@ const equipeTriee = equipe.sort((a, b) => a.nom.localeCompare(b.nom));
       
       <!-- Message aucun résultat -->
       <div id="no-results" class="hidden text-center py-12 bg-white rounded-xl border border-dashed border-slate-300 mt-4">
-        <p class="text-slate-500 font-medium">Aucun spécialiste trouvé dans cette catégorie.</p>
+        <p class="text-slate-500 font-medium">Aucun spécialiste trouvé dans cette catégorie.</p>d
       </div>
 
     </div>

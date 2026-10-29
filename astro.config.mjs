@@ -10,17 +10,34 @@ export default defineConfig({
   // Héritées de WordPress + Nouvelles URLs
   // ==========================================
   redirects: {
-    // Nouvelles URLs optimisées (Option 2)
+    
+    // ----------------------------------------------------
+    // 1. LES NOUVELLES FICHES COURTES (issues de equipe.json)
+    // ----------------------------------------------------
+    
+    // Pour Michaël Plichart
     '/nos-services/psychologie/psychologie-cognitive-et-comportementale/therapie-cognitivo-comportementale-binche-plichart/': '/michael-plichart-psychologue-tcc',
     '/plichart-michael-psychologue-tcc-pour-ados-adultes-et-couples/': '/michael-plichart-psychologue-tcc',
     '/nos-services/psychologie/psychologie-cognitive-et-comportementale/plichart-michael-psychologue-tcc-pour-ados-adultes-et-couples/': '/michael-plichart-psychologue-tcc',
     '/nos-services/psychologie/psychologie-cognitive-et-comportementale/psychologue-comportementaliste/': '/michael-plichart-psychologue-tcc',
     
+    // Pour Céline Mahieu
+    '/mahieux-celine-psychologue-tcc/': '/celine-mahieu-psychologue-tcc',
+    '/nos-services/psychologie/psychologie-cognitive-et-comportementale/mahieux-celine-psychologue-tcc/': '/celine-mahieu-psychologue-tcc',
+    '/nos-services/psychologie/psychologie-cognitive-et-comportementale/mahieux-celine-psychologue-tcc-english-italian/': '/celine-mahieu-psychologue-tcc',
+
+    // Pour Clémentine Delbruyère
     '/delbruyere-clementine-dieteticienne-nutritionniste/': '/clementine-delbruyere-dieteticienne',
     '/nos-services/dietetique/dubrulle-lea-dieteticienne/': '/clementine-delbruyere-dieteticienne',
     '/dubrulle-lea-dieteticienne/': '/clementine-delbruyere-dieteticienne',
 
-    // Redirections WordPress historiques
+    // Pour Mathieu Grégoire
+    '/de-novellis-valeria-osteopathe-generale-pediatrique-grossesse-et-post-partum/': '/mathieu-gregoire-osteopathe',
+    '/osteopathe-d-o/': '/mathieu-gregoire-osteopathe',
+
+    // ----------------------------------------------------
+    // 2. L'HISTORIQUE WORDPRESS INTACT
+    // ----------------------------------------------------
     '/le-centre-therapeutique-les-oranges/': '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/le-centre-therapeutique-les-oranges/',
     '/venir-jusqua-nous/': '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/venir-jusqua-nous/',
     '/contacter-les-gestionnaires-du-centre/': '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/contacter-les-gestionnaires-du-centre/',
@@ -37,14 +54,11 @@ export default defineConfig({
     '/lhypnotherapie/': '/nos-services/psychologie/lhypnotherapie/',
     '/la-therapie-breve/': '/nos-services/psychologie/la-therapie-breve/',
     '/neuropsychologie/': '/nos-services/psychologie/neuropsychologie/',
-    '/mahieux-celine-psychologue-tcc/': '/nos-services/psychologie/psychologie-cognitive-et-comportementale/mahieux-celine-psychologue-tcc/',
-    '/nos-services/psychologie/psychologie-cognitive-et-comportementale/mahieux-celine-psychologue-tcc-english-italian/': '/nos-services/psychologie/psychologie-cognitive-et-comportementale/mahieux-celine-psychologue-tcc/',
     '/holvoet-aurelie-psychologue-enfants-ados-adultes-familles/': '/nos-services/psychologie/lhypnotherapie/holvoet-aurelie-psychologue-enfants-ados-adultes-familles/',
     '/nos-services/psychologues/lhypnotherapie/holvoet-aurelie-psychologue-enfants-ados-adultes-familles/': '/nos-services/psychologie/lhypnotherapie/psychologue-hypnose/',
     '/wauthia-erika/': '/nos-services/psychologie/neuropsychologie/wauthia-erika/',
     '/deprez-shirley-sexologue/': '/nos-services/sexologie/deprez-shirley-sexologue/',
     '/castelein-claire-osteopathe-generale-sportive-et-perinatale/': '/nos-services/osteopathie/castelein-claire-osteopathe-generale-sportive-et-perinatale/',
-    '/nos-services/osteopathie/castelein-claire-osteopathe-generale-sportive-et-perinatale/': '/de-novellis-valeria-osteopathe-generale-pediatrique-grossesse-et-post-partum/',
     '/vandevoorde-elise/': '/nos-services/psychomotricite/vandevoorde-elise/',
     '/nos-services/psychomotricite/vandevoorde-elise/': '/nos-services/psychomotricite/vandevoorde-elise-psychomotricienne/',
     '/podologie-gomree-adeline/': '/nos-services/podologie/podologie-gomree-adeline/',
@@ -60,7 +74,6 @@ export default defineConfig({
     '/nos-services/sexologie/griffin-alexis-medecin-sexologue/': '/nos-services/sexologie/medecin-nutritionniste/',
     '/nos-services/psychologues/': '/nos-services/psychologie/',
     '/nos-services/psychologues/psychologie-cognitive-et-comportementale/psychologue-tcc-anglais/': '/nos-services/psychologie/psychologie-cognitive-et-comportementale/psychologue-tcc/',
-    '/nos-services/psychologues/psychologie-cognitive-et-comportementale/mahieux-celine-psychologue-tcc/': '/nos-services/psychologie/psychologie-cognitive-et-comportementale/psychologue-tcc-anglais/',
     '/galerie-photo/': '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/galerie-photo/',
     '/emdr-eye-movement-desensitization-and-reprocessing/': '/nos-services/psychologie/emdr-eye-movement-desensitization-and-reprocessing/',
     '/therapie-systemique/': '/nos-services/psychologie/therapie-systemique/',
@@ -72,7 +85,6 @@ export default defineConfig({
     '/logopedie/': '/nos-services/logopedie/',
     '/mathys-viviane-logopede/': '/nos-services/logopedie/mathys-viviane-logopede/',
     '/soins-infirmiers-esthetiques/': '/nos-services/soins-infirmiers-esthetiques/',
-    '/de-novellis-valeria-osteopathe-generale-pediatrique-grossesse-et-post-partum/': '/osteopathe-d-o/',
     '/nouvelle-professionnelle-docteur-alexis-griffin/': '/nos-services/dietetique/gaelle-bulteel-dieteticienne/',
     '/nos-services/sexologie/medecin-nutritionniste-sexologue/': '/nos-services/sexologie/medecin-nutritionniste/',
     '/nos-services/neurologie/neurologue-docteur-de-wispelaere-francois/': '/nos-services/psychologie/neuropsychologie/',
