@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import equipeData from '../data/equipe.json';
+
+// 1. ASTRO GÉNÈRE LES PAGES À L'AVANCE (La fameuse fonction !)
+export async function getStaticPaths() {
+  return equipeData.map((pro) => {
+    // On retire le premier "/" de l'URL pour qu'Astro comprenne le chemin
+    const slug = pro.link.startsWith('/') ? pro.link.slice(1) : pro.link;
+    return {
+      params: { slug }, // L'adresse de la page
+      props: { pro },   // Les données du praticien envoyées à la page
+    };
+  });
+}
+
+// 2. RÉCUPÉRATION DES DONNÉES DU PRATICIEN COURANT
+const { pro } = Astro.props;
+
+// 3. PRÉPARATION DE L'IMAGE OPTIMISÉE
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/equipe/*.{jpeg,jpg,png,webp}');
+---
+
+<Layout 
+  title={`${pro.nom} - ${pro.metier} | Centre Les Oranges`}
+  description={`Prenez rendez-vous avec ${pro.nom}, ${pro.metier} au Centre Thérapeutique Les Oranges à Péronnes-lez-Binche.`}
+>
+  <div class="bg-slate-50 min-h-screen pb-24 pt-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Fil d'Ariane (Navigation) -->
+      <nav class="flex text-sm text-slate-500 mb-8" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-2">
+          <li><a href="/" class="hover:text-orange-700 transition-colors">Accueil</a></li>
+          <li><span class="mx-2">/</span></li>
+          <li><a href="/annuaire" class="hover:text-orange-700 transition-colors">Annuaire</a></li>
+          <li><span class="mx-2">/</span></li>
+          <li class="text-slate-900 font-medium" aria-current="page">{pro.nom}</li>
+        </ol>
+      </nav>
+
+      <!-- Fiche Praticien principale -->
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+        
+        <!-- En-tête coloré -->
+        <div class="h-32 bg-gradient-to-r from-slate-900 to-slate-800"></div>
+        
+        <div class="px-8 pb-8">
+          <div class="flex flex-col sm:flex-row gap-8 items-start sm:items-end -mt-16 mb-8">
+            
+            <!-- Photo de profil -->
+            <div class="relative rounded-2xl border-4 border-white bg-white shadow-md flex-shrink-0">
+              {images[`/src/assets/equipe/${pro.photo}`] ? (
+                <Image 
+                  src={images[`/src/assets/equipe/${pro.photo}`]()} 
+                  alt={pro.nom}
+                  width={200} 
+                  height={200}
+                  class={`w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-xl ${pro.statut === 'absent' ? 'grayscale opacity-80' : ''}`}
+                />
+              ) : (
+                <div class="w-32 h-32 sm:w-40 sm:h-40 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400">
+                  Pas de photo
+                </div>
+              )}
+            </div>
+
+            <!-- Infos principales -->
+            <div class="flex-grow pb-2">
+              <h1 class="font-['Lora',serif] text-3xl sm:text-4xl font-bold text-slate-900 mb-2">
+                {pro.nom}
+              </h1>
+              <p class="text-lg font-bold uppercase tracking-widest text-orange-700 mb-4">
+                {pro.metier}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {pro.tags.map((tag: string) => (
+                  <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg border border-slate-200">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Contenu & Contact -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-slate-100 pt-8">
+            
+            <div class="md:col-span-2 prose prose-slate max-w-none">
+              <h2 class="text-xl font-bold text-slate-900 mb-4">Présentation</h2>
+              <!-- Si tu as un champ "description" dans ton JSON, il s'affichera ici -->
+              {pro.description ? (
+                <p class="text-slate-600 leading-relaxed whitespace-pre-line">{pro.description}</p>
+              ) : (
+                <p class="text-slate-500 italic">La description de ce praticien est en cours de rédaction.</p>
+              )}
+            </div>
+
+            <!-- Encart de prise de rendez-vous -->
+            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 h-fit">
+              <h3 class="font-bold text-slate-900 mb-4">Prendre rendez-vous</h3>
+              
+              {pro.statut !== 'absent' ? (
+                <div class="space-y-4">
+                  <a href="/prendre-rendez-vous" class="flex justify-center w-full py-3 px-4 bg-slate-900 hover:bg-orange-800 text-white text-sm font-bold rounded-xl transition-colors shadow-sm">
+                    RDV en ligne
+                  </a>
+                  <p class="text-xs text-slate-500 text-center">
+                    Gérez vos rendez-vous 24h/24 et 7j/7 via notre plateforme sécurisée.
+                  </p>
+                </div>
+              ) : (
+                <div class="bg-amber-100 border border-amber-200 rounded-xl p-4 text-center">
+                  <span class="block text-xs font-bold uppercase tracking-widest text-amber-800 mb-2">Absent(e)</span>
+                  <p class="text-sm font-medium text-amber-900 mb-4">{pro.message_statut}</p>
+                  {pro.redirection_url && (
+                    <a href={pro.redirection_url} class="inline-block py-2 px-4 bg-white text-amber-900 border border-amber-300 text-xs font-bold rounded-lg hover:bg-amber-50 transition-colors">
+                      {pro.redirection_texte || "Voir un autre spécialiste"}
+                    </a>
+                  )}
+                </div>
+              )}
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

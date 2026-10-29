@@ -1,0 +1,31 @@
+---
+// src/components/SeoPraticien.astro
+
+// On reçoit les données du praticien (depuis equipe.json)
+const { praticien } = Astro.props;
+
+// Construction de l'objet JSON-LD selon les règles de Google
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Physician", // Type reconnu par Google pour les professionnels de santé
+  "name": praticien.nom,
+  "medicalSpecialty": praticien.specialite_schema, // ex: "PsychologicalTreatment"
+  "image": `https://www.centrelesoranges.be${praticien.photo}`,
+  "telephone": praticien.telephone,
+  "url": `https://www.centrelesoranges.be${praticien.link}`,
+  "worksFor": {
+    "@type": "MedicalOrganization",
+    "name": "Centre Thérapeutique Les Oranges",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rue Joseph Wauters 191",
+      "addressLocality": "Péronnes-lez-Binche",
+      "postalCode": "7134",
+      "addressCountry": "BE"
+    }
+  }
+};
+---
+
+<!-- Injection du script JSON-LD (Invisible pour les patients, visible pour Google) -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

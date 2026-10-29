@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+// On importe notre nouvelle base de données centralisée !
+import equipe from '../data/equipe.json';
+
+// Récupération des variables du fichier .env (uniquement pour l'admin et le script)
+const scriptUrl = import.meta.env.GOOGLE_SCRIPT_URL;
+const mailAdmin = import.meta.env.EMAIL_ADMIN;
+const mailGeneral = import.meta.env.EMAIL_GENERAL;
+---
+
+<Layout 
+  title="Contact & Accès | Centre Les Oranges"
+  description="Contactez le Centre Thérapeutique Les Oranges à Péronnes-lez-Binche. Formulaire de contact, adresse, horaires et numéro de téléphone."
+>
+
+  <!-- En-tête de la page -->
+  <section class="bg-white py-12 md:py-16 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-['Lora',serif] text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+        Contactez le Centre
+      </h1>
+      <p class="text-slate-600 font-light text-lg">
+        Une question sur nos consultations, nos ateliers ou besoin d'une information administrative ? Notre équipe vous répondra dans les meilleurs délais.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenu Principal -->
+  <section class="bg-slate-50 py-12 md:py-20 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Avertissement Urgences -->
+      <div class="mb-10 bg-orange-50 border-l-4 border-orange-700 p-4 rounded-r-lg shadow-sm">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm text-orange-800 font-medium">
+              En cas d'urgence médicale ou de détresse psychologique aiguë, ne composez pas ce formulaire. Veuillez contacter le 112 ou vous rendre aux urgences les plus proches.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- ========================================== -->
+        <!-- COLONNE GAUCHE : FORMULAIRE -->
+        <!-- ========================================== -->
+        <div class="lg:col-span-8">
+          <div class="bg-white p-8 md:p-10 rounded-2xl border border-slate-200 shadow-sm">
+            <h2 class="font-['Lora',serif] text-2xl font-bold text-slate-900 mb-6">Envoyez-nous un message</h2>
+            
+            <form action={scriptUrl} method="POST" class="space-y-6">
+              
+              <!-- Ligne Nom / Prénom -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="prenom" class="block text-sm font-medium text-slate-700 mb-2">Prénom</label>
+                  <input type="text" id="prenom" name="prenom" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-700 focus:border-orange-700 outline-none transition-colors bg-slate-50 focus:bg-white" placeholder="Jean">
+                </div>
+                <div>
+                  <label for="nom" class="block text-sm font-medium text-slate-700 mb-2">Nom</label>
+                  <input type="text" id="nom" name="nom" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-700 focus:border-orange-700 outline-none transition-colors bg-slate-50 focus:bg-white" placeholder="Dupont">
+                </div>
+              </div>
+
+              <!-- Ligne Email / Téléphone -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Adresse e-mail</label>
+                  <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-700 focus:border-orange-700 outline-none transition-colors bg-slate-50 focus:bg-white" placeholder="jean.dupont@email.com">
+                </div>
+                <div>
+                  <label for="telephone" class="block text-sm font-medium text-slate-700 mb-2">Téléphone <span class="text-slate-400 font-normal">(Optionnel)</span></label>
+                  <input type="tel" id="telephone" name="telephone" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-700 focus:border-orange-700 outline-none transition-colors bg-slate-50 focus:bg-white" placeholder="0470 00 00 00">
+                </div>
+              </div>
+
+              <!-- Destinataire (Généré dynamiquement !) -->
+              <div>
+                <label for="destinataire" class="block text-sm font-medium text-slate-700 mb-2">À qui s'adresse votre message ?</label>
+                <select id="destinataire" name="destinataire" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-700 focus:border-orange-700 outline-none transition-colors bg-slate-50 focus:bg-white text-slate-700">
+                  <option value="" disabled selected>Sélectionnez un destinataire...</option>
+                  
+                  <!-- L'administration centrale -->
+                  <optgroup label="Administration du Centre">
+                    <option value={mailAdmin}>Aurélie Holvoet (Administration & Gestion)</option>
+                    <option value={mailGeneral}>Renseignement général (Accueil)</option>
+                  </optgroup>
+                  
+                  <!-- Les praticiens issus de equipe.json -->
+                  <optgroup label="Nos Praticiens">
+                    {equipe.map((pro) => (
+                      <option value={pro.email}>
+                        {pro.nom} ({pro.metier.split('-')[0].trim()})
+                      </option>
+                    ))}
+                  </optgroup>
+                  
+                </select>
+              </div>
+
+              <!-- Objet de la demande -->
+              <div>
+                <label for="objet" class="block text-sm font-medium text-slate-700 mb-2">Objet de votre demande</label>
+                <select id="objet" name="objet" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-700 focus:border-orange-700 outline-none transition-colors bg-slate-50 focus:bg-white text-slate-700">
+                  <option value="" disabled selected>Sélectionnez un motif...</option>
+                  <option value="rdv">Information sur les consultations</option>
+                  <option value="rdv">Demande de rendez-vous</option>
+                  <option value="ateliers">Renseignement sur un atelier de groupe</option>
+                  <option value="recrutement">Candidature / Location de cabinet</option>
+                  <option value="autre">Autre demande</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Votre message</label>
+                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-700 focus:border-orange-700 outline-none transition-colors bg-slate-50 focus:bg-white resize-none" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+              </div>
+
+              <!-- Consentement RGPD -->
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input id="rgpd" name="rgpd" type="checkbox" required class="w-4 h-4 text-orange-700 bg-slate-100 border-slate-300 rounded focus:ring-orange-700 focus:ring-2">
+                </div>
+                <div class="ml-3 text-sm">
+                  <label for="rgpd" class="font-medium text-slate-700">J'accepte que mes données soient traitées</label>
+                  <p class="text-slate-500 font-light mt-1">Vos données sont utilisées uniquement pour répondre à votre demande. <a href="#" class="text-orange-700 hover:underline">Voir la politique de confidentialité</a>.</p>
+                </div>
+              </div>
+
+              <!-- Bouton d'envoi -->
+              <button type="submit" class="w-full py-4 px-6 text-white font-bold bg-slate-900 hover:bg-orange-800 rounded-xl transition-colors shadow-md hover:shadow-lg text-lg">
+                Envoyer le message
+              </button>
+              
+            </form>
+          </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- COLONNE DROITE : INFORMATIONS -->
+        <!-- ========================================== -->
+        <div class="lg:col-span-4 space-y-8">
+          
+          <!-- Carte Coordonnées -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <h3 class="font-['Lora',serif] text-xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-4">
+              Coordonnées du Centre
+            </h3>
+            
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 text-orange-700 border border-slate-100">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Adresse</p>
+                  <p class="text-slate-900 font-medium">Rue Joseph Wauters 191<br/>7134 Péronnes-lez-Binche</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 text-orange-700 border border-slate-100">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Téléphone</p>
+                  <a href="tel:0486261979" class="text-slate-900 font-medium hover:text-orange-700 transition-colors">0486 / 26.19.79</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte Accès / Parking -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <h3 class="font-['Lora',serif] text-xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-4">
+              Informations pratiques
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-sm text-slate-700">Parking aisé et gratuit à proximité du centre.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-sm text-slate-700">Centre accessible aux personnes à mobilité réduite (PMR).</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-sm text-slate-700">Prélèvements CHU Tivoli accessibles sans rendez-vous.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

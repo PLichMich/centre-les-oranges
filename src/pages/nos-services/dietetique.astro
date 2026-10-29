@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Diététique & Nutrition | Centre Les Oranges">
+  
+  <!-- 1. EN-TÊTE DE LA SPÉCIALITÉ -->
+  <section class="bg-stone-100 py-16 md:py-24 border-b border-stone-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-stone-200 mb-6 shadow-sm">
+        <span class="text-xs font-semibold uppercase tracking-wider text-amber-800">Paramédical & Bien-être</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-stone-900 mb-6">Diététique & Nutrition</h1>
+      <p class="text-lg text-stone-600 leading-relaxed">
+        Retrouvez un rapport sain à l'alimentation grâce à un accompagnement bienveillant et personnalisé, sans régime restrictif ni culpabilité.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. CONTENU DE LA SPÉCIALITÉ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Colonne de texte principal (2/3) -->
+        <div class="lg:col-span-8 space-y-12">
+          
+          <div>
+            <h2 class="text-2xl font-bold text-stone-900 mb-4 flex items-center gap-3">
+              <span class="text-amber-500">■</span> Pourquoi consulter ?
+            </h2>
+            <p class="text-stone-600 leading-relaxed mb-4">
+              La diététique ne se résume pas à la perte de poids. C'est avant tout la science de l'équilibre alimentaire au service de votre santé physique et mentale. Nos consultations s'adressent à toute personne souhaitant adapter son alimentation à son mode de vie, à une pathologie ou à une période spécifique de sa vie.
+            </p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+              <li class="flex items-start gap-2 text-stone-700">
+                <svg class="w-5 h-5 text-emerald-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Rééquilibrage alimentaire
+              </li>
+              <li class="flex items-start gap-2 text-stone-700">
+                <svg class="w-5 h-5 text-emerald-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Intolérances et allergies
+              </li>
+              <li class="flex items-start gap-2 text-stone-700">
+                <svg class="w-5 h-5 text-emerald-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Diabète, cholestérol, hypertension
+              </li>
+              <li class="flex items-start gap-2 text-stone-700">
+                <svg class="w-5 h-5 text-emerald-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Alimentation de la femme enceinte
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-stone-900 mb-4 flex items-center gap-3">
+              <span class="text-amber-500">■</span> Déroulement d'une séance
+            </h2>
+            <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100 text-stone-600 leading-relaxed">
+              <p class="mb-4">Le premier bilan diététique dure généralement 1h. Il permet de faire connaissance, d'analyser vos habitudes de vie, vos goûts, votre histoire pondérale et médicale.</p>
+              <p>Les consultations de suivi (30 à 45 minutes) permettent d'ajuster les objectifs, de lever les éventuels blocages et de maintenir votre motivation sur le long terme.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Colonne latérale : Les praticiens (1/3) -->
+        <div class="lg:col-span-4">
+          <!-- "sticky top-28" permet à la carte de descendre en même temps que le visiteur lit le texte -->
+          <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200 sticky top-28">
+            <h3 class="text-lg font-bold text-stone-900 mb-6 border-b border-stone-200 pb-4">
+              Spécialistes de cette discipline
+            </h3>
+            
+            <!-- Carte Praticien avec la vraie photo -->
+            <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <div class="flex items-center gap-4 mb-4">
+                <!-- Nouveau format photo : un peu plus grand avec des coins arrondis (rounded-2xl) -->
+                <div class="w-20 h-20 rounded-2xl bg-stone-100 overflow-hidden flex-shrink-0">
+                  <img src="/img/Dieteticienne_Nutritionniste_Binche_La_Louviere.jpg" alt="Clémentine Delbruyère" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div>
+                  <h4 class="font-bold text-stone-900 group-hover:text-amber-700 transition-colors">Clémentine Delbruyère</h4>
+                  <p class="text-xs text-stone-500 mt-1">Diététicienne - Nutritionniste</p>
+                </div>
+              </div>
+              <a href="/delbruyere-clementine-dieteticienne-nutritionniste" class="block w-full py-2.5 text-center text-sm font-bold text-amber-900 bg-amber-100 hover:bg-amber-200 rounded-lg transition-colors">
+                Voir son profil & Prendre RDV
+              </a>
+            </div>
+            
+            <!-- (Si demain il y a une deuxième diététicienne, il suffira de copier-coller le bloc "Carte Praticien" juste au-dessus) -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>

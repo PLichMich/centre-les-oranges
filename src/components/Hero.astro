@@ -1,0 +1,75 @@
+---
+// src/components/Hero.astro
+---
+
+<!-- Le fond devient ambre très clair (bg-amber-50/70) -->
+<section class="relative bg-amber-50/70 overflow-hidden border-b border-amber-100/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 py-16 lg:py-24 items-center">
+      
+      <!-- COLONNE GAUCHE : TEXTE & BOUTONS -->
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-amber-200 mb-6 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-amber-900">
+            Centre Pluridisciplinaire à Péronnes-lez-Binche
+          </span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-900 tracking-tight leading-[1.1] mb-6">
+          Des soins de qualité, abordables et <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">dans les meilleurs délais.</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-stone-700 mb-8 leading-relaxed">
+          Médecins, psychologues, professionnels paramédicaux et du bien-être s'unissent pour prendre soin de votre santé physique et mentale dans un cadre chaleureux.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+          <a href="/annuaire" class="inline-flex justify-center items-center gap-2 px-8 py-4 text-sm font-bold text-white bg-stone-900 hover:bg-stone-800 rounded-xl shadow-lg transition-all hover:-translate-y-0.5">
+            Trouver mon spécialiste
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="/centre-de-prelevements-chu-tivoli" class="inline-flex justify-center items-center gap-2 px-8 py-4 text-sm font-bold text-stone-900 bg-white border border-stone-200 hover:bg-stone-50 hover:border-amber-300 rounded-xl transition-all shadow-sm">
+            Prises de sang sans RDV
+          </a>
+        </div>
+
+        <div class="flex items-center gap-4 pt-6 border-t border-amber-200/60">
+          <div class="flex -space-x-3">
+            <div class="w-10 h-10 rounded-full border-2 border-amber-50 bg-stone-100 flex items-center justify-center text-lg">👩‍⚕️</div>
+            <div class="w-10 h-10 rounded-full border-2 border-amber-50 bg-white flex items-center justify-center text-lg">👨‍⚕️</div>
+            <div class="w-10 h-10 rounded-full border-2 border-amber-50 bg-orange-100 flex items-center justify-center text-lg">💆‍♀️</div>
+          </div>
+          <p class="text-sm font-medium text-stone-700">
+            Une équipe de <strong class="text-stone-900">20+ spécialistes</strong><br/>
+            à votre écoute.
+          </p>
+        </div>
+      </div>
+
+      <!-- COLONNE DROITE : IMAGE & BADGE FLOTTANT -->
+      <div class="relative lg:ml-auto w-full max-w-lg lg:max-w-none">
+        
+        <div class="absolute -inset-4 bg-gradient-to-tr from-amber-200/50 to-orange-100/50 rounded-[2.5rem] transform rotate-3 scale-105 -z-10"></div>
+        
+        <!-- N'oublie pas de remettre ton image ici si besoin -->
+        <img 
+          src="/img/Centre-les-oranges-exterieur-chaleureux.jpg" 
+          alt="Accueil du Centre Thérapeutique Les Oranges" 
+          class="w-full h-[500px] lg:h-[600px] object-cover rounded-3xl shadow-2xl"
+        />
+
+        <div class="absolute bottom-6 -left-6 sm:left-6 md:-left-8 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white flex items-center gap-4 max-w-[260px]">
+          <div class="w-12 h-12 flex-shrink-0 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-bold text-stone-900">Agréé Mutuelles</p>
+            <p class="text-xs text-stone-500">Remboursements partiels possibles.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

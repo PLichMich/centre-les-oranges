@@ -1,0 +1,109 @@
+---
+// src/layouts/LayoutPraticien.astro
+import Layout from './Layout.astro';
+import SeoPraticien from '../components/SeoPraticien.astro';
+import PopupRedirection from '../components/PopupRedirection.astro';
+
+// On reçoit les données du praticien depuis la page qui appelle ce gabarit
+const { praticienData } = Astro.props;
+---
+
+<Layout 
+  title={`${praticienData.nom} | ${praticienData.metier.split('-')[0].trim()} à Péronnes-lez-Binche`}
+  description={`Prenez rendez-vous avec ${praticienData.nom}, ${praticienData.metier} au Centre Thérapeutique Les Oranges.`}
+>
+
+  <SeoPraticien praticien={praticienData} />
+  <PopupRedirection praticien={praticienData} />
+
+  <div class="bg-slate-50 min-h-screen py-12 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Bouton Retour -->
+      <a href={`/nos-services/${praticienData.categorie}`} class="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-orange-700 transition-colors mb-8">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Retour aux spécialités
+      </a>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        
+        <!-- ========================================== -->
+        <!-- COLONNE GAUCHE (Profil + Contenu spécifique) -->
+        <!-- ========================================== -->
+        <div class="lg:col-span-8 space-y-12">
+          
+          <!-- L'en-tête commun à tous (Photo, Nom, Métier, Tags) -->
+          <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-8 items-start">
+            <div class="w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0">
+              <img src={praticienData.photo} alt={praticienData.nom} class="w-full h-full object-cover rounded-2xl shadow-sm border-2 border-white" />
+            </div>
+            <div>
+              <h1 class="font-['Lora',serif] text-3xl md:text-4xl font-bold text-slate-900 mb-2">
+                {praticienData.nom}
+              </h1>
+              <p class="text-xl font-medium text-orange-700 mb-4">
+                {praticienData.metier}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {praticienData.tags.map((tag: string) => (
+                  <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-semibold uppercase tracking-wider rounded-lg">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- LA BALISE MAGIQUE : C'est ici que le texte spécifique de chaque praticien s'affichera -->
+          <slot />
+
+        </div>
+
+        <!-- ========================================== -->
+        <!-- COLONNE DROITE : PRISE DE RDV (Commune à tous) -->
+        <!-- ========================================== -->
+        <div class="lg:col-span-4">
+          <div class="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200 p-8 sticky top-28">
+            <h3 class="font-['Lora',serif] text-2xl font-bold text-slate-900 mb-6 text-center">Prendre rendez-vous</h3>
+
+            {praticienData.statut === 'absent' ? (
+              <Fragment>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
+                  <div class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <p class="text-sm font-medium text-amber-800 leading-relaxed">{praticienData.message_statut}</p>
+                  </div>
+                </div>
+                {praticienData.redirection_url ? (
+                  <a href={praticienData.redirection_url} class="flex justify-center items-center gap-2 w-full py-4 px-6 text-white font-bold bg-amber-600 hover:bg-amber-700 rounded-xl transition-colors shadow-md mb-8 text-center">{praticienData.redirection_texte || "Voir une alternative"}</a>
+                ) : (
+                  <div class="flex justify-center items-center gap-2 w-full py-4 px-6 text-slate-400 font-bold bg-slate-100 rounded-xl cursor-not-allowed mb-8">Indisponible</div>
+                )}
+              </Fragment>
+            ) : (
+              <a href="/annuaire" class="flex justify-center items-center gap-2 w-full py-4 px-6 text-white font-bold bg-slate-900 hover:bg-orange-800 rounded-xl transition-colors shadow-md hover:shadow-lg mb-8">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                Voir les disponibilités
+              </a>
+            )}
+
+            <!-- Contacts -->
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 text-orange-700">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Téléphone</p>
+                  <a href={`tel:${praticienData.telephone.replace(/\s/g, '')}`} class="text-slate-900 font-semibold hover:text-orange-700 transition-colors">{praticienData.telephone}</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</Layout>

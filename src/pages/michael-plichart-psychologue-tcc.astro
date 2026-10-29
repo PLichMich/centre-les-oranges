@@ -1,0 +1,71 @@
+---
+// On remonte juste d'un dossier (../) car nous sommes directement dans src/pages/
+import LayoutPraticien from '../layouts/LayoutPraticien.astro';
+import equipe from '../data/equipe.json';
+
+// On récupère tes données précises via ton ID
+const praticienData = equipe.find(pro => pro.id === 'michael-plichart');
+---
+
+<LayoutPraticien praticienData={praticienData}>
+  
+  <!-- Section Présentation -->
+  <section>
+    <h2 class="font-['Lora',serif] text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+      <span class="w-8 h-px bg-orange-700"></span> Présentation
+    </h2>
+    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-slate-600 leading-relaxed space-y-4 font-light text-lg">
+      <p>
+        Psychologue clinicien spécialisé en <strong>Thérapie Cognitivo-Comportementale (TCC)</strong>, je vous accompagne dans la compréhension et la gestion de vos difficultés émotionnelles. Mon approche est concrète, collaborative et orientée vers des solutions pratiques pour le présent.
+      </p>
+      <p>
+        J'interviens particulièrement dans la <strong>gestion du stress, la prévention et le traitement du burn-out</strong>. En consultation individuelle ou via nos ateliers de groupe, nous travaillerons ensemble à identifier les schémas de pensées bloquants et à mettre en place des stratégies d'adaptation (coping) efficaces et durables, en nous appuyant parfois sur des outils issus de la pleine conscience et de la philosophie pragmatique.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section Spécialités & Diplômes -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+    <section>
+      <h2 class="font-['Lora',serif] text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+        <span class="w-6 h-px bg-orange-700"></span> Expertises
+      </h2>
+      <ul class="space-y-3">
+        <li class="flex items-center gap-3 text-slate-700 bg-white px-4 py-3 rounded-xl border border-slate-200">
+          <svg class="w-5 h-5 text-orange-700 opacity-70 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          Thérapie Cognitivo-Comportementale (TCC)
+        </li>
+        <li class="flex items-center gap-3 text-slate-700 bg-white px-4 py-3 rounded-xl border border-slate-200">
+          <svg class="w-5 h-5 text-orange-700 opacity-70 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          Prévention et traitement du burn-out
+        </li>
+        <li class="flex items-center gap-3 text-slate-700 bg-white px-4 py-3 rounded-xl border border-slate-200">
+          <svg class="w-5 h-5 text-orange-700 opacity-70 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          Gestion du stress et de l'anxiété
+        </li>
+        <li class="flex items-center gap-3 text-slate-700 bg-white px-4 py-3 rounded-xl border border-slate-200">
+          <svg class="w-5 h-5 text-orange-700 opacity-70 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          Animation d'ateliers de groupe
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="font-['Lora',serif] text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+        <span class="w-6 h-px bg-orange-700"></span> Formations
+      </h2>
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 space-y-4">
+        <div>
+          <h4 class="font-bold text-slate-900">Master en Psychologie Clinique</h4>
+          <p class="text-sm text-slate-500">Université / École à préciser</p>
+        </div>
+        <hr class="border-slate-100">
+        <div>
+          <h4 class="font-bold text-slate-900">Formation en TCC</h4>
+          <p class="text-sm text-slate-500">Institut ou Certificat à préciser</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</LayoutPraticien>
