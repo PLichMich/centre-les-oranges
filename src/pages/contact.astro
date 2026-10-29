@@ -143,7 +143,7 @@ const mailGeneral = import.meta.env.EMAIL_GENERAL;
         </div>
 
         <!-- ========================================== -->
-        <!-- COLONNE DROITE : INFORMATIONS -->
+        <!-- COLONNE DROITE : INFORMATIONS & CARTE -->
         <!-- ========================================== -->
         <div class="lg:col-span-4 space-y-8">
           
@@ -195,6 +195,24 @@ const mailGeneral = import.meta.env.EMAIL_GENERAL;
                 <span class="text-sm text-slate-700">Prélèvements CHU Tivoli accessibles sans rendez-vous.</span>
               </li>
             </ul>
+          </div>
+
+          <!-- CARTE GOOGLE MAPS INTÉGRÉE ICI -->
+          <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm h-[300px] relative overflow-hidden group">
+            <div class="absolute inset-0 bg-slate-100 flex items-center justify-center -z-10 animate-pulse">
+              <p class="text-slate-400 text-sm font-medium">Chargement de la carte...</p>
+            </div>
+            <iframe 
+              src="https://maps.google.com/maps?q=Rue%20Joseph%20Wauters%20191,%207134%20P%C3%A9ronnes-lez-Binche,%20Belgique&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-xl relative z-10"
+              title="Carte d'accès au Centre Thérapeutique Les Oranges"
+            ></iframe>
           </div>
 
         </div>

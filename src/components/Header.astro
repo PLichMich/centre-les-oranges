@@ -1,8 +1,31 @@
 ---
 // src/components/Header.astro
+import equipeData from '../data/equipe.json';
+
+// 1. Fonction pour raccourcir le nom (ex: "Michaël Plichart" -> "M. Plichart")
+function getShortName(fullName) {
+  if (!fullName) return "";
+  const parts = fullName.split(' ');
+  return parts.length > 1 ? `${parts[0].charAt(0)}. ${parts.slice(1).join(' ')}` : fullName;
+}
+
+// 2. LA FONCTION AIMANT : Elle relie automatiquement le menu au JSON
+function getPractitionersFor(keywords) {
+  return equipeData
+    .filter(pro => pro.statut === 'actif') // On ignore les praticiens absents
+    .filter(pro => keywords.some(kw => 
+      (pro.nom && pro.nom.toLowerCase().includes(kw)) || 
+      (pro.metier && pro.metier.toLowerCase().includes(kw)) ||
+      (pro.tags && pro.tags.some(t => t.toLowerCase().includes(kw)))
+    ))
+    .map(pro => ({
+      name: getShortName(pro.nom),
+      link: pro.link // <-- L'URL EXACTE TIRÉE DU JSON !
+    }));
+}
 
 // ==========================================
-// L'ARBRE DE NAVIGATION CENTRAL (JSON)
+// L'ARBRE DE NAVIGATION CENTRAL (DYNAMIQUE)
 // ==========================================
 const navData = [
   {
@@ -16,8 +39,7 @@ const navData = [
         items: [
           { label: "Le Centre & Philosophie", link: "/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/le-centre-therapeutique-les-oranges" },
           { label: "Galerie photos", link: "/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/galerie-photo" },
-          { label: "Accès & Plan", link: "/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/venir-jusqua-nous" },
-          { label: "Accès & Plan (Test doublon)", link: "/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/venir-jusqua-nous" } // <-- Ton test est ici !
+          { label: "Accès & Plan", link: "/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/venir-jusqua-nous" }
         ]
       },
       {
@@ -29,11 +51,6 @@ const navData = [
         ]
       }
     ]
-  },
-    {
-    label: "Notre Équipe",
-    type: "link",
-    link: "/annuaire"
   },
   {
     label: "Choisir son spécialiste",
@@ -48,18 +65,12 @@ const navData = [
           {
             name: "Psychothérapie TCC",
             link: "/nos-services/psychologie/psychologie-cognitive-et-comportementale",
-            practitioners: [
-              { name: "M. Plichart", link: "/nos-services/psychologie/psychologie-cognitive-et-comportementale/therapie-cognitivo-comportementale-binche-plichart" },
-              { name: "C. Mahieu", link: "/nos-services/psychologie/psychologie-cognitive-et-comportementale/mahieux-celine-psychologue-tcc" }
-            ]
+            practitioners: getPractitionersFor(['tcc', 'cognitivo', 'plichart', 'mahieu'])
           },
           {
             name: "EMDR & Traumatismes",
             link: "/nos-services/psychologie/emdr-eye-movement-desensitization-and-reprocessing",
-            practitioners: [
-              { name: "D. Cisamolo", link: "/daniela-cisamolo-psychologue-therapeute-emdr-pdmy-coach-amoureux-sexologue" },
-              { name: "G. Trunfio", link: "/giovanna-trunfio-psychologue" }
-            ]
+            practitioners: getPractitionersFor(['emdr', 'trauma', 'cisamolo', 'trunfio'])
           }
         ]
       },
@@ -68,8 +79,16 @@ const navData = [
         title: "Paramédical & Rééducation",
         shortTitle: "Paramédical & Corps",
         disciplines: [
-          { name: "Ostéopathie", link: "/nos-services/osteopathie", practitioners: [{ name: "M. Grégoire", link: "/osteopathe-d-o" }] },
-          { name: "Logopédie", link: "/nos-services/logopedie", practitioners: [] }
+          { 
+            name: "Ostéopathie", 
+            link: "/nos-services/osteopathie", 
+            practitioners: getPractitionersFor(['ostéo', 'osteo', 'grégoire'])
+          },
+          { 
+            name: "Logopédie", 
+            link: "/nos-services/logopedie", 
+            practitioners: getPractitionersFor(['logo']) 
+          }
         ]
       },
       {
@@ -80,32 +99,32 @@ const navData = [
           { 
             name: "Diététique & Nutrition", 
             link: "/nos-services/dietetique", 
-            practitioners: [{ name: "C. Delbruyère", link: "/delbruyere-clementine-dieteticienne-nutritionniste" }] 
+            practitioners: getPractitionersFor(['diététi', 'dieteti', 'nutrition', 'delbruy']) 
           },
           { 
             name: "Sophrologie & Massages", 
             link: "/nos-services/sophrologie", 
-            practitioners: [{ name: "C. Malosto", link: "/nos-services/sophrologie/malosto-cathy-sophrologue-et-massotherapeute" }] 
+            practitioners: getPractitionersFor(['sophro', 'massage', 'malosto']) 
           },
           { 
             name: "Kinésiologie & Brain Gym", 
             link: "/nos-services/kinesiologie", 
-            practitioners: [{ name: "C. Di Meo", link: "/nos-services/kinesiologie/cristina-di-meo-kinesiologue-instructrice-brain-gym" }] 
+            practitioners: getPractitionersFor(['kinési', 'kinesi', 'brain gym', 'di meo']) 
           },
           { 
             name: "Médiation familiale", 
             link: "/nos-services/mediation-familiale", 
-            practitioners: [{ name: "G. D'Hoop", link: "/gwendoline-dhoop-juriste-et-mediatrice" }] 
+            practitioners: getPractitionersFor(['médiat', 'mediat', 'familial', 'hoop']) 
           },
           { 
             name: "Naturopathie", 
             link: "/naturopathie", 
-            practitioners: [] 
+            practitioners: getPractitionersFor(['naturo']) 
           },
           { 
             name: "Yoga & Pilates", 
             link: "/yoga", 
-            practitioners: [] 
+            practitioners: getPractitionersFor(['yoga', 'pilates']) 
           }
         ]
       },
@@ -130,7 +149,6 @@ const navData = [
   }
 ];
 ---
-
 <div id="menu-backdrop" class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
 <header class="sticky top-0 z-40 bg-stone-900 border-b border-stone-800 shadow-md">
