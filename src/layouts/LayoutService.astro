@@ -1,0 +1,118 @@
+---
+import Layout from './Layout.astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  description: string;
+  titreService: string;
+  sousTitre?: string;
+  imageIllustration?: string;
+}
+
+const { 
+  title, 
+  description, 
+  titreService, 
+  sousTitre,
+  imageIllustration
+} = Astro.props;
+---
+
+<Layout title={title} description={description} image={imageIllustration}>
+  <div class="bg-stone-200 min-h-screen pb-24 pt-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Fil d'Ariane -->
+      <nav class="flex text-sm text-stone-500 mb-8" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-2">
+          <li><a href="/" class="hover:text-amber-600 transition-colors">Accueil</a></li>
+          <li><span class="mx-2">/</span></li>
+          <li><a href="/annuaire" class="hover:text-amber-600 transition-colors">Nos Services</a></li>
+          <li><span class="mx-2">/</span></li>
+          <li class="text-stone-900 font-semibold" aria-current="page">{titreService}</li>
+        </ol>
+      </nav>
+
+      <!-- CARTE PRINCIPALE -->
+      <div class="bg-white rounded-3xl shadow-xl shadow-stone-200/60 border border-stone-200 overflow-hidden">
+        
+        
+      <!-- Banderole d'en-tête en couleur unie profonde pour une lisibilité parfaite -->
+      <div class="h-32 sm:h-40 bg-orange-800 flex items-center px-6 sm:px-10">
+        <div>
+          <h1 class="font-['Lora',serif] text-3xl sm:text-4xl font-bold text-white mb-1">
+            {titreService}
+          </h1>
+          {sousTitre && (
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-200">
+              {sousTitre}
+            </p>
+          )}
+        </div>
+      </div>
+
+        <div class="px-6 sm:px-10 py-10">
+          <!-- Grille Contenu (Markdown) et Sidebar épurée -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            
+            <!-- Colonne de gauche : Texte Markdown de la discipline -->
+            <div class="lg:col-span-2">
+              <div class="prose prose-stone max-w-none">
+                <slot />
+              </div>
+            </div>
+
+            <!-- Colonne de droite : Actions & Localisation -->
+            <div class="space-y-6">
+              
+              <!-- Widget : Prendre Rendez-vous -->
+              <div class="bg-stone-50 rounded-2xl p-6 border border-stone-200">
+                <h3 class="font-bold text-stone-900 mb-4">Besoin d'un accompagnement ?</h3>
+                <div class="space-y-4">
+                  <a href="/annuaire" class="flex justify-center w-full py-3 px-4 bg-stone-900 hover:bg-amber-600 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-sm hover:shadow-md">
+                    Trouver un spécialiste
+                  </a>
+                  <p class="text-xs text-stone-500 text-center leading-relaxed">
+                    Consultez l'annuaire pour prendre contact directement avec le thérapeute de votre choix.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Widget : Lieu de consultation (Google Maps) -->
+              <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
+                <h3 class="font-bold text-stone-900 mb-3 flex items-center gap-2">
+                  <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  Lieu de consultation
+                </h3>
+                
+                <div class="w-full h-48 rounded-xl overflow-hidden border border-stone-200 mb-4">
+                  <iframe 
+                    src="https://maps.google.com/maps?q=Rue+Joseph+Wauters+191,+7110+Péronnes-lez-Binche&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+
+                <p class="text-sm text-stone-600 mb-4 leading-relaxed">
+                  <strong>Centre Les Oranges</strong><br/>
+                  Rue Joseph Wauters 191<br/>
+                  7110 Péronnes-lez-Binche
+                </p>
+                <a href="https://maps.google.com/?q=Rue+Joseph+Wauters+191,+7110+Péronnes-lez-Binche" target="_blank" rel="noopener noreferrer" class="flex justify-center w-full py-2.5 px-4 bg-white border border-stone-300 hover:bg-stone-50 text-stone-700 text-sm font-semibold rounded-xl transition-all duration-200">
+                  Calculer l'itinéraire
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>
