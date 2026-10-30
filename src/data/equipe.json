@@ -10,8 +10,8 @@
             "Burnout",
             "Anxiété"
         ],
-        "link": "/michael-plichart-psychologue-tcc",
-        "description": "En tant que psychologue clinicien et psychothérapeute TCC, je vous accompagne dans un cadre pragmatique et bienveillant.\n\nNous identifierons ensemble les schémas de pensée qui vous bloquent, pour mettre en place des stratégies concrètes face à l'anxiété, au burn-out ou aux difficultés relationnelles.\n\nMon approche se veut collaborative : vous êtes l'expert de votre vie, je vous apporte les outils cliniques pour retrouver votre équilibre."
+        "fichier_texte": "michaelplichart.md",
+        "link": "/michael-plichart-psychologue-tcc"
     },
     {
         "id": "clementine-delbruyere",
@@ -28,6 +28,7 @@
             "FODMAPs",
             "Poids"
         ],
+        "fichier_texte": "clementinedelbruyere.md",
         "statut": "absent",
         "message_statut": "Clémentine est actuellement en congé maternité.",
         "redirection_texte": "Voir nos autres spécialistes en nutrition",
@@ -48,6 +49,7 @@
             "Anxiété",
             "Stress"
         ],
+        "fichier_texte": "celinemahieu.md",
         "statut": "actif"
     },
     {
@@ -65,6 +67,7 @@
             "Sportifs",
             "Dos"
         ],
+        "fichier_texte": "mathieugregoire.md",
         "statut": "actif"
     }
 ]
