@@ -2,21 +2,17 @@
 import Layout from './Layout.astro';
 import { Image } from 'astro:assets';
 
-interface Props {
-  title: string;
-  description: string;
-  titreService: string;
-  sousTitre?: string;
-  imageIllustration?: string;
-}
+// Permet au layout de fonctionner avec des pages .astro (Astro.props) ou .md (Astro.props.frontmatter)
+const props = Astro.props.frontmatter || Astro.props;
 
 const { 
   title, 
   description, 
   titreService, 
   sousTitre,
-  imageIllustration
-} = Astro.props;
+  imageIllustration,
+  praticiens
+} = props;
 ---
 
 <Layout title={title} description={description} image={imageIllustration}>
@@ -37,20 +33,19 @@ const {
       <!-- CARTE PRINCIPALE -->
       <div class="bg-white rounded-3xl shadow-xl shadow-stone-200/60 border border-stone-200 overflow-hidden">
         
-        
-      <!-- Banderole d'en-tête en couleur unie profonde pour une lisibilité parfaite -->
-      <div class="h-32 sm:h-40 bg-orange-800 flex items-center px-6 sm:px-10">
-        <div>
-          <h1 class="font-['Lora',serif] text-3xl sm:text-4xl font-bold text-white mb-1">
-            {titreService}
-          </h1>
-          {sousTitre && (
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-200">
-              {sousTitre}
-            </p>
-          )}
+        <!-- Banderole d'en-tête en couleur unie profonde pour une lisibilité parfaite -->
+        <div class="h-32 sm:h-40 bg-orange-800 flex items-center px-6 sm:px-10">
+          <div>
+            <h1 class="font-['Lora',serif] text-3xl sm:text-4xl font-bold text-white mb-1">
+              {titreService}
+            </h1>
+            {sousTitre && (
+              <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-200">
+                {sousTitre}
+              </p>
+            )}
+          </div>
         </div>
-      </div>
 
         <div class="px-6 sm:px-10 py-10">
           <!-- Grille Contenu (Markdown) et Sidebar épurée -->
@@ -66,18 +61,52 @@ const {
             <!-- Colonne de droite : Actions & Localisation -->
             <div class="space-y-6">
               
-              <!-- Widget : Prendre Rendez-vous -->
-              <div class="bg-stone-50 rounded-2xl p-6 border border-stone-200">
-                <h3 class="font-bold text-stone-900 mb-4">Besoin d'un accompagnement ?</h3>
-                <div class="space-y-4">
-                  <a href="/annuaire" class="flex justify-center w-full py-3 px-4 bg-stone-900 hover:bg-amber-600 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-sm hover:shadow-md">
-                    Trouver un spécialiste
-                  </a>
-                  <p class="text-xs text-stone-500 text-center leading-relaxed">
-                    Consultez l'annuaire pour prendre contact directement avec le thérapeute de votre choix.
-                  </p>
+              <!-- LOGIQUE D'AFFICHAGE DU PRATICIEN OU DU BLOC PAR DÉFAUT -->
+              {praticiens && praticiens.length > 0 ? (
+                praticiens.map((p) => (
+                  <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm text-center">
+                    {p.image && (
+                      <a href={p.lien || "#"} class="block group">
+                        <img src={p.image} alt={`Portrait de ${p.nom}`} class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-stone-50 shadow-sm mb-4 group-hover:scale-105 transition-transform duration-200" />
+                      </a>
+                    )}
+                    <a href={p.lien || "#"} class="font-bold text-stone-900 text-lg mb-1 hover:text-amber-600 transition-colors block">
+                      {p.nom}
+                    </a>
+                    <p class="text-amber-600 text-sm font-bold uppercase tracking-wider mb-2">{p.specialite}</p>
+                    
+                    {p.telephone && (
+                      <p class="text-stone-600 text-sm mb-5 font-medium flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <a href={`tel:${p.telephone.replace(/\s/g, '')}`} class="hover:text-amber-600 transition-colors underline decoration-stone-300 underline-offset-4">
+                          {p.telephone}
+                        </a>
+                      </p>
+                    )}
+                    
+                    <div class="space-y-2">
+                      <a href={p.lien || "/annuaire"} class="flex justify-center w-full py-2.5 px-4 bg-white border border-stone-300 hover:bg-stone-50 text-stone-700 text-xs font-bold rounded-xl transition-all duration-200">
+                        En savoir plus
+                      </a>
+                      <a href="/annuaire" class="flex justify-center w-full py-3 px-4 bg-stone-900 hover:bg-amber-600 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-sm hover:shadow-md">
+                        Prendre rendez-vous
+                      </a>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div class="bg-stone-50 rounded-2xl p-6 border border-stone-200">
+                  <h3 class="font-bold text-stone-900 mb-4">Besoin d'un accompagnement ?</h3>
+                  <div class="space-y-4">
+                    <a href="/annuaire" class="flex justify-center w-full py-3 px-4 bg-stone-900 hover:bg-amber-600 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-sm hover:shadow-md">
+                      Trouver un spécialiste
+                    </a>
+                    <p class="text-xs text-stone-500 text-center leading-relaxed">
+                      Consultez l'annuaire pour prendre contact directement avec le thérapeute de votre choix.
+                    </p>
+                  </div>
                 </div>
-              </div>
+              )}
 
               <!-- Widget : Lieu de consultation (Google Maps) -->
               <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
