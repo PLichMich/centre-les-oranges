@@ -1,0 +1,46 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Naturopathie à Péronnes-lez-Binche | Centre Les Oranges",
+  description: "Consultations en naturopathie avec Anne Mengeot au Centre Thérapeutique Les Oranges. Alimentation naturelle, hygiène de vie, bien-être et santé globale.",
+  titreService: "Naturopathie",
+  sousTitre: "Une approche naturelle pour préserver et optimiser votre capital santé",
+  praticiens: ["anne-mengeot"] // Affiche automatiquement la fiche d'Anne Mengeot
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que la naturopathie ?</h2>
+  <p>
+    Reconnue par l'Organisation Mondiale de la Santé (OMS) comme médecine traditionnelle, la naturopathie est une approche globale de la santé qui vise à équilibrer le fonctionnement de l'organisme par des moyens exclusivement naturels. 
+  </p>
+  <p>
+    Plutôt que de se concentrer uniquement sur le symptôme, le naturopathe cherche à en comprendre la cause profonde (physique, émotionnelle, ou environnementale) pour redonner au corps sa capacité d'auto-guérison.
+  </p>
+
+  <h2>Pourquoi consulter notre naturopathe ?</h2>
+  <p>
+    Anne Mengeot vous accompagne pour retrouver une hygiène de vie adaptée à vos besoins. Vous pouvez faire appel à la naturopathie pour :
+  </p>
+  <ul>
+    <li><strong>L'alimentation :</strong> adopter une alimentation plus naturelle et digeste au quotidien.</li>
+    <li><strong>L'environnement :</strong> apprendre à vivre dans un environnement sain (produits naturels, gestion des toxines).</li>
+    <li><strong>La vitalité :</strong> lutter contre la fatigue chronique, le manque d'énergie ou les baisses d'immunité.</li>
+    <li><strong>L'équilibre nerveux :</strong> mieux gérer le stress, l'anxiété et les troubles du sommeil de manière naturelle.</li>
+    <li><strong>Les troubles fonctionnels :</strong> inconforts digestifs, problèmes de peau, allergies ou douleurs articulaires.</li>
+  </ul>
+
+  <h2>Comment se déroule une séance ?</h2>
+  <p>
+    La première consultation consiste en un bilan de vitalité approfondi. À travers un dialogue détaillé sur vos habitudes de vie, votre alimentation, votre sommeil et votre sphère émotionnelle, la naturopathe évalue votre terrain. 
+  </p>
+  <p>
+    Elle vous propose ensuite un programme d'hygiène de vie personnalisé (conseils nutritionnels, phytothérapie, aromathérapie, techniques de relaxation) pour vous rendre acteur de votre propre santé.
+  </p>
+
+  <h2>Ateliers d'autonomie à la santé globale</h2>
+  <p>
+    En complément des consultations individuelles, Anne Mengeot organise régulièrement des ateliers pratiques au Centre Les Oranges (ex: "Bien-être au quotidien"). Ces moments d'échange en petits groupes vous permettent d'apprendre des techniques concrètes pour prendre soin de vous naturellement.
+  </p>
+</LayoutService>

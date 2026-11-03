@@ -1,0 +1,49 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Centre de prélèvements CHU Tivoli | Centre Les Oranges",
+  description: "Prises de sang et prélèvements par les infirmiers du CHU Tivoli au Centre Les Oranges à Péronnes-lez-Binche. Sans rendez-vous.",
+  titreService: "Centre de Prélèvements",
+  sousTitre: "Soins infirmiers en collaboration avec le CHU Tivoli",
+  praticiens: [] // L'équipe du laboratoire n'a pas de fiches individuelles
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Prises de sang et prélèvements</h2>
+  <p>
+    Pour l'instant, le service infirmier de notre centre assure uniquement les prises de sang et les prélèvements. Ce service est encadré par la cellule laboratoire-ambulatoire du CHU Tivoli.
+  </p>
+
+  <div class="bg-blue-50 border-l-4 border-blue-500 text-blue-900 p-5 my-6 rounded-r-lg shadow-sm">
+    <p class="font-bold text-lg mb-3">Horaire (sans rendez-vous)</p>
+    <ul class="list-disc ml-5 mb-4 space-y-1">
+      <li><strong>Lundi, mercredi et vendredi :</strong> de 7h30 à 9h00[cite: 1]</li>
+      <li><strong>Samedi :</strong> de 8h00 à 10h00[cite: 1]</li>
+    </ul>
+    <p class="mb-0">
+      <strong>Contact du laboratoire :</strong> 064/27.75.75 ou par e-mail à <a href="mailto:labo.ambu@chu-tivoli.be" class="underline hover:text-blue-700">labo.ambu@chu-tivoli.be</a>
+    </p>
+  </div>
+
+  <h2>Comment procéder ?</h2>
+  <p>
+    Vous devez être muni(e) d'une prescription émanant d'un médecin. Les tarifs des différentes prestations sont demandés directement à la mutuelle, c'est-à-dire qu'ils sont gratuits pour tous les patients (tiers payant).
+  </p>
+
+  <h2>Autres soins infirmiers généraux</h2>
+  <p>
+    De manière générale, un(e) infirmier(e) peut intervenir pour d'autres soins sur prescription :
+  </p>
+  <ul>
+    <li>Soins des plaies (y compris soins de brûlures, d'ulcères et d'escarres)</li>
+    <li>Soins de gastrotomie</li>
+    <li>Injections par intraveineuse, intramusculaire ou sous-cutanée (diabète, gestion des douleurs...)</li>
+    <li>Toilette</li>
+    <li>Préparation hebdomadaire de médicaments par voie orale (pour les patients psychiatriques chroniques notamment)</li>
+  </ul>
+  <p class="text-sm text-stone-500 italic mt-4">
+    Note : Renseignez-vous directement auprès du centre pour vérifier la disponibilité actuelle de ces soins spécifiques à domicile ou en cabinet.
+  </p>
+</LayoutService>

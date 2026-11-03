@@ -1,0 +1,38 @@
+---
+import LayoutService from '../../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Méditation Pleine Conscience (Mindfulness) | Centre Les Oranges",
+  description: "Découvrez la méditation de pleine conscience à Péronnes-lez-Binche avec Eva Ludik. Ateliers et cycles pour gérer le stress, l'anxiété et le burn-out.",
+  titreService: "Méditation Pleine Conscience",
+  sousTitre: "Apprendre à réguler ses émotions pour retrouver le calme et la sérénité",
+  praticiens: ["eva-ludik"] // Affiche automatiquement la fiche d'Eva Ludik
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Pourquoi pratiquer la pleine conscience ?</h2>
+  <p>
+    Aujourd'hui, le stress et l'anxiété sont omniprésents, quel que soit le niveau social et quel que soit l'âge[cite: 2]. La méditation de pleine conscience, aussi appelée méditation basée sur la "présence attentive" ou "mindfulness", est un excellent exercice accessible à tous[cite: 2]. 
+  </p>
+  <p>
+    Elle a pour vertu de mieux nous préparer aux situations stressantes ou anxiogènes[cite: 2]. Moins touché par le stress ou l'anxiété, on devient plus efficace, on dort mieux et la qualité de vie devient nettement meilleure[cite: 2].
+  </p>
+
+  <h2>Quelle est la différence entre la pleine conscience et la relaxation ?</h2>
+  <p>Que ce soit la relaxation ou la méditation pleine conscience, les deux s'avèrent particulièrement utiles pour faire face au stress et à l'anxiété[cite: 2].</p>
+  <ul>
+    <li><strong>La relaxation :</strong> Elle apprend à vite apaiser une émotion et à retourner dans un état appréciable de calme[cite: 2]. Il s'agit essentiellement d'un apaisement physique qui va entraîner un apaisement mental[cite: 2].</li>
+    <li><strong>La méditation pleine conscience :</strong> Elle apprend à se relaxer également, mais y ajoute un travail intérieur de "régulation émotionnelle"[cite: 2]. Le méditant apprend à reconnaître et à maîtriser certains mécanismes intérieurs qui ont un grand rôle dans la gestion de ses émotions[cite: 2].</li>
+  </ul>
+  <p>
+    La pleine conscience a donc un effet non seulement physiologique, mais aussi sur les aspects cognitifs et émotionnels[cite: 2]. L'idéal étant, finalement, de pratiquer les deux approches[cite: 2].
+  </p>
+
+  <h2>Les ateliers de méditation pleine conscience (Cycle de 8 séances)</h2>
+  <p>Vous souffrez d'anxiété, de stress, de burn-out ou de ruminations ? Vous faites face à un épuisement, à des douleurs chroniques (fibromyalgie), à de l'impulsivité ou à un manque de concentration ? Ou vous avez juste envie de vous sentir mieux ?[cite: 2]</p>
+  <p><strong>Apprendre à réguler vos émotions peut vous aider !</strong>[cite: 2]</p>
+  <p>
+    Nous organisons régulièrement des cycles de 8 séances hebdomadaires (d'environ 1h30)[cite: 2]. Un remboursement partiel est possible par les mutuelles[cite: 2]. N'hésitez pas à prendre contact pour vous inscrire au prochain cycle ou demander des renseignements[cite: 2].
+  </p>
+</LayoutService>

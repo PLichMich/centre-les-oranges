@@ -1,0 +1,61 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Sophrologie et Massothérapie à Péronnes-lez-Binche | Centre Les Oranges",
+  description: "Consultations en sophrologie, massages assis (Amma), Reiki et ateliers de groupe avec Cathy Malosto. Gestion du stress, TDAH, douleurs, préparation à la naissance.",
+  titreService: "Sophrologie & Massothérapie",
+  sousTitre: "Apprendre à se relaxer, lâcher prise et s'apaiser au quotidien",
+  praticiens: ["cathy-malosto"] // Affiche automatiquement la fiche de Cathy Malosto
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <p>
+    Vous souhaitez (apprendre à) vous relaxer, lâcher prise ? Je vous reçois pour des consultations individuelles ou familiales ainsi que lors d'ateliers de groupe[cite: 2].
+  </p>
+
+  <h2>Mes spécialités</h2>
+  <ul>
+    <li><strong>Sophrologie</strong> pour enfants dès 5 ans, adolescents, adultes, et femmes enceintes (préparation à la naissance)[cite: 2].</li>
+    <li><strong>Massages assis</strong> habillé (Amma) pour adolescents et adultes[cite: 2].</li>
+    <li><strong>Massages parents/enfants</strong> (ou bébé) : Protocole MISP[cite: 2].</li>
+    <li><strong>Reiki</strong>[cite: 2].</li>
+    <li><strong>Remédiations scolaires</strong> pour les élèves de primaires (en tant qu'ancienne institutrice primaire)[cite: 2].</li>
+  </ul>
+
+  <h2>Exemples de problématiques prises en charge :</h2>
+  <ul>
+    <li>Stress, anxiété, nervosité et impulsions[cite: 2]</li>
+    <li>Troubles de l'attention (TDAH)[cite: 2]</li>
+    <li>Deuil difficile et burn-out[cite: 2]</li>
+    <li>Douleurs difficiles à supporter[cite: 2]</li>
+    <li>Manque de confiance en soi et problèmes de sommeil[cite: 2]</li>
+  </ul>
+
+  <h2>Ateliers de groupe</h2>
+  <p>
+    Je peux également vous recevoir lors d'ateliers en groupes (sur inscriptions limitées)[cite: 2]. L'atelier débute lorsque minimum 4 personnes sont inscrites[cite: 2].
+  </p>
+
+  <h3>Atelier de gestion du stress et de l’anxiété (dès 18 ans)</h3>
+  <p>
+    <em>En collaboration avec ma collègue psychologue Aurélie Holvoet.</em><br>
+    Pour toute personne désirant expérimenter des outils pour lâcher prise au quotidien (outils de thérapie brève, écriture thérapeutique et sophrologie)[cite: 2]. Cycles réguliers de 5 séances le lundi et/ou jeudi matin[cite: 2].
+  </p>
+
+  <h3>Je gère mon stress et mes douleurs par la sophrologie !</h3>
+  <p>
+    Pour adolescents (dès 16 ans) et adultes[cite: 2]. Les séances visent une détente profonde du corps via la respiration consciente, le lâcher-prise, la préparation aux événements stressants et une meilleure gestion de la douleur[cite: 2].
+  </p>
+
+  <h3>Préparation à l'accouchement par la sophrologie</h3>
+  <p>
+    Pour les futures mamans (et papas), ouverts à tous les couples désirant créer du lien avec bébé (à partir de +/- 16 semaines de grossesse)[cite: 2]. Accompagnement des changements physiques, gestion du stress, préparation mentale à l'accouchement, confiance en soi et gestion de la douleur[cite: 2]. 
+  </p>
+
+  <h3>Atelier découverte massages parents/enfants ou frère/sœur</h3>
+  <p>
+    Découverte des massages assis et habillés (MISA) en famille pour diminuer les tensions, s'apaiser et retrouver le plaisir d'être ensemble[cite: 2].
+  </p>
+</LayoutService>

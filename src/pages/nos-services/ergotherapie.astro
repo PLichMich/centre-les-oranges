@@ -1,0 +1,52 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+// On rassemble les infos de la page dans un objet "frontmatter" pour les passer au layout
+const serviceData = {
+  title: "Ergothérapie & Enfants-Adultes-Seniors | Centre Les Oranges",
+  description: "Découvrez l'ergothérapie au Centre Thérapeutique Les Oranges à Péronnes-lez-Binche avec Lydie Junon. Accompagnement pour enfants, adultes et seniors.",
+  titreService: "Ergothérapie",
+  sousTitre: "Enfants, adultes et seniors",
+  praticienId: "lydie-junon" // Le layout ira chercher la photo optimisée et les infos tout seul !
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que l'ergothérapie ?</h2>
+  <p>
+    L'ergothérapie est une profession de la santé qui s'intéresse à la relation entre l'activité humaine et la santé. Elle vise à maintenir, restaurer ou permettre une autonomie sécurisée dans les activités de la vie quotidienne, de loisirs ou professionnelles.
+  </p>
+  <p>
+    Lydie Junon vous accueille au Centre Thérapeutique Les Oranges pour des prises en charge adaptées à chaque étape de la vie :
+  </p>
+
+  <h2>1. Ergothérapie pour les enfants</h2>
+  <p>
+    L'intervention auprès de l'enfant concerne les difficultés qui entravent ses apprentissages scolaires ou son autonomie au quotidien (habillage, repas, écriture, organisation).
+  </p>
+  <ul>
+    <li><strong>Troubles des apprentissages :</strong> dyspraxie, dysgraphie, troubles de l'attention (TDA/H).</li>
+    <li><strong>Développement psychomoteur et sensoriel.</strong></li>
+    <li><strong>Adaptation des outils scolaires</strong> et guidance parentale.</li>
+  </ul>
+
+  <h2>2. Ergothérapie pour les adultes</h2>
+  <p>
+    Pour les adultes, l'ergothérapie aide à surmonter les limitations consécutives à une maladie, un accident, un trouble musculosquelettique ou un épuisement professionnel (burnout).
+  </p>
+  <ul>
+    <li><strong>Rééducation fonctionnelle</strong> des membres supérieurs.</li>
+    <li><strong>Ergonomie au poste de travail</strong> et prévention des troubles musculosquelettiques (TMS).</li>
+    <li><strong>Gestion de l'énergie</strong> et réorganisation des activités quotidiennes.</li>
+  </ul>
+
+  <h2>3. Ergothérapie pour les seniors</h2>
+  <p>
+    Le maintien de l'autonomie des personnes âgées est un enjeu majeur pour préserver leur qualité de vie et leur sécurité à domicile.
+  </p>
+  <ul>
+    <li><strong>Prévention des chutes</strong> et aménagement du domicile.</li>
+    <li><strong>Évaluation des pertes cognitives</strong> (troubles de la mémoire, orientation).</li>
+    <li><strong>Mise en place d'aides techniques</strong> adaptées.</li>
+  </ul>
+</LayoutService>

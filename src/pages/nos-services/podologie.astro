@@ -1,0 +1,62 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Podologie entre La Louvière et Binche | Centre Les Oranges",
+  description: "Soins de la peau des pieds et des ongles, déformation des orteils, analyse de la marche, pied du patient diabétique avec Adeline Gomrée et Pauline Horny.",
+  titreService: "Podologie",
+  sousTitre: "Soins, prévention et traitement des affections du pied",
+  praticiens: ["adeline-gomree", "pauline-horny"] // Les fiches d'Adeline et de sa remplaçante Pauline s'afficheront automatiquement
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <p>
+    Nos pieds nous servent de moyens de locomotion indispensables et supportent le poids du corps au quotidien. Afin d’éviter tout désagrément, il est nécessaire d’en prendre conscience et de leur offrir des soins réguliers et appropriés.
+  </p>
+
+  <h2>Public cible</h2>
+  <ul>
+    <li>Patients diabétiques (tous types et grades)</li>
+    <li>Enfants et adolescents</li>
+    <li>Adultes</li>
+    <li>Séniors</li>
+  </ul>
+
+  <h2>Qu’est-ce que le métier de podologue ?</h2>
+  <p>
+    Le métier de podologue consiste à soigner les affections du pied et des ongles à la demande d’un médecin ou non. Il traite les atteintes superficielles de la peau comme les cors, les durillons, les crevasses. Le podologue est amené à traiter les ongles incarnés et à en déduire la cause.
+  </p>
+  <p>
+    Il réalise également des orthèses fonctionnelles (semelles) dans le cas de troubles de la marche ou d’hyper-appuis pouvant occasionner des gênes. Le podologue est formé à l’utilisation de diverses techniques telles que :
+  </p>
+  <ul>
+    <li><strong>Les orthoplasties :</strong> réalisées sur mesure et modelées sur le pied du patient (orthèses en silicone) permettant de protéger et/ou de corriger la déformation d’orteil.</li>
+    <li><strong>Les orthonyxies :</strong> pour corriger la courbure des ongles.</li>
+    <li><strong>Les onychoplasties :</strong> pour la reconstruction unguéale.</li>
+  </ul>
+  <p>
+    En tant que podothérapeute, il informe et transmet des informations aux patients (prévention des risques). Lorsqu’il suspecte une pathologie, il en réfère auprès d’un spécialiste (médecin, diabétologue, dermatologue…).
+  </p>
+  <p>
+    C'est un professionnel reconnu par l’INAMI pour les soins de santé spécifiques des patients diabétiques (remboursements selon le grade, à voir avec votre diabétologue).
+  </p>
+
+  <h2>Problèmes traités par le podologue :</h2>
+  <ul>
+    <li>Cors, durillons, hyperkératose et ongles incarnés.</li>
+    <li>Déformations des orteils encore réductibles (orteils en marteau, chevauchements) et conflits entre la peau et la chaussure.</li>
+    <li>Reconstruction unguéale en cas de chute de l’ongle (hématome, mycose...).</li>
+    <li>Redressement des ongles ayant une courbure accentuée.</li>
+    <li>Soins spécifiques du patient diabétique (maux perforants plantaires).</li>
+    <li>Analyse de la marche.</li>
+  </ul>
+
+  <h2>Quand consulter ?</h2>
+  <p>
+    N’attendez pas que vos pieds se plaignent pour prendre un rendez-vous ! Une visite régulière (même à raison d’une fois par an) permet de s’assurer de leur état de santé.
+  </p>
+  <p>
+    <strong><em>Prenez soin de vos pieds et ils vous en remercieront !</em></strong>
+  </p>
+</LayoutService>

@@ -1,13 +1,67 @@
 ---
-import LayoutService from '../../../layouts/LayoutService.astro';
-import * as markdownContent from '../../../assets/textes/tcc-explication.md';
+import LayoutService from '../../../layouts/LayoutService.astro'; // Ajuste le chemin des ../ selon le dossier où tu places le fichier
+
+const serviceData = {
+  title: "Thérapie Cognitivo-Comportementale (TCC) | Centre Les Oranges",
+  description: "Découvrez la psychothérapie cognitivo-comportementale (TCC) à Péronnes-lez-Binche avec Michaël Plichart et Céline Mahieu. Traitement de l'anxiété, dépression, burn-out.",
+  titreService: "Thérapie Cognitivo-Comportementale",
+  sousTitre: "Une approche scientifique, structurée et orientée vers des solutions concrètes",
+  praticiens: ["michael-plichart", "celine-mahieu"] // Affiche les deux praticiens TCC côte à côte ou l'un sous l'autre dans la sidebar
+};
 ---
 
-<LayoutService 
-  title="Psychothérapie TCC - Thérapie Cognitivo-Comportementale | Centre Les Oranges"
-  description="Découvrez la Thérapie Cognitivo-Comportementale (TCC) au Centre Thérapeutique Les Oranges à Péronnes-lez-Binche. Accompagnement pragmatique et scientifique."
-  titreService="La Psychothérapie TCC"
-  sousTitre="Thérapie Cognitivo-Comportementale"
->
-  <markdownContent.Content />
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que la psychologie cognitivo-comportementale ?</h2>
+  
+  <h3>D'abord, le comportementalisme. Ensuite, le cognitivisme.</h3>
+  <p>
+    La psychologie cognitive et comportementale est une pratique née au début du XXème siècle. Les principaux représentants de cette époque voulaient avant tout avoir une approche scientifique du bien-être et pouvoir prouver les bienfaits de leur procédé. Ils se sont d'abord concentrés sur le comportementalisme, jugeant que les comportements étaient visibles, quantifiables et mesurables. Pour eux, l'origine des difficultés mentales reposait principalement sur la théorie de <strong>l'apprentissage (conditionnement classique et opérant)</strong>. Ils ont prouvé que les troubles psychologiques comme <strong>la dépression ou l'anxiété</strong> pouvaient être induits ou entretenus par notre comportement.
+  </p>
+  <p>
+    Vers les années 1950, d'autres scientifiques se sont intéressés aux pensées conscientes de leurs patients : <strong>les cognitions</strong>. Ils ont constaté que ce que les patients se disaient à eux-mêmes avait une forte influence sur leurs émotions et leur comportement. De cette constatation est né le <strong>cognitivisme</strong>, qui vise à renforcer les pensées soulageant le patient et à remettre en question celles qui le torturent, pour les faire évoluer.
+  </p>
+
+  <h3>L'intégration des psychothérapies cognitives et comportementales</h3>
+  <p>
+    Dans les années soixante, les chercheurs ont conclu que <strong>le comportementalisme et le cognitivisme étaient complémentaires</strong>. Ils ont fusionné les deux pratiques et la psychothérapie cognitivo-comportementale (TCC) était née.
+  </p>
+
+  <h2>L'aspect scientifique des TCC</h2>
+  <p>
+    Les grands précurseurs de la TCC ont toujours mis un point d'honneur à ce que leur pratique puisse être validée scientifiquement. C'est aujourd'hui la forme de psychothérapie historiquement la plus étudiée et mesurée par le monde scientifique.
+  </p>
+  <p>
+    Elle a démontré son efficacité dans pratiquement <strong>toutes les formes de psychopathologie connues</strong>, et est particulièrement renommée dans le domaine de <strong>l'anxiété et de la dépression</strong>. La TCC se veut être une pratique courte et orientée solutions. Elle démontre son efficacité sur le court, moyen, mais aussi long terme : les thérapeutes apprennent aux patients comment maintenir ce bien-être <strong>longtemps après la thérapie</strong>.
+  </p>
+
+  <h2>La philosophie des TCC</h2>
+  <p>
+    Le psychothérapeute TCC souhaite avant tout trouver une solution afin que le patient se sente mieux le plus vite possible. On parle souvent de psychothérapie brève et efficace. Si un patient consulte, c'est qu'il a souvent déjà tout essayé par lui-même, en vain. Dans ce cas, le psychothérapeute va chercher à briser les cercles vicieux (comportements et pensées) en suivant ces principes :
+  </p>
+  
+  <ul>
+    <li><strong>Premier principe :</strong> Même si le patient n'en est pas encore conscient, ses comportements jouent un rôle essentiel dans l'apparition, le maintien et parfois l'aggravation de ses difficultés.</li>
+    <li><strong>Deuxième principe (la théorie de l'apprentissage) :</strong> Les comportements problématiques peuvent avoir été appris et être devenus des habitudes. S'ils ont été appris, ils peuvent être désappris avec les bonnes techniques.</li>
+    <li><strong>Troisième principe :</strong> Le diagnostic est très important pour une prise en main rapide. Le thérapeute recherche les comportements, les pensées et les émotions qui entretiennent le problème.</li>
+    <li><strong>Quatrième principe :</strong> Le thérapeute réévalue constamment l'efficacité du traitement.</li>
+    <li><strong>Cinquième principe :</strong> La méthode est scientifique et structurée. Le thérapeute détermine les objectifs avec son patient et utilise des techniques prouvées pour y arriver.</li>
+  </ul>
+
+  <h2>Liens intéressants</h2>
+  <ul>
+    <li><a href="http://www.ipubli.inserm.fr/bitstream/handle/10608/146/?sequence=18" target="_blank" rel="noopener noreferrer">Le rapport de L'INSERM prouvant l'efficacité des thérapies cognitives et comportementales (PDF)</a></li>
+  </ul>
+  
+  <div class="aspect-video w-full rounded-xl overflow-hidden mb-4 bg-stone-100 border border-stone-200 mt-8">
+    <iframe 
+      width="100%" 
+      height="100%" 
+      src="https://www.youtube.com/embed/q1c2VBA0gHg?start=10" 
+      title="Christophe André parle de la psychologie Cognitive et comportementale" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <p class="text-sm text-stone-500 text-center italic">Christophe André parle de la psychologie cognitive et comportementale</p>
 </LayoutService>

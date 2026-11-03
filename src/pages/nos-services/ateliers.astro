@@ -1,0 +1,61 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Ateliers de Groupe à Péronnes-lez-Binche | Centre Les Oranges",
+  description: "Découvrez nos ateliers de groupe au Centre Les Oranges : Pilates, Yoga sur chaise, Tai chi, Qi Gong, Méditation et gestion du stress.",
+  titreService: "Ateliers de Groupe",
+  sousTitre: "Des activités collectives pour cultiver votre bien-être physique et mental",
+  // On affiche ici les animateurs spécifiquement dédiés aux ateliers
+  praticiens: ["nathalie-dath", "jean-claude-degreef", "fanny-mesdaght"] 
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <p>
+    En plus des consultations individuelles, le Centre Thérapeutique Les Oranges vous propose une série d'ateliers et de cours collectifs animés par nos praticiens et animateurs spécialisés. Ces séances en petits groupes favorisent l'échange, l'apprentissage et le bien-être dans un cadre bienveillant.
+  </p>
+
+  <h2>Activités corporelles et énergétiques</h2>
+  <ul>
+    <li>
+      <strong>Pilates (avec Nathalie Dath) :</strong> Gymnastique douce visant à renforcer les muscles profonds, améliorer la posture, l'équilibre et la souplesse. Idéal pour soulager les maux de dos.
+    </li>
+    <li>
+      <strong>Tai Chi et Qi Gong (avec Jean-Claude De Greef) :</strong> Arts énergétiques corporels d'origine chinoise. Ils associent mouvements lents, respiration et concentration pour faire circuler l'énergie vitale et apaiser le mental.
+    </li>
+    <li>
+      <strong>Yoga sur chaise (avec Fanny) :</strong> Une pratique du yoga douce et accessible à tous, sans devoir s'asseoir au sol. Parfait pour se détendre, s'étirer et se recentrer au quotidien, idéal pour les seniors ou les personnes à mobilité réduite.
+    </li>
+  </ul>
+
+  <h2>Ateliers psychologiques et gestion des émotions</h2>
+  <ul>
+    <li>
+      <strong>Cycle de Méditation Pleine Conscience (Mindfulness) :</strong> Animé par Eva Ludik (Psychologue). Un cycle de 8 semaines pour apprendre à réguler le stress, l'anxiété et les douleurs par l'attention au moment présent.
+    </li>
+    <li>
+      <strong>Ateliers Gestion du stress et de l'anxiété :</strong> Co-animés par Aurélie Holvoet (Thérapie brève) et Cathy Malosto (Sophrologie). Des outils concrets pour lâcher prise au quotidien (exercices de respiration, écriture thérapeutique).
+    </li>
+    <li>
+      <strong>Préparation à la naissance par la sophrologie :</strong> Animé par Cathy Malosto. Un accompagnement pour les futurs parents afin de gérer les changements physiques et la douleur.
+    </li>
+  </ul>
+
+  <h2>Ateliers santé globale</h2>
+  <ul>
+    <li>
+      <strong>Ateliers de Naturopathie :</strong> Animés par Anne Mengeot. Apprentissage de techniques naturelles (alimentation, huiles essentielles, hygiène de vie) pour préserver sa vitalité.
+    </li>
+    <li>
+      <strong>Ateliers de découverte Massages (Amma / MISP) :</strong> Animés par Cathy Malosto. Initiation aux massages assis et massages parents/enfants.
+    </li>
+  </ul>
+
+  <div class="bg-stone-100 border-l-4 border-orange-500 p-5 my-6 rounded-r-lg shadow-sm">
+    <p class="font-bold text-lg mb-2">Informations pratiques</p>
+    <p class="mb-0">
+      Tous nos ateliers se déroulent en <strong>petits groupes</strong> afin de garantir un accompagnement de qualité. Les places étant limitées, <strong>l'inscription est obligatoire</strong>. N'hésitez pas à contacter directement l'animateur concerné via sa fiche de contact pour connaître les horaires, les tarifs et les dates des prochains cycles.
+    </p>
+  </div>
+</LayoutService>

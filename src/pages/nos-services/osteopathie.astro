@@ -1,0 +1,58 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Ostéopathie | Centre Les Oranges",
+  description: "Mathieu Grégoire, ostéopathe D.O. au Centre Thérapeutique Les Oranges à Péronnes-lez-Binche. Ostéopathie générale, crânienne, viscérale, bébés et adultes.",
+  titreService: "Ostéopathie",
+  sousTitre: "Une approche globale et manuelle pour rétablir la mobilité du corps",
+  praticienId: "mathieu-gregoire" // Fiche de Mathieu Grégoire
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que l'ostéopathie ?</h2>
+  <p>
+    L'ostéopathie est une médecine douce utilisant des techniques manuelles visant à rendre de la mobilité à l'ensemble du corps humain.
+  </p>
+
+  <h3>L'ostéopathie repose sur 3 principes fondamentaux :</h3>
+  <ol>
+    <li>Chaque partie du corps remplit un rôle précis.</li>
+    <li>Le corps fonctionne comme un tout, ce qui signifie que toutes les parties sont interconnectées.</li>
+    <li>Le corps dispose de moyens lui permettant de s'auto-guérir de lui-même : c'est le principe d'auto-guérison.</li>
+  </ol>
+
+  <h3>L'ostéopathie subdivise le corps en trois sphères :</h3>
+  <ol>
+    <li><strong>La sphère structurelle :</strong> les parties osseuses du corps, les muscles et les articulations.</li>
+    <li><strong>La sphère viscérale :</strong> les organes digestifs et thoraciques.</li>
+    <li><strong>La sphère crânienne.</strong></li>
+  </ol>
+
+  <h2>Pourquoi consulter un ostéopathe ?</h2>
+  <p>L'ostéopathie a déjà largement fait ses preuves dans les cas suivants :</p>
+  <ul>
+    <li>Maux de dos (scoliose, hernie discale, lumbago...)</li>
+    <li>Torticolis</li>
+    <li>Problèmes de mâchoire</li>
+    <li>Sciatique</li>
+    <li>Tendinites</li>
+    <li>Arthrose (et polyarthrite rhumatoïde)</li>
+    <li>Fibromyalgie</li>
+    <li>Suites d'un traumatisme (chute)</li>
+    <li>Migraines ou céphalées</li>
+    <li>Problèmes de digestion ou constipation</li>
+    <li>Acouphènes</li>
+    <li>Sinusite</li>
+    <li>Certaines conséquences de troubles psychologiques comme le stress ou la dépression</li>
+  </ul>
+
+  <h2>Focus sur l'ostéopathie crânienne</h2>
+  <p>Cette spécialité de l'ostéopathie peut aider dans différents domaines dont notamment :</p>
+  <ul>
+    <li><strong>Troubles du sommeil :</strong> réduit le temps d'endormissement, régule l'activité du système nerveux sympathique.</li>
+    <li><strong>Pour les bébés :</strong> irritabilité, troubles du sommeil, douleurs, otites, coliques...</li>
+    <li><strong>Fibromyalgie :</strong> diminue les niveaux de douleur et d'anxiété.</li>
+  </ul>
+</LayoutService>

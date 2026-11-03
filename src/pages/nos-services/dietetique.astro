@@ -1,0 +1,64 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Diététique | Centre Les Oranges",
+  description: "Consultations en diététique et nutrition avec Clémentine Delbruyère au Centre Thérapeutique Les Oranges (Péronnes-lez-Binche). Surpoids, sportifs, diabète.",
+  titreService: "Diététique",
+  sousTitre: "Pour une santé et un bien-être optimisés par l'alimentation",
+  praticiens: ["clementine-delbruyere"] // Affiche la fiche de Clémentine Delbruyère
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Pourquoi la diététique aujourd'hui ?</h2>
+  <p>
+    Aujourd’hui, de plus en plus de personnes veillent à avoir une alimentation équilibrée et manger bio est à la mode. 
+    Pourtant, selon une étude récente, une mauvaise alimentation reste un facteur de risque majeur pour la santé. 
+    Dans ce cadre, la diététique, qui est la science qui étudie les rapports qu’entretient l’alimentation avec la santé, est réellement nécessaire.
+  </p>
+
+  <h2>Un diététicien pour qui ?</h2>
+  <p>
+    Un diététicien peut efficacement aider et orienter les personnes de tous les âges à garder une bonne santé grâce 
+    à une alimentation saine et équilibrée, tout en veillant au respect des goûts du patient.
+  </p>
+
+  <h2>Quels sont les problèmes que gère le diététicien ?</h2>
+  <p>Toujours guidé par ce double objectif qu’est la santé et le bien-être du patient, le diététicien se révèle être une personne ressource dans beaucoup de problématiques :</p>
+  <ul>
+    <li>Les troubles du comportement alimentaire</li>
+    <li>Le contrôle du diabète</li>
+    <li>L'obésité et la gestion du poids</li>
+    <li>L’insuffisance rénale</li>
+    <li>L’hyper/hypotension artérielle</li>
+    <li>L’intolérance alimentaire</li>
+    <li>Les allergies alimentaires</li>
+  </ul>
+
+  <h2>Comment le diététicien procède-t-il ?</h2>
+  <p>
+    Afin d’assurer une bonne prise en charge, le diététicien va se baser sur différentes mesures (paramètres anthropométriques, résultats sanguins, affections existantes) 
+    qui vont l’aider à proposer le meilleur traitement possible. 
+  </p>
+  <p>
+    En tant que professionnel, il connaît la valeur nutritionnelle des aliments, les aspects physiologiques de la nutrition et maîtrise les techniques de préparation culinaire. 
+    Son rôle est d’être proche de son patient, de le comprendre et de le motiver en vulgarisant son savoir scientifique.
+  </p>
+
+  <h2>L'Indice de Masse Corporelle (IMC ou BMI)</h2>
+  <p>
+    Le calcul de l'IMC (diviser le poids en kg par la taille en cm au carré) donne une valeur indicative de la corpulence. 
+    Il est utilisé comme indicateur afin d'estimer les risques de maladies liés au surpoids et à l'obésité. 
+    Les diététiciens l'utilisent, tout en tenant compte de la masse musculaire, pour déterminer leur diagnostic et l'objectif à atteindre.
+  </p>
+
+  <h3>Comment interpréter votre BMI :</h3>
+  <ul>
+    <li>Entre <strong>18,5 et 25</strong> : Idéal</li>
+    <li>Moins de <strong>18,5</strong> : Trop maigre</li>
+    <li>Entre <strong>25 et 30</strong> : Léger surpoids</li>
+    <li>Entre <strong>30 et 40</strong> : Obésité</li>
+    <li>Plus de <strong>40</strong> : Obésité morbide</li>
+  </ul>
+</LayoutService>

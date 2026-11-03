@@ -1,0 +1,34 @@
+---
+import LayoutService from '../../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Neuropsychologie à Péronnes-lez-Binche | Centre Les Oranges",
+  description: "Consultations en neuropsychologie avec Céline Vekeman et Gearlyne Nuñez. Tests QI, troubles de l'attention (TDAH), troubles des apprentissages et de la mémoire.",
+  titreService: "Neuropsychologie",
+  sousTitre: "Évaluation, diagnostic et rééducation des troubles cognitifs",
+  praticiens: ["celine-vekeman", "gearlyne-nunez"]
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <p>
+    La neuropsychologie est une science qui vise à identifier le lien entre des difficultés comportementales et cognitives reconnues et la sphère neurologique. Un neuropsychologue est donc une personne ressource pour l'identification de l'origine du déficit et la prise en charge des patients ayant une affection neurologique.
+  </p>
+
+  <h2>Pourquoi consulter un neuropsychologue ?</h2>
+  <p>On peut faire appel à un neuropsychologue par rapport à différents problèmes ou différentes questions :</p>
+  <ul>
+    <li><strong>Problèmes scolaires :</strong> difficultés d'apprentissage, troubles de l'attention avec ou sans hyperactivité (TDAH), trouble de la mémoire...</li>
+    <li><strong>Maladies neurologiques et neurodégénératives :</strong> épilepsie, infirmité motrice cérébrale (IMC), Alzheimer, démence, accident vasculaire cérébral (AVC). L'objectif est de déterminer les potentialités et les faiblesses cognitives pour les rééduquer au mieux.</li>
+    <li><strong>Troubles spécifiques :</strong> questions concernant les Troubles du Spectre Autistique (TSA).</li>
+    <li><strong>Haut Potentiel Intellectuel (HPI) :</strong> évaluation et accompagnement.</li>
+  </ul>
+
+  <h2>Quel est le rôle des neuropsychologues ?</h2>
+  <p>Les neuropsychologues s'occupent de :</p>
+  <ul>
+    <li><strong>La passation de tests :</strong> tests de QI, d'attention, de mémoire et autres tests spécifiques. Ils contribuent à effectuer un diagnostic des troubles (qui doit être confirmé par d'autres professionnels comme un neurologue ou neuropédiatre).</li>
+    <li><strong>La rééducation :</strong> prise en charge des troubles, souvent en collaboration avec d'autres professionnels comme les logopèdes, ergothérapeutes ou psychomotriciens.</li>
+    <li><strong>Le soutien psychologique :</strong> accompagnement des personnes ayant des difficultés d'apprentissage ou des maladies neurodégénératives, ainsi que de leur entourage.</li>
+  </ul>
+</LayoutService>

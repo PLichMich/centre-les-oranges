@@ -1,0 +1,27 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "EMDR & Traumatismes | Centre Les Oranges",
+  description: "Thérapie EMDR au Centre Thérapeutique Les Oranges à Péronnes-lez-Binche avec Daniela Cisamolo et Giovanna Trunfio.",
+  titreService: "EMDR & Traumatismes",
+  sousTitre: "Désensibilisation et retraitement par les mouvements oculaires",
+  praticiens: ["daniela-cisamolo", "giovanna-trunfio"] // Le layout affichera automatiquement les DEUX fiches côte à côte !
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que l'EMDR ?</h2>
+  <p>L'EMDR (Eye Movement Desensitization and Reprocessing) est une approche psychothérapeutique mondialement reconnue, destinée au traitement des traumatismes psychologiques et des souvenirs douloureux non digérés.</p>
+
+  <h2>Pourquoi consulter en EMDR ?</h2>
+  <p>Cette thérapie s'adresse aux personnes souffrant de :</p>
+  <ul>
+    <li><strong>État de Stress Post-Traumatique (ESPT) :</strong> suite à un accident, une agression, une catastrophe naturelle ou un deuil difficile.</li>
+    <li><strong>Troubles anxieux :</strong> crises de panique, phobies sévères, anxiété généralisée.</li>
+    <li><strong>Blocages émotionnels :</strong> manque d'estime de soi, croyances limitantes profondes ("Je suis nul", "Je suis en danger").</li>
+  </ul>
+
+  <h2>Comment se déroule une thérapie ?</h2>
+  <p>Après plusieurs séances de préparation et d'établissement d'un lien de confiance, le processus de retraitement commence. Le thérapeute demande au patient de se concentrer sur le souvenir traumatisant tout en effectuant des <strong>stimulations bilatérales alternées</strong> (généralement des mouvements oculaires de gauche à droite, ou des tapotements). Ce processus relance la capacité naturelle du cerveau à "digérer" l'événement et à en abaisser la charge émotionnelle.</p>
+</LayoutService>

@@ -1,0 +1,39 @@
+---
+import LayoutService from '../../../layouts/LayoutService.astro'; // Ajuste le chemin des ../ selon l'emplacement exact de ton fichier
+
+const serviceData = {
+  title: "Thérapie Brève Orientée Solutions | Centre Les Oranges",
+  description: "Découvrez la thérapie brève orientée vers les solutions à Péronnes-lez-Binche. Une approche intégrative pour atteindre rapidement vos objectifs.",
+  titreService: "Thérapie Brève Orientée Solutions",
+  sousTitre: "Développer vos ressources pour un changement rapide et durable",
+  // Liste des praticiennes utilisant la thérapie brève selon l'ancien site
+  praticiens: [
+    "aurelie-holvoet",
+    "valerie-desclez",
+    "giovanna-trunfio",
+    "luana-bernunzo",
+    "eva-ludik"
+  ] 
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que la thérapie brève orientée vers les solutions ?</h2>
+  <p>
+    La thérapie brève orientée vers les solutions se centre plus spécifiquement sur les ressources du patient afin de lui permettre d’atteindre ses objectifs et de trouver plus rapidement des solutions appropriées à ses problèmes ou, dans certains cas, de les accepter[cite: 3].
+  </p>
+  <p>
+    L'objectif est donc de développer les capacités autothérapeutiques du patient afin qu’il se sente mieux et soit capable de résoudre ses problèmes à l’avenir[cite: 3].
+  </p>
+  <p>
+    C'est une thérapie intégrative (globale) qui s'appuie sur des techniques issues de la TCC (Thérapie Cognitivo-comportementale), de la psychothérapie systémique, de l'écriture thérapeutique et du coaching[cite: 3].
+  </p>
+
+  <h2>En moyenne, combien de séances faut-il ?</h2>
+  <p>
+    En général, les patients sont vus sur une courte période, contrairement à d’autres types de thérapies[cite: 3]. Un minimum de 3 séances est néanmoins souvent nécessaire[cite: 3]. En moyenne, il faut compter entre 5 et 10 séances pour observer des changements durables[cite: 3]. 
+  </p>
+  <p>
+    Ceci dépendra néanmoins toujours de l'ampleur des problèmes et de l'ouverture du patient aux changements[cite: 3].
+  </p>
+</LayoutService>

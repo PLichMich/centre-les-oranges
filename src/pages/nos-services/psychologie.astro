@@ -1,0 +1,72 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Psychologues entre La Louvière, Morlanwelz et Binche | Centre Les Oranges",
+  description: "Psychologues (première ligne) à Péronnes-lez-Binche. Enfants, adolescents, adultes, couples et familles. TCC, Thérapie Brève, EMDR, Coaching...",
+  titreService: "Psychologie & Psychothérapie",
+  sousTitre: "Un accompagnement sur mesure pour surmonter vos difficultés",
+  // On appelle ici toute l'équipe du pôle psychologie !
+  praticiens: [
+    "michael-plichart", 
+    "celine-mahieu", 
+    "aurelie-holvoet", 
+    "daniela-cisamolo", 
+    "luana-bernunzo", 
+    "eva-ludik", 
+    "giovanna-trunfio", 
+    "celine-vekeman", 
+    "valerie-desclez", 
+    "gearlyne-nunez"
+  ] 
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <p>
+    Au Centre thérapeutique Les Oranges, vous pouvez faire appel à l'un de nos psychologues pour tout problème lié à votre vécu ou celui de votre enfant.
+  </p>
+
+  <h2>Qu'est-ce que la psychologie ?</h2>
+  <p>
+    La psychologie renvoie à l'art de l'étude de l'âme. Le mot "psychologie" vient d'ailleurs des deux termes grecs <em>psukhê</em>, qui signifie "âme" et <em>logos</em>, qui signifie "savoir" ou "science".
+  </p>
+
+  <h3>Quelles différences entre la psychologie, la psychothérapie et la psychiatrie ?</h3>
+  <p>
+    Un <strong>psychologue</strong> a suivi une formation universitaire de 5 ans minimum en Sciences Psychologiques afin d'étudier l'intelligence, la personnalité et les comportements humains. Il a effectué des stages supervisés afin de mettre en pratique ces connaissances pour pouvoir écouter les patients, leur apporter un soutien, leur faire parfois passer des tests ou les relayer vers des services plus compétents. Il ne peut, par contre, proposer un traitement médicamenteux.
+  </p>
+  <p>
+    Un <strong>psychiatre</strong> est un médecin qui a suivi une spécialisation complémentaire en psychiatrie. Il est le seul habilité à prescrire des médicaments et/ou un certificat médical, en cas de maladie mentale ou de crise temporaire par exemple.
+  </p>
+  <p>
+    Un <strong>psychothérapeute</strong> est en général psychologue ou psychiatre et a suivi une spécialisation supplémentaire en psychothérapie. <strong>Dans notre centre, nos psychothérapeutes sont tous diplômés en psychologie.</strong> La psychothérapie est un traitement psychologique qui vise à obtenir un changement des comportements et des manières de penser. Le but est également que le patient arrive à se sentir mieux, à gérer ses émotions et résoudre ses problèmes.
+  </p>
+
+  <h2>Les approches proposées dans notre centre</h2>
+  <p>
+    Il existe plusieurs approches liées à la psychologie et à la psychothérapie. Si vous ne savez pas vers qui vous diriger, n'hésitez pas à nous contacter et l'un de nous vous orientera dans les meilleurs délais !
+  </p>
+  <ul>
+    <li><a href="/nos-services/psychologie/psychologie-cognitive-et-comportementale">Thérapie Cognitivo-Comportementale (TCC)</a></li>
+    <li><a href="/nos-services/psychologie/la-therapie-breve">Thérapie brève orientée solutions</a></li>
+    <li><a href="/nos-services/psychologie/emdr-eye-movement-desensitization-and-reprocessing">EMDR (Désensibilisation et retraitement par les mouvements oculaires)</a></li>
+    <li><a href="/nos-services/psychologie/neuropsychologie">Neuropsychologie & Orthopédagogie clinique</a></li>
+    <li><a href="/nos-services/psychologie/meditation-pleine-conscience">Méditation pleine conscience</a></li>
+  </ul>
+
+  <h2>Soins psychologiques de première ligne</h2>
+  <p>
+    Certains de nos psychologues sont conventionnés via l'INAMI ou dits de "première ligne" :
+  </p>
+  <ul>
+    <li><strong>Pour les enfants et adolescents (jusque 23 ans) et parents :</strong> Eva Ludik, Luana Bernunzo, Aurélie Holvoet et Céline Vekeman.</li>
+    <li><strong>Pour les adultes :</strong> Aurélie Holvoet, Michaël Plichart et Daniela Cisamolo.</li>
+  </ul>
+  <p>
+    Ils ont un tarif réduit et <strong>s'orientent vers les personnes ayant un statut BIM ou des difficultés à payer les séances classiques, pour des troubles dits "légers à modérés"</strong>. 
+  </p>
+  <p>
+    Ils ont généralement une <strong>liste d'attente</strong>. C'est pourquoi, <em>si vous ne faites pas partie de ce public cible, nous vous remercions de faire appel à nos autres psychologues (Giovanna Trunfio, Valérie Desclez, Céline Mahieu, Gearlyne Nuñez) afin de laisser la place aux plus démunis</em>. Il y a néanmoins un remboursement partiel de la mutuelle pour les consultations classiques.
+  </p>
+</LayoutService>

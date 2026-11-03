@@ -1,0 +1,41 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Pédicure Médicale à Péronnes-lez-Binche | Centre Les Oranges",
+  description: "Soins spécialisés de pédicurie médicale avec Aurélie Smeets au Centre Thérapeutique Les Oranges. Soulagez vos douleurs : cors, durillons, ongles incarnés.",
+  titreService: "Pédicure Médicale",
+  sousTitre: "La santé et le confort de vos pieds au quotidien",
+  praticiens: ["aurelie-smeets"] // Affiche automatiquement la fiche d'Aurélie Smeets
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que la pédicure médicale ?</h2>
+  <p>
+    Contrairement à la pédicurie esthétique qui vise uniquement la beauté du pied, la <strong>pédicurie médicale</strong> est un soin en profondeur. Elle a pour but de soulager, prévenir et traiter les affections de la peau et des ongles du pied pour vous rendre une marche confortable et sans douleur.
+  </p>
+
+  <h2>Pourquoi consulter une pédicure médicale ?</h2>
+  <p>Vos pieds vous portent toute la journée. Les frottements, les chaussures inadaptées ou certaines pathologies peuvent entraîner des douleurs nécessitant l'intervention d'une professionnelle. Aurélie Smeets vous aide à traiter :</p>
+  <ul>
+    <li><strong>Les cors et durillons :</strong> élimination des zones de pressions douloureuses (hyperkératose, œil-de-perdrix).</li>
+    <li><strong>Les ongles incarnés :</strong> dégagement de l'ongle pour soulager immédiatement la douleur et prévenir l'infection.</li>
+    <li><strong>Les mycoses (champignons) :</strong> soins adaptés pour les ongles épaissis ou décolorés.</li>
+    <li><strong>Les crevasses :</strong> notamment au niveau des talons, souvent dues à une sécheresse extrême de la peau.</li>
+    <li><strong>Les callosités :</strong> retrait des peaux mortes pour retrouver une peau souple.</li>
+  </ul>
+
+  <h2>Comment se déroule une séance ?</h2>
+  <p>
+    Chaque séance débute par une analyse de l'état de vos pieds. La professionnelle procède ensuite à la coupe minutieuse des ongles, au fraisage pour désépaissir si nécessaire, et au retrait des callosités ou des cors à l'aide d'instruments stérilisés. 
+  </p>
+  <p>
+    Le soin se termine généralement par l'application d'une crème hydratante accompagnée d'un léger massage pour relancer la circulation et détendre le pied.
+  </p>
+
+  <h2>Pour qui ?</h2>
+  <p>
+    La pédicure médicale s'adresse à <strong>tous</strong> : enfants, adolescents, adultes, sportifs et personnes âgées. Une visite de prévention une à deux fois par an est souvent recommandée pour garder des pieds en parfaite santé.
+  </p>
+</LayoutService>
