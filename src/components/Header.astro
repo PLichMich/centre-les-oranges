@@ -1,26 +1,26 @@
 ---
-// src/components/Header.astro
-import equipeData from '../data/equipe.json';
+import { equipeData } from '../data/equipe';
 
 // 1. Fonction pour raccourcir le nom (ex: "Michaël Plichart" -> "M. Plichart")
-function getShortName(fullName) {
+function getShortName(fullName: string) {
   if (!fullName) return "";
   const parts = fullName.split(' ');
   return parts.length > 1 ? `${parts[0].charAt(0)}. ${parts.slice(1).join(' ')}` : fullName;
 }
 
-// 2. LA FONCTION AIMANT : Elle relie automatiquement le menu au JSON
-function getPractitionersFor(keywords) {
-  return equipeData
-    .filter(pro => pro.statut === 'actif') // On ignore les praticiens absents
+// Conversion de l'objet en tableau pour utiliser les filtres
+const equipeArray = Object.values(equipeData);
+
+// 2. LA FONCTION AIMANT : Relie automatiquement le menu à equipe.ts
+function getPractitionersFor(keywords: string[]) {
+  return equipeArray
     .filter(pro => keywords.some(kw => 
-      (pro.nom && pro.nom.toLowerCase().includes(kw)) || 
-      (pro.metier && pro.metier.toLowerCase().includes(kw)) ||
-      (pro.tags && pro.tags.some(t => t.toLowerCase().includes(kw)))
+      (pro.nom && pro.nom.toLowerCase().includes(kw.toLowerCase())) || 
+      (pro.specialite && pro.specialite.toLowerCase().includes(kw.toLowerCase()))
     ))
     .map(pro => ({
       name: getShortName(pro.nom),
-      link: pro.link // <-- L'URL EXACTE TIRÉE DU JSON !
+      link: pro.lien // Utilise la propriété "lien" de equipe.ts
     }));
 }
 
@@ -43,11 +43,11 @@ const navData = [
         ]
       },
       {
-        title: "Professionnels de santé",
+        title: "Rejoindre l'équipe",
         items: [
-          { label: "• Location de cabinets", link: "/bureau-a-louer-pour-medecins-specialistes-personnel-de-sante-independants" },
-          { label: "• Offre Kiné", link: "/envie-de-rejoindre-notre-equipe/offre-demploi-kinesitherapeute-independant" },
-          { label: "• Offre Logopède", link: "/envie-de-rejoindre-notre-equipe/offre-demploi-logopede-independante" }
+          { label: "• Location de cabinets", link: "/envie-de-rejoindre-notre-equipe" },
+          { label: "• Offre Kiné", link: "/nos-services/kinesitherapeute" },
+          { label: "• Offre Logopède", link: "/nos-services/logopedie" }
         ]
       }
     ]
@@ -62,32 +62,72 @@ const navData = [
         title: "Psychologie & Mental",
         shortTitle: "Psychologie",
         disciplines: [
-          {
-            name: "Psychothérapie TCC",
-            link: "/nos-services/psychologie/psychologie-cognitive-et-comportementale",
-            practitioners: getPractitionersFor(['tcc', 'cognitivo', 'plichart', 'mahieu'])
+          { 
+            name: "Psychologie générale", 
+            link: "/nos-services/psychologie", 
+            practitioners: getPractitionersFor(['psychologue', 'clinicienne', 'trunfio']) 
           },
-          {
-            name: "EMDR & Traumatismes",
-            link: "/nos-services/psychologie/emdr-eye-movement-desensitization-and-reprocessing",
-            practitioners: getPractitionersFor(['emdr', 'trauma', 'cisamolo', 'trunfio'])
+          { 
+            name: "Psychothérapie TCC", 
+            link: "/nos-services/psychologie/psychologie-cognitive-et-comportementale", 
+            practitioners: getPractitionersFor(['tcc', 'cognitivo']) 
+          },
+          { 
+            name: "Thérapie Brève", 
+            link: "/nos-services/psychologie/la-therapie-breve", 
+            practitioners: getPractitionersFor(['brève', 'breve', 'desclez', 'holvoet']) 
+          },
+          { 
+            name: "Neuropsychologie", 
+            link: "/nos-services/psychologie/neuropsychologie", 
+            practitioners: getPractitionersFor(['neuro']) 
+          },
+          { 
+            name: "EMDR", 
+            link: "/nos-services/emdr", 
+            practitioners: getPractitionersFor(['emdr', 'trauma', 'cisamolo']) 
+          },
+          { 
+            name: "Sexologie & Couple", 
+            link: "/nos-services/sexologie", 
+            practitioners: getPractitionersFor(['sexo', 'conjugale', 'viola']) 
           }
         ]
       },
       {
         id: "pole-paramedical",
         title: "Paramédical & Rééducation",
-        shortTitle: "Paramédical & Corps",
+        shortTitle: "Paramédical",
         disciplines: [
           { 
             name: "Ostéopathie", 
             link: "/nos-services/osteopathie", 
-            practitioners: getPractitionersFor(['ostéo', 'osteo', 'grégoire'])
+            practitioners: getPractitionersFor(['ostéo', 'osteo']) 
+          },
+          { 
+            name: "Ergothérapie", 
+            link: "/nos-services/ergotherapie", 
+            practitioners: getPractitionersFor(['ergo']) 
+          },
+          { 
+            name: "Podologie", 
+            link: "/nos-services/podologie", 
+            practitioners: getPractitionersFor(['podologue']) 
+          },
+          { 
+            name: "Pédicure Médicale", 
+            link: "/nos-services/pedicure-medicale", 
+            practitioners: getPractitionersFor(['pédicure', 'pedicure']) 
           },
           { 
             name: "Logopédie", 
             link: "/nos-services/logopedie", 
-            practitioners: getPractitionersFor(['logo']) 
+            practitioners: [] 
+          },
+          { 
+            name: "Kinésithérapie", 
+            link: "/nos-services/kinesitherapeute", 
+            practitioners: [] 
           }
         ]
       },
@@ -99,32 +139,32 @@ const navData = [
           { 
             name: "Diététique & Nutrition", 
             link: "/nos-services/dietetique", 
-            practitioners: getPractitionersFor(['diététi', 'dieteti', 'nutrition', 'delbruy']) 
+            practitioners: getPractitionersFor(['diététi', 'dieteti', 'nutrition']) 
+          },
+          { 
+            name: "Naturopathie", 
+            link: "/nos-services/naturopathie", 
+            practitioners: getPractitionersFor(['naturo']) 
           },
           { 
             name: "Sophrologie & Massages", 
             link: "/nos-services/sophrologie", 
-            practitioners: getPractitionersFor(['sophro', 'massage', 'malosto']) 
+            practitioners: getPractitionersFor(['sophro', 'massage']) 
           },
           { 
-            name: "Kinésiologie & Brain Gym", 
-            link: "/nos-services/kinesiologie", 
-            practitioners: getPractitionersFor(['kinési', 'kinesi', 'brain gym', 'di meo']) 
+            name: "Hypnothérapie", 
+            link: "/nos-services/lhypnotherapie", 
+            practitioners: getPractitionersFor(['hypnose', 'hypnothérapeute', 'dal bo']) 
           },
           { 
-            name: "Médiation familiale", 
-            link: "/nos-services/mediation-familiale", 
-            practitioners: getPractitionersFor(['médiat', 'mediat', 'familial', 'hoop']) 
-          },
-          { 
-            name: "Naturopathie", 
-            link: "/naturopathie", 
-            practitioners: getPractitionersFor(['naturo']) 
+            name: "Pleine Conscience", 
+            link: "/nos-services/psychologie/meditation-pleine-conscience", 
+            practitioners: getPractitionersFor(['pleine conscience', 'ludik']) 
           },
           { 
             name: "Yoga & Pilates", 
-            link: "/yoga", 
-            practitioners: getPractitionersFor(['yoga', 'pilates']) 
+            link: "/nos-services/ateliers", 
+            practitioners: getPractitionersFor(['yoga', 'pilates', 'tai chi']) 
           }
         ]
       },
@@ -133,19 +173,19 @@ const navData = [
         title: "Prélèvements CHU Tivoli",
         shortTitle: "Prélèvements Tivoli",
         isSpecial: true,
-        link: "/centre-de-prelevements-chu-tivoli"
+        link: "/nos-services/prelevements-tivoli"
       }
     ]
   },
   {
     label: "Ateliers de groupes",
     type: "link",
-    link: "/nos-services/ateliers-formations-a-venir"
+    link: "/nos-services/ateliers"
   },
   {
-    label: "Actualité",
+    label: "Annuaire", // NOUVEAU LIEN D'ANNUAIRE
     type: "link",
-    link: "/les-nouvelles-du-centre"
+    link: "/annuaire"
   }
 ];
 ---
@@ -168,10 +208,9 @@ const navData = [
     </div>
   </div>
 
-  <!-- BARRE DE NAVIGATION PRINCIPALE (Générée depuis le JSON) -->
+  <!-- BARRE DE NAVIGATION PRINCIPALE -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-<a href="/" class="flex items-center gap-3 group">
-      <!-- Le logo est maintenant parfaitement rond grâce à "rounded-full" -->
+    <a href="/" class="flex items-center gap-3 group">
       <img 
         src="/img/logo-cartoon.jpg" 
         alt="Logo Centre Thérapeutique Les Oranges" 
@@ -208,7 +247,7 @@ const navData = [
     </button>
   </div>
 
-  <!-- MEGA-MENUS DESKTOP (Générés depuis le JSON) -->
+  <!-- MEGA-MENUS DESKTOP -->
   <div id="mega-menu-container" class="hidden border-t-4 border-amber-500 bg-stone-50 shadow-2xl transition-all duration-300 absolute w-full">
     
     {navData.map(menuItem => {
@@ -313,7 +352,7 @@ const navData = [
     })}
   </div>
 
-  <!-- TIROIR RESPONSIVE MOBILE (Généré depuis le JSON) -->
+  <!-- TIROIR RESPONSIVE MOBILE -->
   <div id="mobile-menu" class="hidden lg:hidden border-t-4 border-amber-500 bg-white absolute w-full shadow-xl max-h-[85vh] overflow-y-auto">
     <div class="p-4 space-y-1">
       

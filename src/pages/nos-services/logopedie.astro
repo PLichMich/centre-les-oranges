@@ -1,0 +1,35 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Logopédie à Péronnes-lez-Binche | Centre Les Oranges",
+  description: "Le Centre Thérapeutique Les Oranges recherche actuellement un(e) logopède. Prise en charge des troubles du langage, de la parole et de la voix.",
+  titreService: "Logopédie",
+  sousTitre: "Prévention, évaluation et traitement des troubles de la communication",
+  praticiens: [] // Aucun praticien actif pour le moment
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que la logopédie ?</h2>
+  <p>
+    La logopédie (ou orthophonie) est une profession paramédicale qui vise à prévenir, évaluer et traiter les troubles de la communication, du langage (oral et écrit), de la parole, de la voix et des fonctions oro-myo-faciales (déglutition, mastication).
+  </p>
+
+  <h2>Domaines d'intervention</h2>
+  <p>Le ou la logopède intervient auprès des enfants, des adolescents et des adultes pour diverses difficultés :</p>
+  <ul>
+    <li><strong>Langage écrit :</strong> dyslexie, dysorthographie, retards d'apprentissage de la lecture et de l'écriture.</li>
+    <li><strong>Langage oral :</strong> retards de langage, dysphasie, troubles de l'articulation, bégaiement.</li>
+    <li><strong>Logico-mathématiques :</strong> dyscalculie, difficultés de raisonnement.</li>
+    <li><strong>Troubles neurologiques :</strong> aphasie suite à un AVC, maladies neurodégénératives.</li>
+    <li><strong>Troubles de la voix et de la déglutition.</strong></li>
+  </ul>
+
+  <div class="bg-orange-50 border-l-4 border-orange-500 text-orange-800 p-4 mt-8 rounded-r-lg">
+    <p class="font-bold text-lg mb-2">Nous recrutons !</p>
+    <p>
+      Nous sommes actuellement à la recherche d'un(e) logopède pour compléter notre équipe pluridisciplinaire. Vous êtes intéressé(e) ? N'hésitez pas à postuler via notre <a href="/envie-de-rejoindre-notre-equipe" class="underline font-semibold hover:text-orange-600">offre d'emploi</a> !
+    </p>
+  </div>
+</LayoutService>

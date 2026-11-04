@@ -1,0 +1,33 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Hypnothérapie à Péronnes-lez-Binche | Centre Les Oranges",
+  description: "Consultations en hypnose thérapeutique et médicale au Centre Les Oranges. Gestion de la douleur, phobies, arrêt du tabac, stress et traumatismes.",
+  titreService: "Hypnothérapie",
+  sousTitre: "Un état de conscience modifiée pour mobiliser vos ressources profondes",
+  praticiens: ["alessia-dal-bo", "aurelie-holvoet"]
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que l'hypnothérapie ?</h2>
+  <p>
+    L’hypnose est un état naturel de conscience modifiée (comme lorsque l'on est absorbé par un bon livre ou un film) que le thérapeute va recréer et amplifier. Contrairement aux idées reçues, vous gardez le contrôle total pendant la séance. L'objectif est d'accéder à votre inconscient pour y puiser de nouvelles ressources et modifier des comportements qui ne vous conviennent plus.
+  </p>
+
+  <h2>Pourquoi consulter en hypnose ?</h2>
+  <p>L'hypnothérapie est un outil puissant pour accompagner de nombreuses problématiques :</p>
+  <ul>
+    <li><strong>Gestion des émotions :</strong> anxiété, stress, burn-out, attaques de panique.</li>
+    <li><strong>Troubles du comportement :</strong> arrêt du tabac, troubles alimentaires, addictions.</li>
+    <li><strong>Traumatismes et phobies :</strong> peurs irrationnelles, blocages émotionnels.</li>
+    <li><strong>Gestion de la douleur :</strong> douleurs chroniques, migraines, accompagnement médical.</li>
+    <li><strong>Développement personnel :</strong> confiance en soi, préparation aux examens, troubles du sommeil.</li>
+  </ul>
+
+  <h2>Notre approche</h2>
+  <p>
+    Au Centre Les Oranges, l'hypnose est pratiquée dans un cadre sécurisant par des professionnels formés (médecin et psychologue). Elle peut être utilisée seule ou intégrée à une thérapie plus globale (comme la thérapie brève) selon vos besoins et vos objectifs.
+  </p>
+</LayoutService>

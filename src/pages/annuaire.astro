@@ -1,17 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import equipe from '../data/equipe.json';
+import { equipeData } from '../data/equipe';
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/equipe/*.{jpeg,jpg,png,webp}');
-const equipeTriee = equipe.sort((a, b) => a.nom.localeCompare(b.nom));
+// 1. Transformation de l'objet equipeData en tableau pour le tri et les filtres
+const equipeArray = Object.entries(equipeData).map(([id, data]) => {
+  let categorie = 'paramedical';
+  const psyKeys = ['michael-plichart', 'celine-mahieu', 'aurelie-holvoet', 'daniela-cisamolo', 'luana-bernunzo', 'eva-ludik', 'giovanna-trunfio', 'celine-vekeman', 'valerie-desclez', 'gearlyne-nunez', 'cynthia-viola', 'gwendoline-dhoop'];
+  const bienetreKeys = ['cathy-malosto', 'clementine-delbruyere', 'anne-mengeot', 'alessia-dal-bo', 'nathalie-dath', 'jean-claude-degreef', 'fanny-mesdaght'];
+  
+  if (psyKeys.includes(id)) categorie = 'psy';
+  else if (bienetreKeys.includes(id)) categorie = 'bienetre';
+
+  return {
+    id,
+    ...data,
+    categorie,
+    tags: data.telephone ? ['Sur rendez-vous'] : ['Contact via fiche'],
+    statut: id === 'pauline-horny' ? 'remplacante' : 'actif'
+  };
+});
+
+// 2. Tri par ordre alphabétique sur le nom
+const equipeTriee = equipeArray.sort((a, b) => a.nom.localeCompare(b.nom));
 ---
 
 <Layout 
   title="Annuaire des Thérapeutes | Centre Les Oranges"
   description="Trouvez le bon spécialiste et prenez rendez-vous au Centre Thérapeutique Les Oranges à Péronnes-lez-Binche."
 >
-
   <div class="bg-slate-50 min-h-screen pb-24">
     
     <!-- EN-TÊTE -->
@@ -39,110 +56,107 @@ const equipeTriee = equipe.sort((a, b) => a.nom.localeCompare(b.nom));
       <!-- LISTE DES PRATICIENS -->
       <div class="space-y-4" id="directory-grid">
         
-        {equipeTriee.map((pro) => (
-          <div 
-            class={`pro-card bg-white rounded-xl border border-slate-200 p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-sm transition-all relative ${pro.statut === 'absent' ? 'opacity-80' : 'hover:shadow-md hover:border-orange-300 group'}`} 
-            data-category={pro.categorie}
-          >
-            
-            {/* LE LIEN INVISIBLE QUI COUVRE TOUTE LA CARTE */}
-            <a href={pro.link} class="absolute inset-0 z-0" aria-label={`Voir la fiche de ${pro.nom}`}></a>
-            
-            <!-- Badge "Absent" -->
-            {pro.statut === 'absent' && (
-              <span class="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/3 bg-amber-100 border border-amber-200 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest z-10 hidden sm:block">
-                Absent
-              </span>
-            )}
+        {equipeTriee.map((pro, index) => {
+          // Contraste fort : une carte blanche, une carte teintée orange
+          const isDark = index % 2 !== 0;
+          const bgClass = isDark ? 'bg-orange-50 border-orange-200' : 'bg-white border-slate-200';
+          const tagBgClass = isDark ? 'bg-white border-orange-200 text-orange-800' : 'bg-slate-100 border-transparent text-slate-600';
 
-            <!-- Photo -->
-            <div class="flex-shrink-0 relative pointer-events-none">
+          return (
+            <div 
+              class={`pro-card ${bgClass} rounded-xl border p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-sm transition-all relative justify-between ${pro.statut === 'absent' ? 'opacity-80' : 'hover:shadow-md hover:border-orange-400 group'}`} 
+              data-category={pro.categorie}
+            >
+              <a href={pro.lien} class="absolute inset-0 z-0" aria-label={`Voir la fiche de ${pro.nom}`}></a>
+              
+              <!-- Badge "Absent" (Position absolue) -->
               {pro.statut === 'absent' && (
-                <span class="absolute -top-2 -right-2 bg-amber-100 border border-amber-200 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest z-10 sm:hidden">
+                <span class="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/3 bg-amber-100 border border-amber-200 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest z-10 hidden sm:block">
                   Absent
                 </span>
               )}
-              
-              {images[`/src/assets/equipe/${pro.photo}`] ? (
-              <Image 
-                src={images[`/src/assets/equipe/${pro.photo}`]()} 
-                alt={`Portrait de ${pro.nom}, ${pro.metier} à Péronnes-lez-Binche`}
-                width={150} 
-                height={150}
-                class={`w-16 relative z-10 h-16 sm:w-20 sm:h-20 object-cover rounded-lg border border-slate-100 shadow-sm transition-transform duration-300 group-hover:scale-105 ${pro.statut === 'absent' ? 'grayscale opacity-60' : ''}`}
-              />
-              ) : (
-                <div class="w-16 h-16 sm:w-20 sm:h-20 bg-slate-100 rounded-lg flex items-center justify-center text-[10px] text-slate-400 border border-slate-200">
-                  Pas de photo
-                </div>
-              )}
-            </div>
 
-            <!-- Informations -->
-            <div class="flex-grow pointer-events-none">
-              <h2 class={`text-sm font-bold uppercase tracking-widest mb-1 transition-colors ${pro.statut === 'absent' ? 'text-slate-500' : 'text-orange-700 group-hover:text-orange-800'}`}>
-                {pro.metier}
-              </h2>
-              <h3 class={`font-['Lora',serif] text-xl font-bold mb-2 ${pro.statut === 'absent' ? 'text-slate-600' : 'text-slate-900'}`}>
-                {pro.nom}
-              </h3>
-              
-              <div class="flex flex-wrap gap-2 mt-3 relative z-10">
-                {pro.tags.map((tag: string) => (
-                  <span class={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium ${pro.statut === 'absent' ? 'bg-slate-50 text-slate-400 border border-slate-100' : 'bg-slate-100 text-slate-600'}`}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <!-- Boutons / Zone d'action -->
-            <div class="w-full sm:w-auto flex flex-col sm:items-end gap-2 border-t sm:border-t-0 sm:border-l border-slate-100 pt-4 sm:pt-0 sm:pl-6 mt-2 sm:mt-0 relative z-10">
-              
-              {pro.statut !== 'absent' ? (
-                <>
-                  <a href="/prendre-rendez-vous" class="w-full sm:w-40 text-center py-2.5 px-4 text-sm font-bold text-white bg-slate-900 hover:bg-orange-800 rounded-lg transition-colors">
-                    Prendre RDV
-                  </a>
-                  <a href={pro.link} class="w-full sm:w-40 text-center py-2.5 px-4 text-sm font-medium text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 rounded-lg transition-colors group-hover:bg-orange-50 group-hover:border-orange-200 group-hover:text-orange-800">
-                    Voir la fiche
-                  </a>
-                </>
-              ) : (
-                <>
-                  <p class="text-xs font-medium text-amber-700 w-full sm:w-40 text-center mb-1">
-                    {pro.message_statut}
-                  </p>
-                  
-                  {pro.redirection_url ? (
-                    <a href={pro.redirection_url} class="w-full sm:w-40 text-center py-2.5 px-4 text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-lg transition-colors">
-                      {pro.redirection_texte || "Voir l'équipe"}
-                    </a>
-                  ) : (
-                    <span class="w-full sm:w-40 text-center py-2.5 px-4 text-sm font-bold text-slate-400 bg-slate-50 border border-slate-100 rounded-lg cursor-not-allowed">
-                      Indisponible
+              {/* CONTENEUR INTERNE */}
+              <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center flex-grow w-full">
+                
+                <!-- Photo -->
+                <div class="flex-shrink-0 relative pointer-events-none">
+                  {pro.statut === 'absent' && (
+                    <span class="absolute -top-2 -right-2 bg-amber-100 border border-amber-200 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest z-10 sm:hidden">
+                      Absent
                     </span>
                   )}
-                  <a href={pro.link} class="w-full sm:w-40 text-center py-1.5 px-4 text-xs font-medium text-slate-500 bg-white hover:text-slate-700 transition-colors">
-                    Fiche archivée
-                  </a>
-                </>
-              )}
-            </div>
+                  
+                  {pro.image ? (
+                  <Image 
+                    src={pro.image} 
+                    alt={pro.altSEO || `Portrait de ${pro.nom}, ${pro.specialite} à Péronnes-lez-Binche`}
+                    width={150} 
+                    height={150}
+                    class={`w-16 relative z-10 h-16 sm:w-20 sm:h-20 object-cover rounded-lg border border-slate-200 shadow-sm transition-transform duration-300 group-hover:scale-105 ${pro.statut === 'absent' ? 'grayscale opacity-60' : ''}`}
+                  />
+                  ) : (
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-slate-200 rounded-lg flex items-center justify-center text-[10px] text-slate-400 border border-slate-300">
+                      Pas de photo
+                    </div>
+                  )}
+                </div>
 
-          </div>
-        ))}
+                <!-- Informations -->
+                <div class="flex-grow pointer-events-none w-full">
+                  <h2 class={`text-sm font-bold uppercase tracking-widest mb-1 transition-colors ${pro.statut === 'absent' ? 'text-slate-500' : 'text-orange-700 group-hover:text-orange-800'}`}>
+                    {pro.specialite}
+                  </h2>
+                  <h3 class={`font-['Lora',serif] text-xl font-bold mb-2 ${pro.statut === 'absent' ? 'text-slate-600' : 'text-slate-900'}`}>
+                    {pro.nom}
+                  </h3>
+                  
+                  <div class="flex flex-wrap gap-2 mt-3 relative z-10 sm:justify-start">
+                    {pro.tags.map((tag: string) => (
+                      <span class={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border ${tagBgClass} ${pro.statut === 'absent' && 'opacity-70'}`}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Boutons / Zone d'action -->
+              <div class="w-full sm:w-auto flex flex-col sm:items-end gap-2 border-t sm:border-t-0 sm:border-l border-slate-200 pt-4 sm:pt-0 sm:pl-6 mt-2 sm:mt-0 relative z-10 flex-shrink-0">
+                {pro.statut !== 'absent' ? (
+                  <>
+                    <a href={pro.lien} class="w-full sm:w-40 text-center py-2.5 px-4 text-sm font-bold text-white bg-slate-900 hover:bg-orange-800 rounded-lg transition-colors relative z-20">
+                      Prendre RDV
+                    </a>
+                    <a href={pro.lien} class="w-full sm:w-40 text-center py-2.5 px-4 text-sm font-medium text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 rounded-lg transition-colors group-hover:bg-orange-50 group-hover:border-orange-300 group-hover:text-orange-800 relative z-20">
+                      Voir la fiche
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <span class="w-full sm:w-40 text-center py-2.5 px-4 text-sm font-bold text-slate-400 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
+                      Indisponible
+                    </span>
+                    <a href={pro.lien} class="w-full sm:w-40 text-center py-1.5 px-4 text-xs font-medium text-slate-500 bg-transparent hover:text-slate-700 transition-colors relative z-20">
+                      Fiche archivée
+                    </a>
+                  </>
+                )}
+              </div>
+
+            </div>
+          );
+        })}
 
       </div>
       
       <!-- Message aucun résultat -->
       <div id="no-results" class="hidden text-center py-12 bg-white rounded-xl border border-dashed border-slate-300 mt-4">
-        <p class="text-slate-500 font-medium">Aucun spécialiste trouvé dans cette catégorie.</p>d
+        <p class="text-slate-500 font-medium">Aucun spécialiste trouvé dans cette catégorie.</p>
       </div>
 
     </div>
   </div>
-
 </Layout>
 
 <script is:inline>
@@ -150,6 +164,37 @@ const equipeTriee = equipe.sort((a, b) => a.nom.localeCompare(b.nom));
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.pro-card');
     const noResults = document.getElementById('no-results');
+
+    // Recalcule le zébrage uniquement sur les cartes visibles
+    const updateZebraStriping = () => {
+      let visibleIndex = 0;
+      cards.forEach(card => {
+        if (card.style.display !== 'none') {
+          const isDark = visibleIndex % 2 !== 0;
+          
+          if (isDark) {
+            card.classList.remove('bg-white', 'border-slate-200');
+            card.classList.add('bg-orange-50', 'border-orange-200');
+            
+            const tags = card.querySelectorAll('span.text-xs');
+            tags.forEach(tag => {
+              tag.classList.remove('bg-slate-100', 'border-transparent', 'text-slate-600');
+              tag.classList.add('bg-white', 'border-orange-200', 'text-orange-800');
+            });
+          } else {
+            card.classList.remove('bg-orange-50', 'border-orange-200');
+            card.classList.add('bg-white', 'border-slate-200');
+            
+            const tags = card.querySelectorAll('span.text-xs');
+            tags.forEach(tag => {
+              tag.classList.remove('bg-white', 'border-orange-200', 'text-orange-800');
+              tag.classList.add('bg-slate-100', 'border-transparent', 'text-slate-600');
+            });
+          }
+          visibleIndex++;
+        }
+      });
+    };
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -176,6 +221,8 @@ const equipeTriee = equipe.sort((a, b) => a.nom.localeCompare(b.nom));
           noResults.classList.remove('hidden');
         } else {
           noResults.classList.add('hidden');
+          // On met à jour les couleurs alternées après le filtrage
+          updateZebraStriping();
         }
       });
     });
