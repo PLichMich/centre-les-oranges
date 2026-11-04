@@ -1,0 +1,60 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Psychomotricité à Péronnes-lez-Binche | Centre Les Oranges",
+  description: "Consultations en psychomotricité pour enfants, ados, adultes et seniors. Prise en charge des troubles moteurs, apprentissages, TDAH, autisme.",
+  titreService: "Psychomotricité",
+  sousTitre: "« Bouger c'est se découvrir, chercher sa place dans l'espace et le temps. » - Christiane Pesci",
+  praticiens: ["elise-vandevoorde"]
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que la psychomotricité ?</h2>
+  <p>
+    Le psychomotricien est un spécialiste du développement sensori-moteur. Il amène du plaisir de se mouvoir, du plaisir de se mettre en mouvement, en action, à se représenter, à imaginer (sphère symbolique). Il doit permettre à la personne de donner un sens au mouvement, à l’action. 
+  </p>
+  <p>
+    La psychomotricité est donc une discipline paramédicale dont la spécialité est le développement global de la personne. Elle travaille le corps, dans son fonctionnement physique : les sensations et les mouvements.
+  </p>
+
+  <h2>À qui s'adresse la psychomotricité ?</h2>
+  <ul>
+    <li>
+      <strong>Enfants :</strong> Le psychomotricien interviendra principalement au niveau des troubles moteurs, des troubles de la coordination et des troubles de l’apprentissage. Si votre enfant a des difficultés scolaires, des problèmes de graphisme, de latéralité ou de comportement, la psychomotricité peut lui être bénéfique.
+    </li>
+    <li>
+      <strong>Adolescents :</strong> En proposant un travail au plus près du corps, la thérapie prend de front les problèmes des adolescents, ainsi que la fragilité et la complexité d’avoir un corps qui change et se transforme.
+    </li>
+    <li>
+      <strong>Adultes :</strong> Intervention lors de troubles moteurs pour ré-harmoniser l’équilibre psycho-corporel de la personne, palliant les conséquences de difficultés motrices, émotionnelles ou relationnelles sur la vie quotidienne.
+    </li>
+    <li>
+      <strong>Seniors :</strong> Accompagnement face aux conséquences du vieillissement biologique et aux pertes psychomotrices pour s’harmoniser le plus longtemps possible avec les aléas de la vieillesse.
+    </li>
+  </ul>
+
+  <h2>Problématiques spécifiques prises en charge</h2>
+  <p>En consultations individuelles, la prise en charge couvre un large spectre de besoins (un remboursement partiel est possible par les mutuelles) :</p>
+  <ul>
+    <li>Troubles moteurs et troubles de la coordination</li>
+    <li>Troubles des apprentissages et troubles du comportement</li>
+    <li>Troubles envahissants du développement (TED), autisme</li>
+    <li>Troubles de l'attention avec ou sans hyperactivité (TDAH)</li>
+  </ul>
+
+  <h2>La psychomotricité en vidéo</h2>
+  <div class="aspect-w-16 aspect-h-9 mt-8 mb-8">
+    <iframe 
+      src="https://player.vimeo.com/video/220676697?dnt=1&app_id=122963" 
+      width="100%" 
+      height="450" 
+      frameborder="0" 
+      allow="autoplay; fullscreen" 
+      allowfullscreen
+      class="rounded-xl shadow-sm border border-stone-200"
+      title="3 minutes de psychomotricité">
+    </iframe>
+  </div>
+</LayoutService>

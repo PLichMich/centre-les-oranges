@@ -37,15 +37,15 @@ const navData = [
       {
         title: "Découvrir le Centre",
         items: [
-          { label: "Le Centre & Philosophie", link: "/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/le-centre-therapeutique-les-oranges" },
-          { label: "Galerie photos", link: "/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/galerie-photo" },
-          { label: "Accès & Plan", link: "/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/venir-jusqua-nous" }
+          { label: "Le Centre & Philosophie", link: "/" },
+          { label: "Galerie photos", link: "/" },
+          { label: "Accès & Plan", link: "/contact" }
         ]
       },
       {
         title: "Rejoindre l'équipe",
         items: [
-          { label: "• Location de cabinets", link: "/envie-de-rejoindre-notre-equipe" },
+          { label: "• Location de cabinets", link: "/contact" },
           { label: "• Offre Kiné", link: "/nos-services/kinesitherapeute" },
           { label: "• Offre Logopède", link: "/nos-services/logopedie" }
         ]
@@ -103,6 +103,11 @@ const navData = [
             name: "Ostéopathie", 
             link: "/nos-services/osteopathie", 
             practitioners: getPractitionersFor(['ostéo', 'osteo']) 
+          },
+          { 
+            name: "Psychomotricité", 
+            link: "/nos-services/psychomotricite", 
+            practitioners: getPractitionersFor(['psychomotrici', 'vandevoorde']) 
           },
           { 
             name: "Ergothérapie", 
@@ -183,7 +188,7 @@ const navData = [
     link: "/nos-services/ateliers"
   },
   {
-    label: "Annuaire", // NOUVEAU LIEN D'ANNUAIRE
+    label: "Annuaire",
     type: "link",
     link: "/annuaire"
   }
@@ -270,7 +275,7 @@ const navData = [
               <div class="col-span-4">
                 <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
                   <h4 class="font-bold text-stone-900 text-base mb-2">Contacter le Centre</h4>
-                  <a href="/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/contacter-les-gestionnaires-du-centre" class="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl text-xs font-bold text-white bg-stone-900 hover:bg-stone-800 mt-4">Formulaire de contact</a>
+                  <a href="/contact" class="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl text-xs font-bold text-white bg-stone-900 hover:bg-stone-800 mt-4">Formulaire de contact</a>
                 </div>
               </div>
             </div>
