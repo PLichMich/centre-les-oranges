@@ -45,7 +45,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0486/26.19.79",
     image: photoMichael,
     altSEO: "Portrait de Michaël Plichart, psychologue cognitivo-comportementaliste (TCC) à Péronnes-lez-Binche",
-    lien: "/nos-services/psychologie/psychologie-cognitive-et-comportementale/plichart-michael-psychologue-tcc-pour-ados-adultes-et-couples/"
+    lien: "/nos-services/psychologie/psychologie-cognitive-et-comportementale"
   },
   "celine-mahieu": {
     nom: "Céline Mahieu",
@@ -53,7 +53,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0492/16.48.18",
     image: photoCeline,
     altSEO: "Portrait de Céline Mahieu, psychologue clinicienne TCC pour adultes et couples à Binche et La Louvière",
-    lien: "/nos-services/psychologie/psychologie-cognitive-et-comportementale/mahieux-celine-psychologue-tcc/"
+    lien: "/nos-services/psychologie/psychologie-cognitive-et-comportementale"
   },
   "aurelie-holvoet": {
     nom: "Aurélie Holvoet",
@@ -61,7 +61,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "",
     image: photoAurelieH,
     altSEO: "Portrait d'Aurélie Holvoet, psychologue spécialisée en thérapie brève orientée solutions et hypnose au Centre Les Oranges",
-    lien: "/nos-services/psychologie/lhypnotherapie/holvoet-aurelie-psychologue-enfants-ados-adultes-familles/"
+    lien: "/nos-services/psychologie/la-therapie-breve"
   },
   "daniela-cisamolo": {
     nom: "Daniela Cisamolo",
@@ -69,7 +69,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0476/89.11.58",
     image: photoDaniela,
     altSEO: "Portrait de Daniela Cisamolo, psychologue, thérapeute EMDR et sexologue à Péronnes-lez-Binche",
-    lien: "/daniela-cisamolo-psychologue-therapeute-emdr-pdmy-coach-amoureux-sexologue/"
+    lien: "/nos-services/emdr"
   },
   "luana-bernunzo": {
     nom: "Luana Bernunzo",
@@ -77,7 +77,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "",
     image: photoLuana,
     altSEO: "Portrait de Luana Bernunzo, psychologue clinicienne pour enfants et adolescents dans la région de Binche",
-    lien: "/luana-bernunzo-psychologue-clinicienne-pour-enfants-et-adolescents/"
+    lien: "/nos-services/psychologie"
   },
   "eva-ludik": {
     nom: "Eva Ludik",
@@ -85,7 +85,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0474/62.95.84",
     image: photoEva,
     altSEO: "Portrait d'Eva Ludik, psychologue clinicienne et instructrice en méditation pleine conscience à Binche",
-    lien: "/ludik-eva-psychologue-specialisee-en-pleine-conscience-hp-et-douleurs/"
+    lien: "/nos-services/psychologie/meditation-pleine-conscience"
   },
   "giovanna-trunfio": {
     nom: "Giovanna Trunfio",
@@ -93,7 +93,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0494/23.89.15",
     image: photoGiovanna,
     altSEO: "Portrait de Giovanna Trunfio, psychologue pour enfants, adolescents et adultes, thérapie EMDR à Binche",
-    lien: "/giovanna-trunfio-psychologue/"
+    lien: "/nos-services/psychologie"
   },
   "celine-vekeman": {
     nom: "Céline Vekeman",
@@ -101,7 +101,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0495/36.67.98",
     image: photoCelineV,
     altSEO: "Portrait de Céline Vekeman, neuropsychologue et orthopédagogue clinicienne au Centre Les Oranges",
-    lien: "/celine-vekeman-neuropsychologue-et-orthopedagogue-clinicienne/"
+    lien: "/nos-services/psychologie/neuropsychologie"
   },
   "valerie-desclez": {
     nom: "Valérie Desclez",
@@ -109,7 +109,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0485/72.23.21",
     image: photoValerie,
     altSEO: "Portrait de Valérie Desclez, psychologue en thérapie brève et coach en développement personnel à Binche",
-    lien: "/valerie-desclez-psychologue-et-coach-en-developpement-personnel/"
+    lien: "/nos-services/psychologie/la-therapie-breve"
   },
   "gearlyne-nunez": {
     nom: "Gearlyne Nuñez",
@@ -117,7 +117,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0470/69.07.88",
     image: photoGearlyne,
     altSEO: "Portrait de Gearlyne Nuñez, neuropsychologue à Péronnes-lez-Binche près de La Louvière",
-    lien: "/gearlyne-nunez-neuropsychologue-a-binche-centre-les-oranges/"
+    lien: "/nos-services/psychologie/neuropsychologie"
   },
   "alessia-dal-bo": {
     nom: "Dr Alessia Dal Bo",
@@ -125,7 +125,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0497/61.59.03",
     image: photoAlessia,
     altSEO: "Portrait du Dr Alessia Dal Bo, médecin hypnothérapeute et médecine intégrative au Centre Les Oranges",
-    lien: "/dr-alessia-dal-bo-medecin-hypnotherapeute-et-aromatherapeute/"
+    lien: "/nos-services/lhypnotherapie"
   },
   "cynthia-viola": {
     nom: "Cynthia Viola",
@@ -133,7 +133,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0497/33.20.95",
     image: photoCynthia,
     altSEO: "Portrait de Cynthia Viola, conseillère conjugale et familiale à Binche et Morlanwelz",
-    lien: "/cynthia-viola-conseillere-conjugale-et-familiale/"
+    lien: "/nos-services/sexologie"
   },
   "gwendoline-dhoop": {
     nom: "Gwendoline D'Hoop",
@@ -141,7 +141,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0493/71.17.34",
     image: photoGwendoline,
     altSEO: "Portrait de Gwendoline D'Hoop, juriste et médiatrice familiale et sociale à Péronnes-lez-Binche",
-    lien: "/gwendoline-dhoop-juriste-et-mediatrice/"
+    lien: "/nos-services/psychologie"
   },
 
   // --- PÔLE BIEN-ÊTRE, NUTRITION & CORPS ---
@@ -151,7 +151,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0475/26.06.51",
     image: photoCathy,
     altSEO: "Portrait de Cathy Malosto, sophrologue et massothérapeute au Centre thérapeutique Les Oranges",
-    lien: "/nos-services/sophrologie/malosto-cathy-sophrologue-et-massotherapeute/"
+    lien: "/nos-services/sophrologie"
   },
   "clementine-delbruyere": {
     nom: "Clémentine Delbruyère",
@@ -159,7 +159,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0471/48.01.18",
     image: photoClementine,
     altSEO: "Portrait de Clémentine Delbruyère, diététicienne nutritionniste à Binche et La Louvière",
-    lien: "/delbruyere-clementine-dieteticienne-nutritionniste/"
+    lien: "/nos-services/dietetique"
   },
   "anne-mengeot": {
     nom: "Anne Mengeot",
@@ -167,7 +167,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0478/67.05.52",
     image: photoAnne,
     altSEO: "Portrait d'Anne Mengeot, naturopathe au Centre Les Oranges à Péronnes-lez-Binche",
-    lien: "/naturopathie/"
+    lien: "/nos-services/naturopathie"
   },
 
   // --- PÔLE PARAMÉDICAL ---
@@ -177,7 +177,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0478/04.55.63",
     image: photoAdeline,
     altSEO: "Portrait d'Adeline Gomrée, podologue à Péronnes-lez-Binche",
-    lien: "/nos-services/podologie/podologie-gomree-adeline/"
+    lien: "/nos-services/podologie"
   },
   "pauline-horny": {
     nom: "Pauline Horny",
@@ -185,7 +185,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0478/04.55.63",
     image: photoPauline,
     altSEO: "Portrait de Pauline Horny, podologue au Centre thérapeutique Les Oranges",
-    lien: "/nos-services/podologie/"
+    lien: "/nos-services/podologie"
   },
   "aurelie-smeets": {
     nom: "Aurélie Smeets",
@@ -193,7 +193,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0493/70.69.06",
     image: photoAurelieS,
     altSEO: "Portrait d'Aurélie Smeets, pédicure médicale à Binche près de La Louvière",
-    lien: "/nos-services/emilie-ruaut-pedicure-medicale-massotherapeute/"
+    lien: "/nos-services/pedicure-medicale"
   },
   "mathieu-gregoire": {
     nom: "Mathieu Grégoire",
@@ -201,7 +201,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0478/24.48.12",
     image: photoMathieu,
     altSEO: "Portrait de Mathieu Grégoire, ostéopathe D.O. au Centre Les Oranges",
-    lien: "/osteopathe-d-o/"
+    lien: "/nos-services/osteopathie"
   },
   "elise-vandevoorde": {
     nom: "Elise Vandevoorde",
@@ -209,7 +209,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0499/60.01.90",
     image: photoElise,
     altSEO: "Portrait d'Elise Vandevoorde, psychomotricienne pour enfants et adultes à Binche",
-    lien: "/nos-services/psychomotricite/vandevoorde-elise-psychomotricienne/"
+    lien: "/nos-services/psychomotricite"
   },
   "lydie-junon": {
     nom: "Lydie Jugnon",
@@ -217,7 +217,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0474/24.91.84",
     image: photoLydie,
     altSEO: "Portrait de Lydie Jugnon, ergothérapeute à Péronnes-lez-Binche",
-    lien: "/ergotherapeute-lydie-jugnon/"
+    lien: "/nos-services/ergotherapie"
   },
 
   // --- ANIMATEURS ATELIERS ---
@@ -227,7 +227,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0496/53.48.61",
     image: photoNathalie,
     altSEO: "Portrait de Nathalie Dath, instructrice de Pilates à Binche",
-    lien: "/nos-services/kinesitherapeute/pilates/"
+    lien: "/nos-services/ateliers"
   },
   "jean-claude-degreef": {
     nom: "Jean-Claude De Greef",
@@ -235,7 +235,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0475/71.12.97",
     image: photoJeanClaude,
     altSEO: "Portrait de Jean-Claude De Greef, animateur de Tai chi et Qi Gong à Péronnes-lez-Binche",
-    lien: "#"
+    lien: "/nos-services/ateliers"
   },
   "fanny-mesdaght": {
     nom: "Fanny",
@@ -243,6 +243,6 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0476/30.92.80",
     image: photoFanny,
     altSEO: "Portrait de Fanny, professeure de Yoga sur chaise au Centre Les Oranges",
-    lien: "/yoga/"
+    lien: "/nos-services/ateliers"
   }
 };
