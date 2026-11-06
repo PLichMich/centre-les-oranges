@@ -59,11 +59,18 @@ export default defineConfig({
     '/brain-gym/': '/nos-services/sophrologie',
     '/nos-services/kinesiologie/': '/nos-services/sophrologie',
 
-    // 3. L'HISTORIQUE WORDPRESS STRUCTUREL
-    '/le-centre-therapeutique-les-oranges/': '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/le-centre-therapeutique-les-oranges/',
-    '/venir-jusqua-nous/': '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/venir-jusqua-nous/',
-    '/contacter-les-gestionnaires-du-centre/': '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/contacter-les-gestionnaires-du-centre/',
-    '/galerie-photo/': '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/galerie-photo/',
+// 3. L'HISTORIQUE WORDPRESS STRUCTUREL
+    // --- Les anciennes URL à rallonge corrigées (Dans le bon sens !) ---
+    '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/le-centre-therapeutique-les-oranges/': '/',
+    '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/venir-jusqua-nous/': '/contact',
+    '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/contacter-les-gestionnaires-du-centre/': '/contact',
+    '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/contacter-les-gestionnaires-du-centre/annuaire/': '/annuaire',
+    '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/galerie-photo/': '/',
+    '/plan-du-site/': '/',
+    '/ateliers-pour-enfants-avec-troubles-cognitifs-ou-moteurs/': '/nos-services/ergotherapie/',
+    '/author/plichart/': '/',
+
+    // --- Tes liens existants qui étaient parfaits (Conservés) ---
     '/dietetique/': '/nos-services/dietetique/',
     '/psychologie/': '/nos-services/psychologie/',
     '/sexologie/': '/nos-services/sexologie/',
@@ -87,7 +94,29 @@ export default defineConfig({
     '/adele-chiengue-sage-femme/': '/',
     '/nos-services/sage-femme-infirmiere/adele-chiengue-sage-femme/': '/',
     '/sage-femme-infirmiere/': '/nos-services/sage-femme-infirmiere/',
-    '/nouvelle-psychologue-specialisee-en-systemique-hypnose-et-emdr/': '/'
+    '/nouvelle-psychologue-specialisee-en-systemique-hypnose-et-emdr/': '/',
+    // --- NETTOYAGE DES ANCIENNES ACTUALITÉS (Redirection vers l'accueil) ---
+    '/les-nouvelles-du-centre/': '/',
+    '/ateliers-pour-enfants-avec-troubles-cognitifs-ou-moteurs/': '/nos-services/ergotherapie/',
+    '/author/plichart/': '/',
+    '/les-nouvelles-du-centre/page/2/': '/',
+    '/category/articles-interessants-du-centre-therapeutique-les-oranges/': '/',
+    '/category/articles-interessants-du-centre-therapeutique-les-oranges/aide-a-la-parentalite/': '/',
+    '/category/articles-interessants-du-centre-therapeutique-les-oranges/page/2/': '/',
+    '/actualite-covid-19/': '/',
+    '/actualite-post-confinement/': '/',
+    '/adaptation-de-nos-services-suite-au-covid-19/': '/',
+    '/bonne-rentree-nos-nouveautes/': '/',
+    '/nos-nouveautes-pour-la-rentree/': '/',
+    '/nos-nouveautes-pour-lautomne/': '/',
+    '/petites-nouvelles-de-fin-et-de-debut-dannee/': '/',
+    '/bonne-fete-a-toutes-les-mamans/': '/',
+    '/seance-dinformation-sur-lallaitement-maternel/': '/',
+    '/comprendre-le-stress-et-ses-obstacles-au-changement-avec-les-tcc/': '/',
+    '/bientot-des-ateliers-au-centre/': '/',
+    '/une-logopede-et-des-ateliers-massages-parents-enfants-et-pilates-pour-bien-debuter-cette-rentree/': '/',
+    '/une-sophrologue-et-massotherapeute-a-rejoins-notre-equipe/': '/',
+    '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/galerie-photo/': '/',
   },
 
   // ==========================================

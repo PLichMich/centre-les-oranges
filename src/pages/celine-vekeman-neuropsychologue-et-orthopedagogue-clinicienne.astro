@@ -1,0 +1,55 @@
+---
+import CollaborateurLayout from '../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../data/equipe';
+
+// On récupère les infos de Céline depuis le fichier central
+const praticien = equipeData["celine-vekeman"];
+---
+
+<CollaborateurLayout {...praticien}>
+  
+  <p class="text-gray-600 text-lg mb-8">
+    Consultations dédiées aux <strong>enfants, adolescents et adultes</strong>. Spécialisée dans les bilans diagnostiques et la revalidation cognitive.
+  </p>
+
+  <!-- Bilans et Diagnostics -->
+  <div class="mb-10">
+    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+      <svg class="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+      Réalisation de bilans
+    </h3>
+    
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <h4 class="font-bold text-gray-800 mb-2">Bilans Intellectuels</h4>
+        <p class="text-gray-600 text-sm">Test de QI, suspicion de haut potentiel (HPI), retard ou handicap mental.</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <h4 class="font-bold text-gray-800 mb-2">Bilans Attentionnels</h4>
+        <p class="text-gray-600 text-sm">Évaluation dans le cadre de suspicion de TDAH.</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <h4 class="font-bold text-gray-800 mb-2">Bilans Mnésiques</h4>
+        <p class="text-gray-600 text-sm">Évaluation de la mémoire (troubles des apprentissages ou suspicion de démence).</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <h4 class="font-bold text-gray-800 mb-2">Bilans Globaux & Jeune Enfant</h4>
+        <p class="text-gray-600 text-sm">Troubles praxiques, visuo-spatiaux, troubles « dys ».</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prise en charge -->
+  <div class="bg-orange-50 rounded-2xl p-6 border border-orange-100">
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Revalidation et prise en charge</h3>
+    <ul class="grid sm:grid-cols-2 gap-3 text-gray-700 text-sm">
+      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> Revalidation neuropsychologique</li>
+      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> Méthode de travail</li>
+      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> Gestion mentale</li>
+      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> Aide aux habiletés parentales</li>
+      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> Psychoéducation</li>
+      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> Burnout parental</li>
+    </ul>
+  </div>
+
+</CollaborateurLayout>

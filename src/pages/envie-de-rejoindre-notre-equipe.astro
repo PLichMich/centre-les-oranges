@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Schéma JSON-LD pour forcer l'indexation dans Google for Jobs et Google Local
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "name": "Centre Thérapeutique Les Oranges",
+      "url": "https://centrelesoranges.be",
+      "logo": "https://centrelesoranges.be/logo.png", // À adapter selon ton vrai chemin d'image
+      "sameAs": [
+        "https://www.facebook.com/centrelesoranges/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rue Joseph Wauters 191",
+        "addressLocality": "Péronnes-lez-Binche",
+        "postalCode": "7110",
+        "addressCountry": "BE"
+      }
+    },
+    {
+      "@type": "JobPosting",
+      "title": "Collaborateur(trice) Indépendant(e) - Médical, Paramédical et Bien-être",
+      "description": "Le Centre thérapeutique Les Oranges met à disposition des locaux meublés (cabinet médical, bureaux, salle) pour l'exercice de professions médicales, paramédicales, ou liées au bien-être. Nous recherchons activement : Logopèdes, Kinésithérapeutes, Psychologues, et Médecins spécialistes. Rejoignez une équipe pluridisciplinaire dynamique !",
+      "datePosted": new Date().toISOString().split('T')[0],
+      "validThrough": "2027-12-31T00:00:00Z",
+      "employmentType": ["CONTRACTOR", "PART_TIME", "FULL_TIME"],
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Centre Thérapeutique Les Oranges",
+        "sameAs": "https://centrelesoranges.be",
+        "logo": "https://centrelesoranges.be/logo.png"
+      },
+      "jobLocationType": "TELECOMMUTE", // Ignoré si un lieu physique est précisé
+      "applicantLocationRequirements": {
+        "@type": "Country",
+        "name": "Belgium"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rue Joseph Wauters 191",
+          "addressLocality": "Péronnes-lez-Binche",
+          "postalCode": "7110",
+          "addressCountry": "BE"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "EUR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 25,
+          "maxValue": 30,
+          "unitText": "HOUR"
+        }
+      }
+    }
+  ]
+};
+---
+
+<Layout title="Bureaux à louer pour professionnels de la santé | Centre Les Oranges" description="Cabinets et salle pour médecins, paramédicaux et bien-être à louer à Péronnes-lez-Binche. Rejoignez notre équipe pluridisciplinaire (Logopède, Kiné, Psy) !">
+  
+  <!-- Injection invisible des métadonnées SEO enrichies pour Google -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <main class="pt-24 pb-16 bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 max-w-4xl">
+      
+      <!-- En-tête -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
+          Offres d'emplois indépendants & Bureaux à louer
+        </h1>
+        <p class="text-xl text-gray-600">
+          Rejoignez le <span class="font-semibold text-orange-500">Centre thérapeutique Les Oranges</span> (Hainaut, Belgique)
+        </p>
+      </div>
+
+      <!-- Introduction -->
+      <div class="bg-white rounded-2xl shadow-sm p-8 mb-8 border border-gray-100">
+        <p class="text-gray-700 leading-relaxed text-lg">
+          Afin de réunir le plus possible de spécialistes d'horizons différents souhaitant collaborer pour le bien-être de leurs patients, le Centre thérapeutique Les Oranges met à disposition des locaux meublés (<strong class="text-orange-500">un cabinet médical, 6 bureaux et une salle</strong>) ainsi qu'un jardin pour l'exercice de professions médicales, paramédicales, ou liées au bien-être.
+        </p>
+      </div>
+
+      <!-- Profils recherchés -->
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+          <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          Profils recherchés actuellement
+        </h2>
+        <p class="text-gray-600 mb-6">Nous recherchons essentiellement des professionnels sous statut indépendant (complémentaire ou principal) dans ces domaines :</p>
+        
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-orange-500">
+            <h3 class="font-bold text-gray-800 mb-3">Médecins spécialistes</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Psychiatre</li>
+              <li>• Pédiatre & Neuropédiatre</li>
+              <li>• Neurologue</li>
+              <li>• Rhumatologue & Algologue</li>
+              <li>• Gynécologue & Dermatologue</li>
+              <li>• Gastroentérologue & Nutritionniste</li>
+              <li>• Tabacologue & Homéopathe</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-orange-400">
+            <h3 class="font-bold text-gray-800 mb-3">Santé & Bien-être</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Acupuncteur(trice)</li>
+              <li>• Logopède</li>
+              <li>• Kinésithérapeute</li>
+              <li>• Médiateur/trice familial(e)</li>
+              <li>• Sage-femme</li>
+              <li>• Animateurs d'ateliers (enfants/parents/seniors)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 mt-4 italic">Autres profils acceptés : minimum un diplôme d'enseignement supérieur dans un domaine de la santé, de l'éducation, social ou juridique.</p>
+      </div>
+
+      <!-- Avantages et Cadre -->
+      <div class="bg-orange-50 rounded-2xl p-8 mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Vos avantages en nous rejoignant</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span class="text-gray-700"><strong>Horaires flexibles :</strong> Mise à disposition par plages horaires (contrat). Salle flexible pour événements.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span class="text-gray-700"><strong>Sécurité :</strong> Système d'alarmes (incendie, intrusion, caméras).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span class="text-gray-700"><strong>Cadre agréable :</strong> Accès à une cuisine et un jardin pour échanger.</span>
+            </li>
+          </ul>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span class="text-gray-700"><strong>Travail d'équipe :</strong> Collaboration naturelle et rencontres régulières entre l'équipe.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span class="text-gray-700"><strong>Accessibilité :</strong> Accès et parkings faciles pour vous et vos patients.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span class="text-gray-700"><strong>Visibilité :</strong> Nous gérons votre visibilité web (très bien référencée). Secrétariat indépendant possible.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center bg-white p-8 rounded-2xl shadow-md border-t-4 border-orange-500">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Envie de tenter l'aventure ?</h2>
+        <p class="text-gray-600 mb-8">N'hésitez pas à nous contacter pour organiser une visite des locaux et discuter des modalités.</p>
+        <a href="/contact" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg hover:shadow-xl">
+          Nous contacter pour postuler
+        </a>
+      </div>
+
+    </div>
+  </main>
+</Layout>

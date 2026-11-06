@@ -101,7 +101,9 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0495/36.67.98",
     image: photoCelineV,
     altSEO: "Portrait de Céline Vekeman, neuropsychologue et orthopédagogue clinicienne au Centre Les Oranges",
-    lien: "/nos-services/psychologie/neuropsychologie"
+    lien: "/nos-services/psychologie/neuropsychologie",
+    actif: true,
+    conventionne: true
   },
   "valerie-desclez": {
     nom: "Valérie Desclez",
