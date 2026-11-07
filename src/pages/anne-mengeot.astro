@@ -1,0 +1,28 @@
+---
+import CollaborateurLayout from '../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../data/equipe';
+
+// On récupère les infos d'Anne directement depuis le fichier central
+const praticien = equipeData["anne-mengeot"];
+---
+
+<CollaborateurLayout {...praticien}>
+  <p class="text-lg leading-relaxed mb-6 font-medium text-gray-800">
+    Naturopathe certifiée, je vous accompagne vers une santé globale et durable.
+  </p>
+  <p class="mb-6 text-gray-600">
+    La naturopathie vous donne les clefs individualisées d’une hygiène de vie optimale : conseils alimentaires, gestion du stress, activités physiques et respiratoires. Elle ne se substitue pas à la médecine conventionnelle mais la complète harmonieusement.
+  </p>
+  
+  <h3 class="text-xl font-bold text-gray-800 mb-4">Domaines d'accompagnement</h3>
+  <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
+    <li>Stress, fatigue, burn-out, problèmes de sommeil</li>
+    <li>Troubles digestifs, allergies et intolérances</li>
+    <li>Suivi de la grossesse, de l'enfant et de l'adolescent</li>
+    <li>Optimisation de la vitalité et prévention</li>
+  </ul>
+
+  <p class="text-gray-600">
+    Consultations sur rendez-vous le jeudi de 16h à 20h. J'organise également des ateliers pratiques sur l'autonomie à la santé globale.
+  </p>
+</CollaborateurLayout>

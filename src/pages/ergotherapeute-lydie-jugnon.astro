@@ -1,0 +1,82 @@
+---
+import CollaborateurLayout from '../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../data/equipe';
+
+// On récupère les infos de Lydie depuis le fichier central
+const praticien = equipeData["lydie-junon"];
+---
+
+<CollaborateurLayout {...praticien}>
+  
+  <!-- Introduction -->
+  <p class="text-lg leading-relaxed mb-6 font-medium text-gray-800">
+    Ergothérapeute accompagnant les personnes de la pédiatrie aux seniors.
+  </p>
+  <p class="mb-10 text-gray-600">
+    Mon objectif est d'aider mes patients dans la recherche d’indépendance et de plus d’autonomie dans leurs occupations de la vie de tous les jours, au travail et dans la scolarité.
+  </p>
+
+  <!-- Spécialités -->
+  <div class="mb-10">
+    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+      <svg class="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+      Mes spécialités
+    </h3>
+    
+    <div class="space-y-4 text-gray-700">
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex gap-4">
+        <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        </div>
+        <div>
+          <h4 class="font-bold text-gray-800 mb-1">Aide à la personne âgée ou en situation de handicap</h4>
+          <p class="text-sm text-gray-600">Évaluation et conseil, réadaptation, prise en charge pour les activités de la vie quotidienne, prévention des chutes, adaptation et aménagement du domicile.</p>
+        </div>
+      </div>
+      
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex gap-4">
+        <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <div>
+          <h4 class="font-bold text-gray-800 mb-1">Enfants présentant des troubles d'apprentissage</h4>
+          <p class="text-sm text-gray-600">Accompagnement et rééducation pour les troubles de la coordination et les différents troubles "dys".</p>
+        </div>
+      </div>
+      
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex gap-4">
+        <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+        </div>
+        <div>
+          <h4 class="font-bold text-gray-800 mb-1">Médecines naturelles</h4>
+          <p class="text-sm text-gray-600">Forte de ma formation et de mon expérience d'assistante en pharmacie, j'apporte des conseils de traitement par l'homéopathie, l'aromathérapie et la phytothérapie (en complément du suivi médical).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formations et Engagement -->
+  <div class="bg-orange-50 rounded-2xl p-8 border border-orange-100">
+    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+      <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+      Formations & Engagement
+    </h3>
+    
+    <p class="mb-6 text-gray-700 text-sm">
+      Je suis membre de l’Union Professionnelle des Ergothérapeutes belges (UPE). Je me forme très activement et me tiens à jour via les revues scientifiques afin d’améliorer continuellement mes connaissances et proposer un service parfaitement adapté.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-y-2 gap-x-4 text-sm text-gray-600">
+      <div class="flex items-start gap-2"><span class="text-orange-500">🎓</span> Baccalauréat en ergothérapie</div>
+      <div class="flex items-start gap-2"><span class="text-orange-500">🎓</span> Baccalauréat assistante en pharmacie</div>
+      <div class="flex items-start gap-2"><span class="text-orange-500">📚</span> L'iPAD comme outil compensatoire</div>
+      <div class="flex items-start gap-2"><span class="text-orange-500">📚</span> L'écriture et l'ergothérapie</div>
+      <div class="flex items-start gap-2"><span class="text-orange-500">📚</span> Les réflexes archaïques (connexions primordiales)</div>
+      <div class="flex items-start gap-2"><span class="text-orange-500">📚</span> Prévention des personnes âgées chuteurs</div>
+      <div class="flex items-start gap-2"><span class="text-orange-500">📚</span> Aménagement du domicile (Module 1)</div>
+      <div class="flex items-start gap-2"><span class="text-orange-500">📚</span> Les nouvelles aides technologiques</div>
+    </div>
+  </div>
+
+</CollaborateurLayout>

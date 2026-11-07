@@ -1,0 +1,152 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { equipeData } from '../../data/equipe';
+
+// On extrait et groupe les praticiens actifs par catégorie depuis equipeData
+const praticiens = Object.entries(equipeData)
+  .filter(([_, membre]) => membre.actif !== false); // On ne garde que les actifs
+
+// Tu peux filtrer par spécialité ou pôle directement si tu veux les afficher automatiquement :
+const psychologues = praticiens.filter(([_, m]) => m.specialite.toLowerCase().includes('psychologue') || m.specialite.toLowerCase().includes('neuropsychologue') || m.specialite.toLowerCase().includes('sexologue'));
+const paramedicaux = praticiens.filter(([_, m]) => m.specialite.toLowerCase().includes('ostéopathe') || m.specialite.toLowerCase().includes('podologue') || m.specialite.toLowerCase().includes('diététicienne') || m.specialite.toLowerCase().includes('psychomotricienne') || m.specialite.toLowerCase().includes('ergothérapeute') || m.specialite.toLowerCase().includes('pédicure'));
+const bienEtre = praticiens.filter(([_, m]) => m.specialite.toLowerCase().includes('sophrologue') || m.specialite.toLowerCase().includes('naturopathe') || m.specialite.toLowerCase().includes('hypnothérapeute'));
+---
+
+<Layout title="Nos Services & Spécialités | Centre Thérapeutique Les Oranges à Binche" description="Découvrez toutes nos consultations paramédicales, de psychologie, thérapies alternatives et ateliers de groupe à Péronnes-lez-Binche.">
+  <main class="pt-24 pb-16 bg-stone-50 min-h-screen">
+    <div class="container mx-auto px-4 max-w-6xl">
+      
+      <!-- En-tête -->
+      <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12 mb-12 border border-stone-200/80 text-center">
+        <span class="inline-block px-4 py-1.5 bg-amber-100 text-amber-900 text-xs font-bold rounded-full mb-4 uppercase tracking-wider">
+          Offre de soins
+        </span>
+        <h1 class="text-3xl md:text-5xl font-bold text-stone-900 font-['Lora',serif] mb-6">
+          Nos Services & Spécialités
+        </h1>
+        <p class="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
+          Un cadre pluridisciplinaire et une équipe de professionnels sélectionnés pour vous accompagner de manière globale, de l'enfance aux seniors.
+        </p>
+      </div>
+
+      <!-- Grille des grands pôles connectée à equipe.ts -->
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        
+        <!-- 1. PÔLE PSYCHOLOGIE & MENTAL -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-stone-200/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-800 font-bold mb-6 text-xl">🧠</div>
+            <h2 class="text-2xl font-bold text-stone-900 font-['Lora',serif] mb-4">Psychologie & Santé Mentale</h2>
+            <p class="text-stone-600 text-sm mb-6 leading-relaxed">
+              Prise en charge de la souffrance psychique, des troubles émotionnels et accompagnement de l'enfant à l'adulte.
+            </p>
+            
+            <!-- Liste dynamique des psys issus de equipe.ts -->
+            <div class="mb-8">
+              <span class="text-xs uppercase font-bold tracking-wider text-stone-400 block mb-3">Praticiens de ce pôle :</span>
+              <div class="flex flex-wrap gap-2">
+                {psychologues.map(([slug, membre]) => (
+                  <a href={`/${slug}`} class="px-3 py-1.5 bg-stone-100 hover:bg-amber-100 text-stone-800 text-xs font-semibold rounded-lg transition-colors border border-stone-200">
+                    {membre.nom}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          <a href="/nos-services/psychologie" class="inline-flex items-center justify-center w-full py-3 px-4 rounded-xl text-sm font-bold text-amber-900 bg-amber-50 hover:bg-amber-100 transition-colors">
+            Découvrir le pôle psychologie &rarr;
+          </a>
+        </div>
+
+        <!-- 2. PÔLE PARAMÉDICAL & CORPS -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-stone-200/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-800 font-bold mb-6 text-xl">🩺</div>
+            <h2 class="text-2xl font-bold text-stone-900 font-['Lora',serif] mb-4">Paramédical & Soins Somatiques</h2>
+            <p class="text-stone-600 text-sm mb-6 leading-relaxed">
+              Traitements de l'appareil locomoteur, prévention, rééducation et soins corporels spécialisés.
+            </p>
+            
+            <!-- Liste dynamique des paramédicaux issus de equipe.ts -->
+            <div class="mb-8">
+              <span class="text-xs uppercase font-bold tracking-wider text-stone-400 block mb-3">Praticiens de ce pôle :</span>
+              <div class="flex flex-wrap gap-2">
+                {paramedicaux.map(([slug, membre]) => (
+                  <a href={`/${slug}`} class="px-3 py-1.5 bg-stone-100 hover:bg-emerald-100 text-stone-800 text-xs font-semibold rounded-lg transition-colors border border-stone-200">
+                    {membre.nom}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          <a href="/annuaire" class="inline-flex items-center justify-center w-full py-3 px-4 rounded-xl text-sm font-bold text-emerald-900 bg-emerald-50 hover:bg-emerald-100 transition-colors">
+            Voir tous les praticiens paramédicaux &rarr;
+          </a>
+        </div>
+
+        <!-- 3. PÔLE BIEN-ÊTRE & ALTERNATIVES -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-stone-200/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-800 font-bold mb-6 text-xl">🌿</div>
+            <h2 class="text-2xl font-bold text-stone-900 font-['Lora',serif] mb-4">Bien-être & Thérapies Douces</h2>
+            <p class="text-stone-600 text-sm mb-6 leading-relaxed">
+              Approches complémentaires pour la gestion du stress, des émotions et de l'énergie vitale.
+            </p>
+            
+            <!-- Liste dynamique bien-être issus de equipe.ts -->
+            <div class="mb-8">
+              <span class="text-xs uppercase font-bold tracking-wider text-stone-400 block mb-3">Praticiens de ce pôle :</span>
+              <div class="flex flex-wrap gap-2">
+                {bienEtre.map(([slug, membre]) => (
+                  <a href={`/${slug}`} class="px-3 py-1.5 bg-stone-100 hover:bg-orange-100 text-stone-800 text-xs font-semibold rounded-lg transition-colors border border-stone-200">
+                    {membre.nom}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          <a href="/nos-services/sophrologie" class="inline-flex items-center justify-center w-full py-3 px-4 rounded-xl text-sm font-bold text-orange-900 bg-orange-50 hover:bg-orange-100 transition-colors">
+            Explorer le pôle bien-être &rarr;
+          </a>
+        </div>
+
+        <!-- 4. ATELIERS DE GROUPE & PRÉLÈVEMENTS -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-stone-200/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-800 font-bold mb-6 text-xl">👥</div>
+            <h2 class="text-2xl font-bold text-stone-900 font-['Lora',serif] mb-4">Ateliers & Services Spécifiques</h2>
+            <p class="text-stone-600 text-sm mb-6 leading-relaxed">
+              Activités collectives, prévention du burnout, et permanence de prélèvements sanguins.
+            </p>
+            <ul class="space-y-2.5 text-sm text-stone-700 mb-8">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span><a href="/nos-services/ateliers-formations-a-venir" class="hover:text-blue-700 font-medium">Ateliers de groupe (Burn-out, émotions, enfants)</a></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span><a href="/nos-services/kinesitherapeute/pilates" class="hover:text-blue-700 font-medium">Cours de Pilates & Yoga sur chaise</a></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span><a href="/centre-de-prelevements" class="hover:text-blue-700 font-medium">Centre de prélèvements CHU Tivoli (Sans RDV)</a></li>
+            </ul>
+          </div>
+          <a href="/nos-services/ateliers-formations-a-venir" class="inline-flex items-center justify-center w-full py-3 px-4 rounded-xl text-sm font-bold text-blue-900 bg-blue-50 hover:bg-blue-100 transition-colors">
+            Voir l'agenda des ateliers &rarr;
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Appel à l'action bas de page -->
+      <div class="bg-stone-900 text-white rounded-3xl p-8 md:p-12 text-center shadow-md">
+        <h3 class="text-2xl font-bold mb-3 font-['Lora',serif]">Besoin d'aide pour choisir votre spécialiste ?</h3>
+        <p class="text-stone-400 text-sm max-w-xl mx-auto mb-6">
+          Le secrétariat ou les gestionnaires du centre sont à votre écoute pour vous orienter vers la discipline la mieux adaptée à votre situation.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="/annuaire" class="bg-amber-500 text-stone-900 font-bold py-3 px-8 rounded-full hover:bg-amber-400 transition-colors text-sm">
+            Consulter l'annuaire des pros
+          </a>
+          <a href="/contact" class="bg-stone-800 text-stone-200 font-bold py-3 px-8 rounded-full hover:bg-stone-700 transition-colors text-sm border border-stone-700">
+            Nous contacter
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</Layout>

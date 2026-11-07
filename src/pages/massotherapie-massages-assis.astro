@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import photoCathy from '../assets/equipe/cathy-malosto-sophrologue-massotherapeute-binche.jpg';
+---
+
+<Layout title="Massothérapie & Massages Assis | Centre Les Oranges à Binche" description="Découvrez les différents massages pratiqués au Centre Les Oranges : massage assis (Amma), massages parents/enfants et Reiki avec Cathy Malosto.">
+  <main class="pt-24 pb-16 bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 max-w-4xl">
+      
+      <!-- En-tête -->
+      <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12 mb-8 border border-gray-100 text-center">
+        <span class="inline-block px-4 py-1.5 bg-orange-100 text-orange-700 text-sm font-bold rounded-full mb-4 uppercase tracking-wider">
+          Pôle Bien-être & Santé
+        </span>
+        <h1 class="text-3xl md:text-5xl font-bold text-gray-900 font-heading mb-6">
+          La Massothérapie
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Les différents massages pratiqués par nos thérapeutes constituent un soutien et un complément précieux aux soins de santé.
+        </p>
+      </div>
+
+      <!-- Encart Praticienne (Cathy Malosto) - Format harmonisé aux fiches praticiens -->
+      <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-10 border border-gray-100 flex flex-col md:flex-row gap-6 items-center md:items-start">
+        <div class="w-32 h-32 rounded-full overflow-hidden shrink-0 border-4 border-white shadow-md bg-orange-50">
+          <Image src={photoCathy} alt="Portrait de Cathy Malosto" class="w-full h-full object-cover" />
+        </div>
+        <div class="text-center md:text-left flex-1">
+          <span class="text-xs font-bold uppercase tracking-wider text-orange-500 block mb-1">Votre thérapeute référente</span>
+          <h2 class="text-2xl font-bold text-gray-800 mb-1">Cathy Malosto</h2>
+          <p class="text-orange-500 font-medium text-lg mb-4">Sophrologue et massothérapeute</p>
+          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
+            <a href="tel:0475260651" class="inline-flex items-center gap-2 bg-orange-500 text-white font-bold py-2.5 px-6 rounded-xl hover:bg-orange-600 transition-colors shadow-sm text-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              0475/26.06.51
+            </a>
+            <a href="/nos-services/sophrologie/malosto-cathy-sophrologue-et-massotherapeute" class="text-sm font-semibold text-orange-600 hover:underline">
+              Voir sa fiche complète &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenu principal -->
+      <div class="space-y-8">
+        
+        <!-- Massage Assis Amma -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+            <span class="text-2xl">💆‍♀️</span> Massage assis (Amma)
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Pratiqué par notre sophrologue et massothérapeute Cathy Malosto, il procure une action immédiate :
+          </p>
+          <ul class="grid sm:grid-cols-2 gap-3 text-sm text-gray-700">
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-1.5 bg-orange-500 rounded-full shrink-0"></span> Sensation de détente physique et mentale</li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-1.5 bg-orange-500 rounded-full shrink-0"></span> Meilleure gestion du stress et des pressions</li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-1.5 bg-orange-500 rounded-full shrink-0"></span> Réduction de la fatigue et des tensions musculaires</li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-1.5 bg-orange-500 rounded-full shrink-0"></span> Activation et renouvellement de l'énergie corporelle</li>
+          </ul>
+        </div>
+
+        <!-- Massage Parents / Enfants / Bébé (MISP) -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+            <span class="text-2xl">👶</span> Massage parents / enfants / bébé (Protocole MISP)
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Le programme MISP (<em>Massage In School Programme</em>) est conçu pour favoriser le bien-être des plus jeunes :
+          </p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2"><span class="text-orange-500 font-bold">✔</span> Expérience du toucher sain et nourrissant</li>
+            <li class="flex items-start gap-2"><span class="text-orange-500 font-bold">✔</span> Effet calmant et réduction du stress chez l'enfant</li>
+            <li class="flex items-start gap-2"><span class="text-orange-500 font-bold">✔</span> Renforcement de la communication et réconciliation familiale</li>
+          </ul>
+        </div>
+
+        <!-- Reiki -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+            <span class="text-2xl">✨</span> Le Reiki
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Méthode de soin d'origine japonaise de relaxation par imposition des mains. Elle permet de se ressourcer, d'harmoniser le corps et l'esprit, et de dissoudre les blocages énergétiques (physiques, émotionnels, spirituels). La séance dure environ 1h30 (personne habillée).
+          </p>
+          <p class="text-sm font-semibold text-gray-700">
+            Praticiennes : Cathy Malosto et le Dr Alessia Dal Bo.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</Layout>

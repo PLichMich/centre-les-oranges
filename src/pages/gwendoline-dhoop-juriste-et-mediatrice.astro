@@ -1,0 +1,88 @@
+---
+import CollaborateurLayout from '../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../data/equipe';
+
+// On récupère les infos de Gwendoline depuis le fichier central
+const praticien = equipeData["gwendoline-dhoop"];
+---
+
+<CollaborateurLayout {...praticien}>
+  
+  <!-- Introduction & Parcours -->
+  <p class="text-lg leading-relaxed mb-6 font-medium text-gray-800">
+    Juriste, anciennement avocate et aujourd’hui médiatrice en matières familiale, civile, sociale et commerciale.
+  </p>
+  <p class="mb-4 text-gray-600">
+    J’accompagne les personnes qui traversent des tensions, des incompréhensions ou des conflits, qu’ils soient d’ordre privé ou professionnel. Au fil de mon parcours professionnel et personnel, j’ai constaté à quel point les difficultés relationnelles peuvent impacter le bien-être personnel et abîmer des relations. Or, il n’y a pas de relations humaines sans conflits.
+  </p>
+  <p class="mb-10 text-gray-600">
+    Comment transformer un conflit en un dialogue constructif, bienveillant et humain ? La <strong>médiation</strong> est une approche qui permet une telle transformation, et si vous le souhaitez, je m’engage à vous accompagner dans cette voie.
+  </p>
+
+  <!-- L'approche (Méthode) -->
+  <div class="bg-orange-50 rounded-2xl p-8 border border-orange-100 mb-10">
+    <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+      <svg class="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+      Mon approche
+    </h3>
+    
+    <p class="mb-4 text-gray-700">Mon rôle est de vous aider à rétablir un dialogue constructif, à clarifier vos objectifs, vos points de vue, à rétablir un climat de confiance et à faire émerger d’éventuelles solutions durables à la situation conflictuelle en jeu, sans jugement ni prise de parti.</p>
+    
+    <p class="text-gray-700">J’accorde une attention particulière aux <strong>émotions</strong> présentes dans les échanges, car elles sont souvent au cœur des blocages comme des évolutions possibles. Mon accompagnement se veut à la fois structuré et humain, afin que vous puissiez avancer avec plus de clarté, d’apaisement et d’autonomie.</p>
+  </div>
+
+  <!-- Domaines d'interventions -->
+  <div class="mb-10">
+    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+      <svg class="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+      Mes domaines d’interventions
+    </h3>
+    
+    <div class="grid sm:grid-cols-2 gap-4 mb-8">
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <span class="text-orange-500">1.</span> Matières familiales
+        </h4>
+        <p class="text-gray-600 text-sm">Séparation, divorce, hébergement des enfants, questions immobilières.</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <span class="text-orange-500">2.</span> Matières commerciales
+        </h4>
+        <p class="text-gray-600 text-sm">Par exemple : litige entre associé(e)s.</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <span class="text-orange-500">3.</span> Matières sociales
+        </h4>
+        <p class="text-gray-600 text-sm">Par exemple : litige lié au contrat de travail.</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <span class="text-orange-500">4.</span> Matières civiles
+        </h4>
+        <p class="text-gray-600 text-sm">Conflit de voisinage, conflit entre locataires ou avec le bailleur.</p>
+      </div>
+    </div>
+    
+    <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-orange-500">
+      <h4 class="font-bold text-gray-800 mb-2">Conseils juridiques & administratifs</h4>
+      <p class="text-gray-600 text-sm">
+        En dehors de ma pratique de médiatrice, je suis également à votre disposition pour vous conseiller et vous orienter sur des <strong>questions juridiques</strong> spécifiques ou vous aider dans des <strong>démarches administratives</strong>.
+      </p>
+    </div>
+  </div>
+
+  <!-- Langues -->
+  <div>
+    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+      <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
+      Langues de consultation
+    </h3>
+    <div class="flex gap-4">
+      <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium shadow-sm">🇫🇷 Français</span>
+      <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium shadow-sm">🇬🇧 Anglais</span>
+    </div>
+  </div>
+
+</CollaborateurLayout>

@@ -21,7 +21,6 @@ export default defineConfig({
     // 1. LES PRATICIENS ACTIFS
     '/nos-services/psychologie/psychologie-cognitive-et-comportementale/therapie-cognitivo-comportementale-binche-plichart/': '/nos-services/psychologie/psychologie-cognitive-et-comportementale',
     '/plichart-michael-psychologue-tcc-pour-ados-adultes-et-couples/': '/nos-services/psychologie/psychologie-cognitive-et-comportementale',
-    '/nos-services/psychologie/psychologie-cognitive-et-comportementale/plichart-michael-psychologue-tcc-pour-ados-adultes-et-couples/': '/nos-services/psychologie/psychologie-cognitive-et-comportementale',
     '/nos-services/psychologie/psychologie-cognitive-et-comportementale/psychologue-comportementaliste/': '/nos-services/psychologie/psychologie-cognitive-et-comportementale',
     '/mahieux-celine-psychologue-tcc/': '/nos-services/psychologie/psychologie-cognitive-et-comportementale',
     '/nos-services/psychologie/psychologie-cognitive-et-comportementale/mahieux-celine-psychologue-tcc/': '/nos-services/psychologie/psychologie-cognitive-et-comportementale',
@@ -35,6 +34,7 @@ export default defineConfig({
     '/gearlyne-numez-neuropsychologue-a-binche-centre-les-oranges/': '/nos-services/psychologie/neuropsychologie',
     '/gearlyne-numez-neuropsychologue-binche-centre-les-oranges/': '/nos-services/psychologie/neuropsychologie',
     '/gearlyne-nunez-neuropsychologue-binche-centre-les-oranges/': '/nos-services/psychologie/neuropsychologie',
+    '/la-psychologie-legale/': '/nos-services/psychologie-legale',
 
     // 2. LES PRATICIENS INACTIFS / REMPLACÉS
     '/estievenart-melanie-kinesitherapeute/': '/nos-services/kinesitherapeute',
@@ -59,18 +59,17 @@ export default defineConfig({
     '/brain-gym/': '/nos-services/sophrologie',
     '/nos-services/kinesiologie/': '/nos-services/sophrologie',
 
-// 3. L'HISTORIQUE WORDPRESS STRUCTUREL
-    // --- Les anciennes URL à rallonge corrigées (Dans le bon sens !) ---
+    // 3. L'HISTORIQUE WORDPRESS STRUCTUREL
     '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/le-centre-therapeutique-les-oranges/': '/',
     '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/venir-jusqua-nous/': '/contact',
     '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/contacter-les-gestionnaires-du-centre/': '/contact',
-    '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/contacter-les-gestionnaires-du-centre/annuaire/': '/annuaire',
     '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/galerie-photo/': '/',
     '/plan-du-site/': '/',
-    '/ateliers-pour-enfants-avec-troubles-cognitifs-ou-moteurs/': '/nos-services/ergotherapie/',
     '/author/plichart/': '/',
+    '/centre-de-prelevements-chu-tivoli/': '/centre-de-prelevements',
+    '/centre-de-prelevements-chu-tivoli-dans-notre-centre/': '/centre-de-prelevements',
 
-    // --- Tes liens existants qui étaient parfaits (Conservés) ---
+    // --- Raccourcis de rubriques ---
     '/dietetique/': '/nos-services/dietetique/',
     '/psychologie/': '/nos-services/psychologie/',
     '/sexologie/': '/nos-services/sexologie/',
@@ -95,10 +94,10 @@ export default defineConfig({
     '/nos-services/sage-femme-infirmiere/adele-chiengue-sage-femme/': '/',
     '/sage-femme-infirmiere/': '/nos-services/sage-femme-infirmiere/',
     '/nouvelle-psychologue-specialisee-en-systemique-hypnose-et-emdr/': '/',
-    // --- NETTOYAGE DES ANCIENNES ACTUALITÉS (Redirection vers l'accueil) ---
+
+    // --- NETTOYAGE DES ANCIENNES ACTUALITÉS ---
     '/les-nouvelles-du-centre/': '/',
     '/ateliers-pour-enfants-avec-troubles-cognitifs-ou-moteurs/': '/nos-services/ergotherapie/',
-    '/author/plichart/': '/',
     '/les-nouvelles-du-centre/page/2/': '/',
     '/category/articles-interessants-du-centre-therapeutique-les-oranges/': '/',
     '/category/articles-interessants-du-centre-therapeutique-les-oranges/aide-a-la-parentalite/': '/',
@@ -116,7 +115,6 @@ export default defineConfig({
     '/bientot-des-ateliers-au-centre/': '/',
     '/une-logopede-et-des-ateliers-massages-parents-enfants-et-pilates-pour-bien-debuter-cette-rentree/': '/',
     '/une-sophrologue-et-massotherapeute-a-rejoins-notre-equipe/': '/',
-    '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/galerie-photo/': '/',
   },
 
   // ==========================================

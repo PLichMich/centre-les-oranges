@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="La Psychologie Légale | Centre Les Oranges à Binche" description="Découvrez la psychologie légale, à l'interface entre le système judiciaire et la psychologie.">
+  <main class="pt-24 pb-16 bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 max-w-4xl">
+      
+      <!-- En-tête -->
+      <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12 mb-8 border border-gray-100 text-center">
+        <span class="inline-block px-4 py-1.5 bg-orange-100 text-orange-700 text-sm font-bold rounded-full mb-4 uppercase tracking-wider">
+          Pôle Psychologie
+        </span>
+        <h1 class="text-3xl md:text-5xl font-bold text-gray-900 font-heading mb-6">
+          La psychologie légale
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Une discipline à l'interface entre le système judiciaire et la psychologie, contribuant à la compréhension et à la gestion des comportements criminels et déviants.
+        </p>
+      </div>
+
+<!-- Encart Recrutement -->
+      <div class="bg-orange-50 rounded-2xl p-8 mb-10 border-2 border-orange-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2 flex items-center gap-2">
+            <span class="text-2xl">👋</span> Nous recrutons !
+          </h3>
+          <p class="text-gray-700 font-medium">
+            Notre ancienne psychologue légale a quitté le centre. Nous sommes actuellement à la recherche d'un(e) nouveau/nouvelle collaborateur(trice) pour reprendre cette spécialité.
+          </p>
+        </div>
+        <a href="/envie-de-rejoindre-notre-equipe" class="shrink-0 bg-orange-500 text-white font-bold py-3 px-6 rounded-xl hover:bg-orange-600 transition-colors shadow-sm text-sm">
+          Voir nos offres d'emploi
+        </a>
+      </div>
+
+      <!-- Contenu explicatif -->
+      <div class="grid md:grid-cols-2 gap-8 mb-10">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            Domaines d'intervention
+          </h3>
+          <ul class="space-y-4 text-gray-600 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 mt-1.5 bg-orange-500 rounded-full shrink-0"></span>
+              <span><strong>Le domaine pénal :</strong> Intervenir auprès des auteurs d'infractions pour évaluer les risques de récidive et proposer des mesures de réhabilitation.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 mt-1.5 bg-orange-500 rounded-full shrink-0"></span>
+              <span><strong>Le domaine civil :</strong> Fournir des expertises (garde des enfants, droits de visite, capacité mentale).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 mt-1.5 bg-orange-500 rounded-full shrink-0"></span>
+              <span><strong>Le travail auprès des victimes :</strong> Les accompagner, les aider à gérer les traumatismes et les soutenir.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-8">
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+              Méthodes & Objectifs
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Les psychologues légaux utilisent des <strong>évaluations cliniques</strong> approfondies, des <strong>tests psychométriques</strong> et des outils d'évaluation du <strong>risque de récidive</strong>.
+            </p>
+            <p class="text-gray-600 text-sm">
+              L'objectif est d'aider les tribunaux en fournissant des expertises objectives, d'offrir un soutien thérapeutique aux auteurs d'infractions, et d'accompagner les victimes dans leur rétablissement.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</Layout>

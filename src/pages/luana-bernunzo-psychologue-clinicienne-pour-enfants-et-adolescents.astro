@@ -1,0 +1,109 @@
+---
+import CollaborateurLayout from '../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../data/equipe';
+
+// On récupère les infos de Luana depuis le fichier central
+const praticien = equipeData["luana-bernunzo"];
+---
+
+<CollaborateurLayout {...praticien}>
+  
+  <!-- Introduction & Parcours -->
+  <p class="text-lg leading-relaxed mb-6 font-medium text-gray-800">
+    Psychologue clinicienne spécialisée dans l’accompagnement des enfants dès 4 ans, des adolescents et des jeunes adultes.
+  </p>
+  <p class="mb-4 text-gray-600">
+    Je propose d'accompagner les plus jeunes dans leurs chemins de vie, mais également d’apporter mon soutien aux parents qui peuvent parfois se sentir dépassés dans leur rôle.
+  </p>
+  <p class="mb-10 text-gray-600">
+    Forte d'une expérience au sein d'écoles (centres PMS) et en cabinet libéral, je me suis également spécialisée en thérapie assistée par le cheval. Cette approche très complète m’a apporté de nombreux outils inspirés de différents courants de la psychologie : analytique, systémique, mais également de la psychologie corporelle et intégrative.
+  </p>
+
+  <!-- Soins de Première Ligne -->
+  <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-100 mb-10 flex items-start gap-4">
+    <div class="bg-emerald-500 rounded-full p-2 shrink-0 mt-1">
+      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+    </div>
+    <div>
+      <h4 class="font-bold text-emerald-800 mb-1">Psychologue Conventionnée (INAMI)</h4>
+      <p class="text-emerald-700 text-sm">Prise en charge de première ligne pour les patients ayant un statut BIM ou rencontrant des difficultés financières pour payer les séances classiques.</p>
+    </div>
+  </div>
+
+  <!-- Problématiques prises en charge -->
+  <div class="mb-10">
+    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+      <svg class="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+      Problématiques prises en charge
+    </h3>
+    
+    <p class="mb-6 text-gray-700">Je suis à votre disposition pour toutes problématiques entraînant un mal-être ou une souffrance psychique :</p>
+    
+    <div class="grid sm:grid-cols-2 gap-y-3 gap-x-6 text-gray-700">
+      <div class="flex items-start gap-3">
+        <span class="w-1.5 h-1.5 mt-2 bg-orange-500 rounded-full shrink-0"></span>
+        <span>Anxiété et peurs (ex: peur de l'échec)</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="w-1.5 h-1.5 mt-2 bg-orange-500 rounded-full shrink-0"></span>
+        <span>Manque de confiance en soi</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="w-1.5 h-1.5 mt-2 bg-orange-500 rounded-full shrink-0"></span>
+        <span>Décrochage scolaire</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="w-1.5 h-1.5 mt-2 bg-orange-500 rounded-full shrink-0"></span>
+        <span>Troubles du comportement</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="w-1.5 h-1.5 mt-2 bg-orange-500 rounded-full shrink-0"></span>
+        <span>Comportements auto-destructeurs</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="w-1.5 h-1.5 mt-2 bg-orange-500 rounded-full shrink-0"></span>
+        <span>Traumatisme(s) et Deuil</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="w-1.5 h-1.5 mt-2 bg-orange-500 rounded-full shrink-0"></span>
+        <span>État dépressif</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="w-1.5 h-1.5 mt-2 bg-orange-500 rounded-full shrink-0"></span>
+        <span>Conflits familiaux et difficultés relationnelles</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="w-1.5 h-1.5 mt-2 bg-orange-500 rounded-full shrink-0"></span>
+        <span>Soutien à la parentalité</span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="w-1.5 h-1.5 mt-2 bg-orange-500 rounded-full shrink-0"></span>
+        <span>Problématiques psychiatriques</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ateliers -->
+  <div class="bg-orange-50 rounded-2xl p-8 border border-orange-100">
+    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+      <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      Ateliers de groupe
+    </h3>
+    
+    <h4 class="font-bold text-gray-800 mb-2">
+      Confiance en soi et gestion des émotions (Enfants 5-8 ans)
+    </h4>
+    <p class="text-gray-600 text-sm mb-4">
+      En collaboration avec Cristina DI MEO (Kinésiologue).
+    </p>
+    <ul class="space-y-2 text-sm text-gray-700 mb-4">
+      <li class="flex items-center gap-2"><span class="font-bold text-orange-500">Quand :</span> Le vendredi de 16h30 à 18h00</li>
+      <li class="flex items-center gap-2"><span class="font-bold text-orange-500">Tarif :</span> Gratuit (Prise en charge INAMI/RHESEAU)</li>
+      <li class="flex items-center gap-2"><span class="font-bold text-orange-500">Capacité :</span> Limité à 10 enfants maximum</li>
+    </ul>
+    <p class="text-xs text-orange-600 font-semibold uppercase tracking-wider">
+      N'hésitez pas à me contacter pour connaitre les dates du prochain cycle.
+    </p>
+  </div>
+
+</CollaborateurLayout>

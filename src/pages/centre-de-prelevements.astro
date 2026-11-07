@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+// On importe ta photo avec le nom optimisé pour le SEO
+import photoLabo from '../assets/equipe/prise-de-sang-chu-tivoli-binche.jpg';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Centre de Prélèvements CHU Tivoli - Les Oranges",
+  "description": "Prises de sang et analyses médicales sans rendez-vous à Péronnes-lez-Binche (La Louvière). Partenariat avec le CHU Tivoli et le PHU Coeur du Hainaut.",
+  "url": "https://centrelesoranges.be/centre-de-prelevements",
+  "medicalSpecialty": "Pathology",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue Albert Elisabeth (Entrée arrière)",
+    "addressLocality": "Péronnes-lez-Binche",
+    "postalCode": "7134",
+    "addressCountry": "BE"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Wednesday", "Friday"],
+      "opens": "07:30",
+      "closes": "09:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:00",
+      "closes": "10:00"
+    }
+  ]
+};
+---
+
+<Layout title="Prises de sang & Laboratoire CHU Tivoli | Binche (Péronnes)" description="Centre de prélèvements du CHU Tivoli à Péronnes-lez-Binche. Prises de sang SANS rendez-vous le lundi, mercredi, vendredi (7h30-9h) et samedi (8h-10h).">
+  
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <main class="pt-24 pb-16 bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 max-w-5xl">
+      
+      <!-- En-tête Chaleureux (Hero Section avec Photo) -->
+      <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-12 border border-gray-100 flex flex-col md:flex-row">
+        
+        <!-- Côté Image -->
+        <div class="md:w-2/5 relative min-h-[300px] bg-red-50">
+          <Image src={photoLabo} alt="Infirmière réalisant une prise de sang au centre de prélèvements du CHU Tivoli à Binche" class="absolute inset-0 w-full h-full object-cover" />
+          <!-- Léger dégradé pour adoucir le bord de l'image -->
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 md:to-transparent"></div>
+        </div>
+        
+        <!-- Côté Texte -->
+        <div class="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+          <span class="inline-block px-4 py-1.5 bg-red-50 text-red-600 text-sm font-bold rounded-full mb-4 uppercase tracking-wider w-max border border-red-100">
+            Laboratoire & Analyses
+          </span>
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-800 font-heading mb-4 leading-tight">
+            Centre de prélèvements sanguins
+          </h1>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+            Bienvenue dans notre espace de soins géré en partenariat direct avec le <strong class="text-red-500">CHU Tivoli</strong> et le PHU Coeur du Hainaut. Nos infirmiers vous y accueillent dans un cadre chaleureux, serein et professionnel pour toutes vos analyses médicales.
+          </p>
+          <div class="flex items-center gap-3 text-red-500 font-medium bg-red-50 w-max px-4 py-2 rounded-lg">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>Consultations 100% sans rendez-vous</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Informations de fonctionnement (Grille asymétrique) -->
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Colonne Gauche : Horaires & Infos pratiques (Plus large) -->
+        <div class="md:col-span-2 space-y-8">
+          
+          <div class="bg-white rounded-2xl shadow-sm p-8 border border-gray-100">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+              <span class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-500 shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              </span>
+              Nos horaires d'ouverture
+            </h2>
+            
+            <div class="space-y-4">
+              <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-red-50 transition-colors">
+                <span class="font-medium text-gray-700 text-lg">Lundi, Mercredi, Vendredi</span>
+                <span class="bg-white px-4 py-2 rounded-lg text-red-600 font-bold shadow-sm">07h30 - 09h00</span>
+              </div>
+              <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-red-50 transition-colors">
+                <span class="font-medium text-gray-700 text-lg">Samedi</span>
+                <span class="bg-white px-4 py-2 rounded-lg text-red-600 font-bold shadow-sm">08h00 - 10h00</span>
+              </div>
+              <div class="flex justify-between items-center p-4 text-gray-400">
+                <span class="italic">Mardi, Jeudi, Dimanche</span>
+                <span>Fermé</span>
+              </div>
+            </div>
+
+            <!-- Encart "À ne pas oublier" adouci -->
+            <div class="mt-8 p-6 bg-orange-50 rounded-xl border border-orange-100 flex gap-4">
+              <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-800 mb-1">Pour votre visite, pensez à prendre :</h3>
+                <p class="text-gray-600">Votre <strong>prescription médicale</strong>, votre <strong>carte d'identité</strong> et quelques vignettes de votre mutuelle.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Colonne Droite : Accès & Contact -->
+        <div class="md:col-span-1 space-y-6">
+          
+          <!-- L'entrée spéciale (Mise en évidence) -->
+          <div class="bg-white rounded-2xl shadow-sm p-6 border-2 border-red-100 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-red-50 rounded-bl-full -z-10"></div>
+            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              Accès spécifique
+            </h2>
+            <p class="text-gray-600 text-sm mb-4">
+              L'entrée du centre de prélèvements ne se fait pas par la porte principale du Centre Les Oranges.
+            </p>
+            <div class="p-4 rounded-xl text-center bg-gray-50 border border-gray-200">
+              <span class="block text-xs text-gray-500 uppercase tracking-widest mb-1">Entrée par la</span>
+              <strong class="text-lg text-gray-800 block leading-tight mb-1">Rue Albert Elisabeth</strong>
+              <span class="inline-block bg-white px-2 py-1 rounded text-xs text-gray-500 font-medium shadow-sm">Accès par le jardin</span>
+            </div>
+          </div>
+
+          <!-- Contact Labo -->
+          <div class="bg-gray-800 rounded-2xl shadow-sm p-6 text-white text-center">
+            <h2 class="text-lg font-bold mb-3">Une question sur vos résultats ?</h2>
+            <p class="text-gray-400 text-sm mb-6">Contactez directement la cellule laboratoire-ambulatoire du CHU :</p>
+            <a href="tel:064277575" class="block w-full py-3 px-4 bg-white/10 hover:bg-white/20 rounded-xl text-2xl font-bold text-white transition-colors mb-3">
+              064/27.75.75
+            </a>
+            <a href="mailto:labo.ambu@chu-tivoli.be" class="text-red-400 hover:text-red-300 transition-colors text-sm underline">
+              labo.ambu@chu-tivoli.be
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+</Layout>

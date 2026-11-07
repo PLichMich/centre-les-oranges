@@ -1,0 +1,64 @@
+---
+import CollaborateurLayout from '../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../data/equipe';
+
+// On récupère les infos d'Eva depuis le fichier central
+const praticien = equipeData["eva-ludik"];
+---
+
+<CollaborateurLayout {...praticien}>
+  
+  <!-- Introduction & Présentation -->
+  <p class="text-lg leading-relaxed mb-6 font-medium text-gray-800">
+    Psychologue clinicienne et instructrice en méditation de pleine conscience.
+  </p>
+  <p class="mb-10 text-gray-600">
+    J'accompagne les adolescents et les adultes dans la traversée de moments de vie difficiles, de questionnements profonds ou face à la souffrance psychologique et physique.
+  </p>
+
+  <!-- Domaines d'expertise -->
+  <div class="mb-10">
+    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+      <svg class="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+      Mes domaines de prédilection
+    </h3>
+    
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <span class="w-2 h-2 bg-orange-500 rounded-full"></span> Pleine Conscience (Mindfulness)
+        </h4>
+        <p class="text-gray-600 text-sm">Outils de régulation émotionnelle, réduction du stress, de l'anxiété et prévention des rechutes dépressives.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <span class="w-2 h-2 bg-orange-500 rounded-full"></span> Haut Potentiel (HP / HPI)
+        </h4>
+        <p class="text-gray-600 text-sm">Accompagnement des profils atypiques, hypersensibilité, sentiment de décalage et quête de sens.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 sm:col-span-2">
+        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <span class="w-2 h-2 bg-orange-500 rounded-full"></span> Gestion de la douleur chronique
+        </h4>
+        <p class="text-gray-600 text-sm">Soutien psychologique pour les personnes souffrant de douleurs chroniques ou de maladies invalidantes, afin d'apprivoiser l'inconfort et de retrouver une qualité de vie.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ateliers de Pleine Conscience -->
+  <div class="bg-orange-50 rounded-2xl p-8 border border-orange-100 mb-10">
+    <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+      <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+      Ateliers : Cycles de 8 séances
+    </h3>
+    <p class="text-gray-700 text-sm leading-relaxed mb-4">
+      J'organise régulièrement des cycles d'automne de méditation de pleine conscience (8 séances hebdomadaires de +/- 1h30) pour apprendre à réguler ses émotions face au stress, aux ruminations, aux douleurs chroniques ou à l'épuisement.
+    </p>
+    <p class="text-sm font-semibold text-orange-600">
+      Renseignements et inscriptions directement par téléphone ou via notre formulaire de contact.
+    </p>
+  </div>
+
+</CollaborateurLayout>

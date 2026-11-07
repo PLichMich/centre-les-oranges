@@ -1,0 +1,80 @@
+---
+import CollaborateurLayout from '../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../data/equipe';
+
+// On récupère les infos de Cynthia depuis le fichier central
+const praticien = equipeData["cynthia-viola"];
+---
+
+<CollaborateurLayout {...praticien}>
+  
+  <!-- Introduction -->
+  <p class="text-lg leading-relaxed mb-6 font-medium text-gray-800">
+    Je m’appelle Cynthia Viola, conseillère conjugale et familiale formée en thérapie brève.
+  </p>
+  <p class="mb-10 text-gray-600">
+    Depuis 2018, j’accompagne principalement les adolescents et jeunes adultes, ainsi que les couples et les familles qui traversent des moments de doute, de transition ou de questionnement.
+  </p>
+
+  <!-- Approche et outils -->
+  <div class="mb-10">
+    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+      <svg class="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+      Mon approche
+    </h3>
+    
+    <p class="mb-4 text-gray-600">Je suis passionnée par le développement personnel sous toutes ses formes. Ma force première est de créer du lien naturellement : les personnes se sentent rapidement en sécurité, entendues et comprises.</p>
+    
+    <p class="mb-4 text-gray-600">J’offre un accompagnement basé sur :</p>
+    <ul class="grid sm:grid-cols-2 gap-3 text-gray-700 mb-6">
+      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> L’écoute active</li>
+      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> La bienveillance</li>
+      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> L’accueil sans jugement</li>
+      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> Une approche concrète et centrée sur les solutions</li>
+    </ul>
+
+    <p class="mb-4 text-gray-600">Je me forme continuellement à différentes techniques et approches pour vous aider au mieux :</p>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 font-medium text-gray-700 text-center">
+        Ennéagramme
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 font-medium text-gray-700 text-center">
+        Communication Non Violente (CNV)
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 font-medium text-gray-700 text-center sm:col-span-2">
+        Approches émotionnelles et relationnelles modernes
+      </div>
+    </div>
+  </div>
+
+  <!-- Ateliers -->
+  <div class="bg-orange-50 rounded-2xl p-8 border border-orange-100 mb-10">
+    <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+      <svg class="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      Ateliers "Grandir de l'Intérieur"
+    </h3>
+    
+    <p class="mb-4 text-gray-700">En parallèle de mes consultations, je développe un projet qui me tient particulièrement à cœur : des ateliers de développement personnel destinés aux <strong>jeunes de 11 à 18 ans</strong>.</p>
+    
+    <p class="mb-3 text-gray-700 font-medium">L’objectif est d'offrir un espace doux, sécurisant et inspirant où les adolescents peuvent :</p>
+    <ul class="space-y-2 text-gray-700 mb-6">
+      <li class="flex items-start gap-3">
+        <svg class="w-5 h-5 text-orange-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span>Mieux se connaître et comprendre leurs émotions</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <svg class="w-5 h-5 text-orange-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span>Renforcer leur estime et leur confiance en eux</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <svg class="w-5 h-5 text-orange-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span>Développer leurs compétences sociales et trouver leur place avec authenticité</span>
+      </li>
+    </ul>
+
+    <p class="text-gray-600 text-sm italic">
+      Ces ateliers allient activités ludiques, introspection, échanges et outils concrets que les jeunes peuvent réutiliser au quotidien.
+    </p>
+  </div>
+
+</CollaborateurLayout>
