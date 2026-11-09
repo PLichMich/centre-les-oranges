@@ -1,0 +1,37 @@
+---
+import LayoutService from '../../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Cours de Pilates à Binche | Centre Thérapeutique Les Oranges",
+  description: "Découvrez les cours de Pilates au Centre Thérapeutique Les Oranges à Péronnes-lez-Binche avec Nathalie Dath. Renforcement musculaire et posture.",
+  titreService: "Le Pilates",
+  sousTitre: "Renforcement musculaire, posture et conscience corporelle en douceur",
+  praticiens: ["nathalie-dath"] // Lie automatiquement la fiche de Nathalie Dath
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que le Pilates ?</h2>
+  <p>
+    Le <strong>Pilates</strong> est une méthode d'exercice physique douce qui s'inspire du yoga, de la danse et de la gymnastique. Elle a été conçue pour renforcer les muscles profonds du corps, améliorer l'alignement postural et harmoniser la musculature.
+  </p>
+  <p>
+    En se concentrant sur la respiration, la précision des mouvements et la stabilité du centre (le "core"), le Pilates permet de tonifier le corps sans l' traumatiser.
+  </p>
+
+  <h2>Les bienfaits de la méthode</h2>
+  <p>
+    Pratiqué régulièrement au Centre Les Oranges sous la supervision de notre instructrice Nathalie Dath, le Pilates procure de nombreux bienfaits :
+  </p>
+  <ul>
+    <li><strong>Renforcement de la sangle abdominale :</strong> travail en profondeur des muscles abdominaux et du plancher pelvien.</li>
+    <li><strong>Amélioration de la posture :</strong> soulagement des maux de dos chroniques par le redressement de la colonne vertébrale.</li>
+    <li><strong>Souplesse et mobilité :</strong> assouplissement des articulations et gain d'amplitude dans les mouvements du quotidien.</li>
+    <li><strong>Gestion du stress :</strong> la concentration requise sur la respiration favorise un réel lâcher-prise mental.</li>
+  </ul>
+
+  <h2>Pour qui ?</h2>
+  <p>
+    Le Pilates s'adresse à tout le monde, quel que soit l'âge ou la condition physique de départ. Les exercices peuvent être adaptés en fonction des besoins de chacun, qu'il s'agisse de reprise d'activité, de prévention des blessures ou de recherche de bien-être physique.
+  </p>
+</LayoutService>

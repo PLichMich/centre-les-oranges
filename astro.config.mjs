@@ -58,6 +58,9 @@ export default defineConfig({
     '/nos-services/kinesiologie/cristina-di-meo-kinesiologue-instructrice-brain-gym/': '/nos-services/sophrologie',
     '/brain-gym/': '/nos-services/sophrologie',
     '/nos-services/kinesiologie/': '/nos-services/sophrologie',
+    '/gaelle-bulteel': '/clementine-delbruyere',
+    '/nos-services/emilie-ruaut-pedicure-medicale-massotherapeute': '/nos-services/pedicure-medicale',
+    '/nos-services/infirmiere': '/nos-services/prelevements-tivoli',
 
     // 3. L'HISTORIQUE WORDPRESS STRUCTUREL
     '/bienvenue-sur-le-site-internet-du-centre-therapeutique-les-oranges/le-centre-therapeutique-les-oranges/': '/',
@@ -94,6 +97,13 @@ export default defineConfig({
     '/nos-services/sage-femme-infirmiere/adele-chiengue-sage-femme/': '/',
     '/sage-femme-infirmiere/': '/nos-services/sage-femme-infirmiere/',
     '/nouvelle-psychologue-specialisee-en-systemique-hypnose-et-emdr/': '/',
+    '/nos-services/neurologie': '/nos-services/psychologie/neuropsychologie',
+    '/nos-services/nutritionniste/dr-isabelle-janssens-medecin-nutritionniste': '/nos-services/dietetique',
+    '/nos-services/osteopathie/castelein-claire-osteopathe-generale-sportive-et-perinatale': '/osteopathe-d-o',
+    '/nos-services/podologie/podologie-gomree-adeline': '/nos-services/podologie-gomree-adeline',
+    '/nos-services/psychologie/la-therapie-breve/valerie-desclez-psychologue-et-coach-en-developpement-personnel/': '/valerie-desclez',
+    '/nos-services/psychologie/lhypnotherapie/holvoet-aurelie-psychologue-enfants-ados-adultes-familles/': '/holvoet-aurelie',
+    '/nos-services/psychologie/neuropsychologie/wauthia-erika/': '/nos-services/psychologie/',
 
     // --- NETTOYAGE DES ANCIENNES ACTUALITÉS ---
     '/les-nouvelles-du-centre/': '/',

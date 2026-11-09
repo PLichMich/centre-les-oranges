@@ -1,0 +1,38 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Médiation Familiale & Sociale à Binche | Centre Les Oranges",
+  description: "Consultations en médiation familiale, sociale et juridique avec Gwendoline D'Hoop au Centre Thérapeutique Les Oranges à Péronnes-lez-Binche.",
+  titreService: "La Médiation Familiale & Sociale",
+  sousTitre: "Trouver un espace de dialogue constructif pour résoudre les conflits",
+  praticiens: ["gwendoline-dhoop"] // Lie automatiquement la fiche de Gwendoline D'Hoop
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que la médiation ?</h2>
+  <p>
+    La <strong>médiation</strong> est un processus confidentiel et volontaire de résolution des conflits. Elle est menée par un tiers neutre, indépendant et impartial : le médiateur. Son rôle n'est pas de juger ou de trancher, mais de rétablir la communication et d'aider les parties à trouver elles-mêmes des accords mutuellement acceptables et durables.
+  </p>
+
+  <h2>Médiation familiale</h2>
+  <p>
+    La médiation familiale s'adresse aux couples, aux parents (en cours de séparation ou séparés) ou aux familles traversant des tensions ou une crise relationnelle. Elle permet d'aborder sereinement des sujets délicats tels que :
+  </p>
+  <ul>
+    <li>L'organisation de la co-parentalité et l'hébergement des enfants</li>
+    <li>La réorganisation de la vie quotidienne et financière suite à une séparation</li>
+    <li>Les conflits liés à des successions ou des différends intergénérationnels</li>
+  </ul>
+
+  <h2>Médiation sociale</h2>
+  <p>
+    La médiation sociale vise à renouer le dialogue dans les contextes de tensions relationnelles, qu'elles concernent le cadre de vie, les relations de voisinage ou les différends au sein de structures collectives. L'objectif est de prévenir l'enlisement du conflit et d'aboutir à des solutions concrètes.
+  </p>
+
+  <h2>Comment se déroulent les séances ?</h2>
+  <p>
+    L'accompagnement commence généralement par un entretien d'information préalable pour poser le cadre, évaluer la faisabilité de la démarche et s'assurer de l'adhésion de chacun. S'ensuivent des séances de négociation rythmées par les besoins des participants, dans un climat de respect et de sécurité juridique et émotionnelle.
+  </p>
+</LayoutService>

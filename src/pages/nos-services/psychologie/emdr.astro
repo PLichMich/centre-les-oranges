@@ -1,0 +1,49 @@
+---
+import LayoutService from '../../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "EMDR à Binche | Centre Thérapeutique Les Oranges",
+  description: "Thérapie EMDR / PDMY (désensibilisation et reprogrammation par mouvements oculaires) avec Daniela Cisamolo et Giovanna Trunfio au Centre Les Oranges.",
+  titreService: "L'EMDR",
+  sousTitre: "Désensibilisation et reprogrammation par les mouvements oculaires pour guérir les traumatismes",
+  praticiens: ["daniela-cisamolo", "giovanna-trunfio"] // Lie automatiquement les fiches correspondantes
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que l'EMDR ?</h2>
+  <p>
+    L'<strong>EMDR</strong> (pour <em>Eye Movement Desensitization and Reprocessing</em>) ou <strong>PDMY</strong> a été développée par F. Shapiro en 1987 et est validée aujourd’hui comme technique thérapeutique par l’OMS. 
+  </p>
+  <p>
+    Plus connue sous le nom de "thérapie par les yeux", elle permet de guérir de nombreux traumatismes et événements de vie douloureux. Elle est aujourd’hui largement utilisée pour traiter un large éventail de difficultés psychologiques.
+  </p>
+
+  <h2>L'EMDR, comment ça marche ?</h2>
+  <p>
+    La thérapie EMDR suit une procédure rigoureuse basée sur des stimulations bilatérales alternées (qui peuvent être visuelles, tactiles ou sonores). Le mouvement rythmique des yeux s'apparente au processus qui a lieu spontanément pendant le sommeil paradoxal (lors des rêves).
+  </p>
+  <p>
+    Cette stimulation facilite le transfert d’informations entre les différentes parties du cerveau, permettant ainsi le retraitement et la guérison. Elle aide à recoder les images, les perceptions et les souvenirs stockés de manière négative dans le cerveau émotionnel pour en diminuer la charge affective et modifier les croyances limitantes associées.
+  </p>
+
+  <h2>Pour quelles difficultés consulter ?</h2>
+  <p>
+    L'EMDR est particulièrement reconnue et utilisée pour la prise en charge de :
+  </p>
+  <ul>
+    <li><strong>Les événements traumatiques :</strong> accidents, agressions, abus ou chocs violents.</li>
+    <li><strong>Les peurs et angoisses :</strong> phobies, attaques de panique et insécurités profondes.</li>
+    <li><strong>La dépression et le burnout :</strong> épuisement professionnel et états dépressifs persistants.</li>
+    <li><strong>Les deuils et ruptures :</strong> accompagnement des séparations difficiles ou des deuils bloqués.</li>
+    <li><strong>L'estime de soi :</strong> sentiment de dévalorisation, manque de confiance en soi.</li>
+  </ul>
+
+  <h2>Comment se déroule l'accompagnement ?</h2>
+  <p>
+    La prise en charge commence par un entretien préparatoire approfondi (anamnèse) pour cibler la problématique et poser un cadre de sécurité. 
+  </p>
+  <p>
+    Au Centre Thérapeutique Les Oranges, nos praticiennes intègrent souvent cet outil puissant au sein d'un parcours psychothérapeutique global, qu'il s'agisse de thérapies classiques, de sexothérapie ou de coaching, dès qu'un souvenir douloureux ou un blocage nécessite ce travail de libération.
+  </p>
+</LayoutService>

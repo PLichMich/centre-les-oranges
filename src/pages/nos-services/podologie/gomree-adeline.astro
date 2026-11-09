@@ -1,0 +1,67 @@
+---
+// Adapte le nombre de '../' selon l'emplacement exact de ton fichier
+import CollaborateurLayout from '../../../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../../../data/equipe';
+
+const membre = equipeData['adeline-gomree'];
+---
+
+<CollaborateurLayout {...membre}>
+  <div class="space-y-6 text-stone-700 leading-relaxed text-base">
+    
+    <!-- Bandeau d'information remplacement -->
+    <div class="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-2xl shadow-sm flex items-start gap-3.5">
+      <svg class="w-6 h-6 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <p class="text-sm sm:text-base text-amber-900 leading-relaxed">
+        <strong>Information importante :</strong> Adeline Gomrée est momentanément remplacée par notre podologue <strong>Pauline Horny</strong>. Vous pouvez prendre rendez-vous au <a href="tel:0478045563" class="font-bold underline hover:text-amber-700">0478/04.55.63</a> ou directement via l'<a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0gyp2pyjCyvPJFTa1v3xN_RRoRJix-jFSmssxOj03yZVNT9vZ81c3wkmhQrOHU1VoU7JPdOekT?gv=true" target="_blank" rel="noopener noreferrer" class="underline font-bold hover:text-amber-700">agenda en ligne</a>.
+      </p>
+    </div>
+
+    <!-- Section Présentation -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-4 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        </svg>
+        Présentation
+      </h2>
+      <div class="space-y-4 text-stone-600">
+        <p>
+          Podologue-podothérapeute diplômée de la Haute École Condorcet de Montignies-sur-Sambre et formée en réflexologie plantaire, Adeline Gomrée (ainsi que sa remplaçante Pauline Horny) reçoit les enfants, adolescents, adultes et seniors pour des soins de prévention et de thérapie.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section Spécialités -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-6 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+        </svg>
+        Spécialités
+      </h2>
+
+      <ul class="space-y-3 pl-2 text-stone-600">
+        <li class="flex items-start gap-2.5">
+          <span class="text-amber-600 font-bold mt-0.5">•</span>
+          <span><strong class="text-stone-800">Soins de podologie :</strong> pathologies au niveau de la peau des pieds (cors, durillons, crevasses) et des ongles (ongles incarnés, reconstruction unguéale).</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="text-amber-600 font-bold mt-0.5">•</span>
+          <span><strong class="text-stone-800">Biomécanique :</strong> analyse de la marche et réalisation de semelles (orthèses fonctionnelles) et d'orthoplasties sur mesure.</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="text-amber-600 font-bold mt-0.5">•</span>
+          <span><strong class="text-stone-800">Suivi spécifique :</strong> prise en charge conventionnée des patients diabétiques.</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="text-amber-600 font-bold mt-0.5">•</span>
+          <span><strong class="text-stone-800">Bien-être :</strong> séances de réflexologie plantaire.</span>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+</CollaborateurLayout>

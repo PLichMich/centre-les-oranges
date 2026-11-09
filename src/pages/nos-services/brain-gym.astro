@@ -1,0 +1,37 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Brain Gym & Kinésiologie à Binche | Centre Les Oranges",
+  description: "Découvrez le Brain Gym au Centre Thérapeutique Les Oranges : mouvements pour l'apprentissage, la concentration, la gestion du stress et des émotions.",
+  titreService: "Brain Gym",
+  sousTitre: "Des mouvements simples pour stimuler le corps et l'esprit",
+  praticiens: ["lory-soni", "cristina-di-meo"] // Renseigne ici les slugs correspondants dans equipe.ts si besoin
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que le Brain Gym ?</h2>
+  <p>
+    Le <strong>Brain Gym</strong> (ou gymnastique du cerveau) est une approche éducative qui utilise des mouvements corporels simples et ludiques pour stimuler les fonctions cérébrales. Développé par le Dr Paul Dennison, il repose sur l'idée que le mouvement est la porte d'entrée de l'apprentissage.
+  </p>
+  <p>
+    En effectuant des mouvements spécifiques, on favorise la communication entre les différents hémisphères du cerveau, ce qui aide à libérer les blocages émotionnels, physiques et cognitifs.
+  </p>
+
+  <h2>Pour qui et pour quoi consulter ?</h2>
+  <p>
+    Le Brain Gym s'adresse à tout le monde : enfants, étudiants, adultes et seniors. Il est particulièrement recommandé pour :
+  </p>
+  <ul>
+    <li><strong>Les troubles des apprentissages :</strong> difficultés de lecture, d'écriture, d'orthographe ou de calcul.</li>
+    <li><strong>La concentration et l'attention :</strong> aide pour les enfants hyperactifs ou distraits (TDAH).</li>
+    <li><strong>La gestion du stress :</strong> préparation aux examens, trac, gestion des émotions et des peurs.</li>
+    <li><strong>La coordination et la posture :</strong> amélioration de l'ancrage, de l'équilibre et de la motricité fine.</li>
+  </ul>
+
+  <h2>Comment se déroule une séance ?</h2>
+  <p>
+    Une séance de Brain Gym se pratique dans le cadre des consultations de kinésiologie. Elle combine un échange bienveillant pour identifier votre objectif avec des exercices corporels ciblés (mouvements croisés, étirements, équilibrages) que vous pourrez facilement reproduire chez vous ou à l'école.
+  </p>
+</LayoutService>

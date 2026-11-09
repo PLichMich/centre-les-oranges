@@ -1,0 +1,47 @@
+---
+import LayoutService from '../../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Hypnothérapie à Binche | Centre Thérapeutique Les Oranges",
+  description: "Séances d'hypnose thérapeutique et hypnothérapie avec Aurélie Holvoet et le Dr Alessia Dal Bo au Centre Thérapeutique Les Oranges à Péronnes-lez-Binche.",
+  titreService: "L'Hypnothérapie",
+  sousTitre: "Accéder aux ressources de l'inconscient pour initier le changement et retrouver l'apaisement",
+  praticiens: ["holvoet-aurelie", "alessia-dal-bo"] // Lie automatiquement les fiches correspondantes
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Qu'est-ce que l'hypnose ?</h2>
+  <p>
+    L'<strong>hypnose</strong> est un état de conscience modifié, un état naturel que chacun de nous expérimente plusieurs fois par jour (par exemple, juste avant de s'endormir ou lors de moments de rêverie et de déconnexion au cours de la journée).
+  </p>
+  <p>
+    En thérapie, l'hypnose permet d’accéder aux ressources de l'inconscient afin de se rapprocher des objectifs fixés. Grâce à divers outils, le thérapeute devient un accompagnateur bienveillant dans le processus du changement souhaité par son patient.
+  </p>
+  <p>
+    L'approche est respectueuse de la personne grâce à un langage permissif et adapté. Le praticien s'appuie sur des métaphores, des anecdotes et des suggestions indirectes pour lever les résistances au changement ou aider à accepter ce qui ne peut être changé.
+  </p>
+
+  <h2>Indications et bienfaits</h2>
+  <p>
+    Les champs d’application de l’hypnose thérapeutique sont très vastes et agissent à trois grands niveaux :
+  </p>
+  <ul>
+    <li><strong>Sur le plan physique :</strong> problèmes psychosomatiques, gestion de la douleur, troubles dermatologiques, etc.</li>
+    <li><strong>Sur le plan comportemental :</strong> gestion du poids, amélioration de la qualité du sommeil, récupération physique pour les sportifs, gestion de la timidité et des phobies.</li>
+    <li><strong>En développement personnel et émotionnel :</strong> gestion du stress et des émotions (colère, tristesse), dépassement de traumatismes, préparation à des objectifs particuliers (examens), burnout, confiance et estime de soi.</li>
+  </ul>
+
+  <h2>Comment se déroule une séance ?</h2>
+  <p>
+    Une séance dure généralement entre 45 minutes et une heure et s'articule autour de trois temps forts :
+  </p>
+  <ol class="list-decimal pl-5 space-y-2 mb-6">
+    <li><strong>Le dialogue préliminaire :</strong> pour faire le point sur vos attentes et votre situation.</li>
+    <li><strong>L'hypnose proprement dite :</strong> la phase de travail en état modifié de conscience.</li>
+    <li><strong>Le dialogue post-hypnotique :</strong> un retour sur votre ressenti, vos difficultés et l'intégration de la séance.</li>
+  </ol>
+  <p>
+    En général, 3 à 10 séances suffisent pour un problème ponctuel. Afin de favoriser l'autonomie du patient, le praticien enseigne également des exercices d'<strong>autohypnose</strong> pour permettre d'avancer plus rapidement au quotidien.
+  </p>
+</LayoutService>

@@ -1,0 +1,40 @@
+---
+import LayoutService from '../../layouts/LayoutService.astro';
+
+const serviceData = {
+  title: "Diététique & Nutrition à Binche | Centre Les Oranges",
+  description: "Consultations en diététique et rééquilibrage alimentaire avec Clémentine Delbruyère au Centre Thérapeutique Les Oranges à Péronnes-lez-Binche.",
+  titreService: "Diététique & Nutrition",
+  sousTitre: "Retrouvez un équilibre alimentaire durable et une relation saine avec l'alimentation",
+  praticiens: ["clementine-delbruyere"] // Lie automatiquement la fiche de Clémentine Delbruyère
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>L'approche en diététique et nutrition</h2>
+  <p>
+    Manger sainement ne devrait pas être synonyme de privation ou de régime strict. Au Centre Thérapeutique Les Oranges, notre accompagnement en diététique repose sur une écoute bienveillante de vos besoins, de votre mode de vie et de vos habitudes.
+  </p>
+  <p>
+    L'objectif est de vous guider pas à pas vers un rééquilibrage alimentaire durable, en tenant compte de votre santé globale, de votre métabolisme et de votre bien-être psychologique.
+  </p>
+
+  <h2>Pourquoi consulter une diététicienne ?</h2>
+  <p>
+    Les consultations s'adressent à toute personne désireuse d'améliorer sa santé par l'assiette, que ce soit pour :
+  </p>
+  <ul>
+    <li><strong>Un rééquilibrage alimentaire :</strong> retrouver un poids de forme de manière saine et sans frustration.</li>
+    <li><strong>Des troubles digestifs :</strong> apaiser les inconforts intestinaux (ballonnements, syndrome de l'intestin irritable, intolérances).</li>
+    <li><strong>Des pathologies spécifiques :</strong> accompagnement du diabète, de l'hypertension, du cholestérol ou de troubles hormonaux (SOPK, thyroïde).</li>
+    <li><strong>Des besoins particuliers :</strong> alimentation de la femme enceinte, du sportif, de l'enfant ou de l'adolescent.</li>
+  </ul>
+
+  <h2>Comment se déroule le suivi ?</h2>
+  <p>
+    La première séance est un temps d'échange approfondi pour dresser votre bilan nutritionnel, analyser vos habitudes quotidiennes, vos objectifs et vos éventuelles contraintes. 
+  </p>
+  <p>
+    Les consultations de suivi permettent ensuite d'ajuster les conseils, d'ancrer de nouvelles habitudes sur le long terme et de surmonter ensemble les difficultés rencontrées, toujours à votre rythme.
+  </p>
+</LayoutService>
