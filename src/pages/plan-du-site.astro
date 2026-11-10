@@ -1,0 +1,153 @@
+---
+// src/pages/plan-du-site.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Plan du site | Centre Thérapeutique Les Oranges"
+  description="Consultez l'ensemble des pages, services, ateliers et spécialistes du Centre Thérapeutique Les Oranges à Péronnes-lez-Binche."
+>
+  <main class="pt-24 pb-16 bg-stone-50 min-h-screen">
+    <div class="container mx-auto px-4 max-w-5xl">
+      
+      <!-- En-tête -->
+      <div class="bg-white rounded-3xl p-8 sm:p-10 mb-8 border border-stone-200 shadow-sm text-center">
+        <span class="inline-block px-4 py-1.5 bg-amber-100 text-amber-900 text-xs font-bold rounded-full mb-3 uppercase tracking-wider">
+          Navigation & SEO
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-bold font-['Lora',serif] text-stone-900 mb-3">
+          Plan du site
+        </h1>
+        <p class="text-stone-600 max-w-2xl mx-auto text-base">
+          Retrouvez l'arborescence complète de nos consultations, cours collectifs, membres de l'équipe et opportunités professionnelles.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Colonne 1 -->
+        <div class="space-y-8">
+          
+          <!-- Bloc Général & Présentation -->
+          <section class="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200 shadow-sm">
+            <h2 class="text-lg font-bold font-['Lora',serif] text-stone-900 pb-3 border-b-2 border-amber-500 mb-4 flex items-center gap-2">
+              <span class="text-xl">🏡</span> Le Centre
+            </h2>
+            <ul class="space-y-2.5 text-sm text-stone-700">
+              <li><a href="/" class="hover:text-amber-700 font-medium transition-colors">Accueil</a></li>
+              <li><a href="/annuaire" class="hover:text-amber-700 font-medium transition-colors">Annuaire des praticiens</a></li>
+              <li><a href="/contact" class="hover:text-amber-700 font-medium transition-colors">Contact, plan & accès</a></li>
+              <li><a href="/centre-de-prelevements" class="hover:text-amber-700 font-medium transition-colors">Centre de prélèvements CHU Tivoli (Prises de sang)</a></li>
+            </ul>
+          </section>
+
+          <!-- Bloc Pôle Psychologie & Mental -->
+          <section class="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200 shadow-sm">
+            <h2 class="text-lg font-bold font-['Lora',serif] text-stone-900 pb-3 border-b-2 border-amber-500 mb-4 flex items-center gap-2">
+              <span class="text-xl">🧠</span> Psychologie & Santé Mentale
+            </h2>
+            <ul class="space-y-2 text-sm text-stone-700">
+              <li><a href="/nos-services/psychologie" class="font-bold text-stone-900 hover:text-amber-700">Psychologie (Vue d'ensemble)</a></li>
+              <li class="pl-3 border-l-2 border-amber-200 space-y-2 mt-2">
+                <div><a href="/nos-services/psychologie/psychologie-cognitive-et-comportementale" class="hover:text-amber-700 transition-colors">Thérapie Cognitivo-Comportementale (TCC)</a></div>
+                <div><a href="/nos-services/psychologie/la-therapie-breve" class="hover:text-amber-700 transition-colors">Thérapie brève orientée solutions</a></div>
+                <div><a href="/nos-services/psychologie/emdr" class="hover:text-amber-700 transition-colors">EMDR & PDMY (Traumatismes)</a></div>
+                <div><a href="/nos-services/psychologie/neuropsychologie" class="hover:text-amber-700 transition-colors">Neuropsychologie & bilans (QI, TDAH)</a></div>
+                <div><a href="/nos-services/psychologie/meditation-pleine-conscience" class="hover:text-amber-700 transition-colors">Méditation de pleine conscience (Mindfulness)</a></div>
+                <div><a href="/nos-services/psychologie/lhypnotherapie" class="hover:text-amber-700 transition-colors">Hypnothérapie</a></div>
+                <div><a href="/nos-services/psychologie-legale" class="hover:text-amber-700 transition-colors">Psychologie légale</a></div>
+                <div><a href="/nos-services/sexologie" class="hover:text-amber-700 transition-colors">Sexologie & coaching amoureux</a></div>
+                <div><a href="/nos-services/mediation-familiale" class="hover:text-amber-700 transition-colors">Médiation familiale & sociale</a></div>
+                <div><a href="/equipe/cynthia-viola" class="hover:text-amber-700 transition-colors">Conseil conjugal et familial</a></div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Bloc Recrutement & Collaboration -->
+          <section class="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200 shadow-sm">
+            <h2 class="text-lg font-bold font-['Lora',serif] text-stone-900 pb-3 border-b-2 border-amber-500 mb-4 flex items-center gap-2">
+              <span class="text-xl">🤝</span> Rejoindre l'Équipe
+            </h2>
+            <ul class="space-y-2 text-sm text-stone-700">
+              <li><a href="/envie-de-rejoindre-notre-equipe" class="font-bold text-stone-900 hover:text-amber-700">Location de cabinets & espaces indépendants</a></li>
+              <li class="pl-3 border-l-2 border-orange-200 space-y-2 mt-2">
+                <div><a href="/envie-de-rejoindre-notre-equipe/offre-demploi-kinesitherapeute-independant" class="hover:text-amber-700 transition-colors">Offre : Kinésithérapeute indépendant(e)</a></div>
+                <div><a href="/envie-de-rejoindre-notre-equipe/offre-demploi-logopede-independante" class="hover:text-amber-700 transition-colors">Offre : Logopède indépendant(e)</a></div>
+                <div><a href="/envie-de-rejoindre-notre-equipe/offre-de-collaboration-mediateurtrice-familiale" class="hover:text-amber-700 transition-colors">Offre : Médiateur(trice) familial(e)</a></div>
+              </li>
+            </ul>
+          </section>
+
+        </div>
+
+        <!-- Colonne 2 -->
+        <div class="space-y-8">
+          
+          <!-- Bloc Paramédical & Bien-être -->
+          <section class="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200 shadow-sm">
+            <h2 class="text-lg font-bold font-['Lora',serif] text-stone-900 pb-3 border-b-2 border-amber-500 mb-4 flex items-center gap-2">
+              <span class="text-xl">🌿</span> Paramédical & Corps
+            </h2>
+            <ul class="space-y-2.5 text-sm text-stone-700">
+              <li><a href="/nos-services/osteopathie" class="hover:text-amber-700 transition-colors">Ostéopathie</a></li>
+              <li><a href="/nos-services/kinesitherapeute" class="hover:text-amber-700 transition-colors">Kinésithérapie</a></li>
+              <li><a href="/nos-services/psychomotricite" class="hover:text-amber-700 transition-colors">Psychomotricité</a></li>
+              <li><a href="/nos-services/ergotherapie" class="hover:text-amber-700 transition-colors">Ergothérapie</a></li>
+              <li><a href="/nos-services/logopedie" class="hover:text-amber-700 transition-colors">Logopédie</a></li>
+              <li><a href="/nos-services/podologie" class="hover:text-amber-700 transition-colors">Podologie & podo-réflexologie</a></li>
+              <li><a href="/nos-services/pedicure-medicale" class="hover:text-amber-700 transition-colors">Pédicure médicale</a></li>
+              <li><a href="/nos-services/dietetique" class="hover:text-amber-700 transition-colors">Diététique & nutrition</a></li>
+              <li><a href="/nos-services/nutritionniste" class="hover:text-amber-700 transition-colors">Médecine nutritionnelle</a></li>
+              <li><a href="/nos-services/naturopathie" class="hover:text-amber-700 transition-colors">Naturopathie</a></li>
+              <li><a href="/nos-services/sophrologie" class="hover:text-amber-700 transition-colors">Sophrologie</a></li>
+              <li><a href="/massotherapie-massages-assis" class="hover:text-amber-700 transition-colors">Massothérapie & massages assis</a></li>
+              <li><a href="/nos-services/brain-gym" class="hover:text-amber-700 transition-colors">Brain Gym</a></li>
+            </ul>
+          </section>
+
+          <!-- Bloc Ateliers Collectifs -->
+          <section class="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200 shadow-sm">
+            <h2 class="text-lg font-bold font-['Lora',serif] text-stone-900 pb-3 border-b-2 border-amber-500 mb-4 flex items-center gap-2">
+              <span class="text-xl">🧘‍♀️</span> Ateliers & Cours Collectifs
+            </h2>
+            <ul class="space-y-2 text-sm text-stone-700">
+              <li><a href="/nos-services/ateliers" class="font-bold text-stone-900 hover:text-amber-700">Ateliers de groupes (Calendrier)</a></li>
+              <li class="pl-3 border-l-2 border-amber-200 space-y-2 mt-2">
+                <div><a href="/nos-services/ateliers/yoga" class="hover:text-amber-700 transition-colors">Yoga & Yoga sur chaise</a></div>
+                <div><a href="/nos-services/ateliers/pilates" class="hover:text-amber-700 transition-colors">Pilates</a></div>
+                <div><a href="/nos-services/ateliers/ateliers-formations-a-venir" class="hover:text-amber-700 transition-colors">Ateliers ponctuels & formations</a></div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Bloc Profils des Praticiens -->
+          <section class="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200 shadow-sm">
+            <h2 class="text-lg font-bold font-['Lora',serif] text-stone-900 pb-3 border-b-2 border-amber-500 mb-4 flex items-center gap-2">
+              <span class="text-xl">👥</span> Fiches des Thérapeutes
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-xs text-stone-700">
+              <a href="/equipe/aurelie-holvoet" class="hover:text-amber-700">Aurélie Holvoet</a>
+              <a href="/equipe/valerie-desclez" class="hover:text-amber-700">Valérie Desclez</a>
+              <a href="/equipe/celine-vekeman" class="hover:text-amber-700">Céline Vekeman</a>
+              <a href="/equipe/daniela-cisamolo" class="hover:text-amber-700">Daniela Cisamolo</a>
+              <a href="/equipe/giovanna-trunfio" class="hover:text-amber-700">Giovanna Trunfio</a>
+              <a href="/equipe/luana-bernunzo" class="hover:text-amber-700">Luana Bernunzo</a>
+              <a href="/equipe/eva-ludik" class="hover:text-amber-700">Eva Ludik</a>
+              <a href="/equipe/alessia-dal-bo" class="hover:text-amber-700">Dr Alessia Dal Bo</a>
+              <a href="/equipe/anne-mengeot" class="hover:text-amber-700">Anne Mengeot</a>
+              <a href="/equipe/cathy-malosto" class="hover:text-amber-700">Cathy Malosto</a>
+              <a href="/equipe/gwendoline-dhoop" class="hover:text-amber-700">Gwendoline D'Hoop</a>
+              <a href="/equipe/elise-vandevoorde" class="hover:text-amber-700">Elise Vandevoorde</a>
+              <a href="/equipe/lydie-jugnon" class="hover:text-amber-700">Lydie Jugnon</a>
+              <a href="/equipe/adeline-gomree" class="hover:text-amber-700">Adeline Gomrée</a>
+              <a href="/equipe/cynthia-viola" class="hover:text-amber-700">Cynthia Viola</a>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</Layout>

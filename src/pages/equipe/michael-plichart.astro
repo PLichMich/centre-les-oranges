@@ -1,0 +1,100 @@
+---
+// src/pages/equipe/michael-plichart.astro
+import CollaborateurLayout from '../../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../../data/equipe';
+
+const praticien = equipeData["michael-plichart"];
+---
+
+<CollaborateurLayout {...praticien}>
+  <div class="space-y-8 text-stone-700 leading-relaxed text-base">
+    
+    <!-- Section Présentation -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-4 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        </svg>
+        Présentation & Démarche
+      </h2>
+      <div class="space-y-4 text-stone-600">
+        <p>
+          Psychologue clinicien et psychothérapeute spécialisé en <strong>Thérapies Cognitives et Comportementales (TCC)</strong>, Michaël Plichart reçoit les grands adolescents, adultes et couples au Centre Thérapeutique Les Oranges.
+        </p>
+        <p>
+          Formé aux approches scientifiques validées (TCC de 3ᵉ vague, pleine conscience / Mindfulness, régulation émotionnelle), le travail thérapeutique se déroule en collaboration active : identification précise des schémas de pensée, analyse fonctionnelle des comportements et mise en place d'expérimentations concrètes au quotidien.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section Champs d'intervention -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-6 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012-2m-6 9l2 2 4-4"></path>
+        </svg>
+        Motifs de consultation & Accompagnements
+      </h2>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-stone-50 p-4 rounded-xl border border-stone-200/60">
+          <h3 class="text-sm font-bold uppercase tracking-wider text-amber-900 mb-2">Troubles anxieux & humeur</h3>
+          <ul class="space-y-2 text-stone-600 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Anxiété généralisée, attaques de panique et agoraphobie</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Phobies spécifiques et anxiété sociale</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Troubles obsessionnels compulsifs (TOC)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Épisodes dépressifs et gestion des ruminations mentales</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-stone-50 p-4 rounded-xl border border-stone-200/60">
+          <h3 class="text-sm font-bold uppercase tracking-wider text-amber-900 mb-2">Santé au travail & vie de couple</h3>
+          <ul class="space-y-2 text-stone-600 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Stress chronique, épuisement professionnel (burnout)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Thérapie de couple et communication interpersonnelle</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Affirmation de soi et gestion des émotions intenses</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Pratique de la méditation de pleine conscience (Mindfulness)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Ateliers collectifs -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-4 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
+        Ateliers & Groupes thérapeutiques
+      </h2>
+      <p class="text-stone-600 leading-relaxed">
+        Michaël co-anime régulièrement au centre des cycles d'ateliers en groupe axés sur la <strong>gestion du stress et la prévention du burnout par les TCC</strong> (notamment en binôme avec Céline Mahieu), ainsi que des sessions d'initiation et de pratique de la <strong>méditation de pleine conscience</strong>.
+      </p>
+    </section>
+
+  </div>
+</CollaborateurLayout>

@@ -1,0 +1,83 @@
+---
+// src/pages/equipe/celine-mahieu.astro
+import CollaborateurLayout from '../../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../../data/equipe';
+
+const praticien = equipeData["celine-mahieu"] || equipeData["celine-mahieux"];
+---
+
+<CollaborateurLayout {...praticien}>
+  <div class="space-y-8 text-stone-700 leading-relaxed text-base">
+    
+    <!-- Section Présentation -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-4 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        </svg>
+        Présentation & Spécialités
+      </h2>
+      <div class="space-y-4 text-stone-600">
+        <p>
+          Psychologue clinicienne cognitivo-comportementaliste (TCC), Céline Mahieu consulte au Centre Thérapeutique Les Oranges. Elle propose des suivis individualisés pour adolescents et adultes en <strong>français, anglais et italien</strong>.
+        </p>
+        <p>
+          Son cadre d'intervention repose sur l'écoute bienveillante, la psychoéducation et l'apprentissage d'outils concrets pour surmonter les blocages émotionnels et relationnels.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section Domaines d'accompagnement -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-6 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012-2m-6 9l2 2 4-4"></path>
+        </svg>
+        Domaines de prise en charge
+      </h2>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-stone-50 p-4 rounded-xl border border-stone-200/60">
+          <h3 class="text-sm font-bold uppercase tracking-wider text-amber-900 mb-2">Thérapie individuelle</h3>
+          <ul class="space-y-2 text-stone-600 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Anxiété, crises d'angoisse et phobies</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Gestion du stress, surcharge mentale et burnout</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Dépression, perte de motivation et régulation de l'humeur</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Estime de soi, confiance en soi et affirmation personnelle</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-stone-50 p-4 rounded-xl border border-stone-200/60">
+          <h3 class="text-sm font-bold uppercase tracking-wider text-amber-900 mb-2">Spécificités & Consultations multilingues</h3>
+          <ul class="space-y-2 text-stone-600 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Consultations en <strong>Français</strong>, <strong>English</strong> et <strong>Italiano</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Accompagnement des transitions de vie et difficultés relationnelles</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span>Co-animation d'ateliers de gestion du stress et burnout</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</CollaborateurLayout>

@@ -1,0 +1,150 @@
+---
+import CollaborateurLayout from '../../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../../data/equipe';
+import { Image } from 'astro:assets';
+
+// 📸 Import de l'image spécifique pour les massages
+import photoMassage from '../../assets/equipe/Massage-AMA.jpg';
+
+const membre = equipeData['cathy-malosto'];
+---
+
+<CollaborateurLayout {...membre}>
+  <div class="space-y-6 text-stone-700 leading-relaxed text-base">
+    
+    <!-- Section Présentation -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-4 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        </svg>
+        Présentation
+      </h2>
+      <div class="space-y-4 text-stone-600">
+        <p>
+          Vous souhaitez (apprendre à) vous relaxer, lâcher prise ? 
+        </p>
+        <p>
+          Je vous reçois pour des consultations individuelles ou familiales ainsi que lors d’ateliers de groupe au Centre Thérapeutique Les Oranges.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section Mes spécialités -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-6 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+        </svg>
+        Mes spécialités
+      </h2>
+
+      <ul class="space-y-3 pl-2 text-stone-600">
+        <li class="flex items-start gap-2.5">
+          <span class="text-amber-600 font-bold mt-0.5">•</span>
+          <span><strong class="text-stone-800">Sophrologie :</strong> pour enfants dès 5 ans, adolescents, adultes, femmes enceintes (préparation à la naissance).</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="text-amber-600 font-bold mt-0.5">•</span>
+          <span><strong class="text-stone-800">Massages assis habillés (Amma) :</strong> pour adolescents et adultes.</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="text-amber-600 font-bold mt-0.5">•</span>
+          <span><strong class="text-stone-800">Massages parents/enfants (ou bébé) :</strong> Protocole MISP.</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="text-amber-600 font-bold mt-0.5">•</span>
+          <span><strong class="text-stone-800">Reiki :</strong> soins énergétiques et bien-être global.</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="text-amber-600 font-bold mt-0.5">•</span>
+          <span><strong class="text-stone-800">Remédiations scolaires :</strong> pour les élèves de primaires (en tant qu'ancienne institutrice primaire).</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Section Problématiques prises en charge -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-6 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+        </svg>
+        Exemple de problématiques prises en charge
+      </h2>
+
+      <div class="grid sm:grid-cols-2 gap-3">
+        <div class="p-3 bg-stone-50 rounded-xl border border-stone-200/60 text-sm text-stone-700 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span> Stress et anxiété
+        </div>
+        <div class="p-3 bg-stone-50 rounded-xl border border-stone-200/60 text-sm text-stone-700 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span> Nervosité, impulsions
+        </div>
+        <div class="p-3 bg-stone-50 rounded-xl border border-stone-200/60 text-sm text-stone-700 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span> Troubles de l’attention (TDAH)
+        </div>
+        <div class="p-3 bg-stone-50 rounded-xl border border-stone-200/60 text-sm text-stone-700 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span> Deuil difficile
+        </div>
+        <div class="p-3 bg-stone-50 rounded-xl border border-stone-200/60 text-sm text-stone-700 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span> Burnout
+        </div>
+        <div class="p-3 bg-stone-50 rounded-xl border border-stone-200/60 text-sm text-stone-700 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span> Douleurs difficiles à supporter
+        </div>
+        <div class="p-3 bg-stone-50 rounded-xl border border-stone-200/60 text-sm text-stone-700 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span> Manque de confiance en soi
+        </div>
+        <div class="p-3 bg-stone-50 rounded-xl border border-stone-200/60 text-sm text-stone-700 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span> Problèmes de sommeil
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Ateliers de groupe -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-4 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
+        Ateliers de groupe
+      </h2>
+      
+      <div class="space-y-4 text-stone-600 mb-6">
+        <p>
+          Je peux également vous recevoir lors d’ateliers en groupes (sur inscriptions limitées). Je vous invite à me contacter pour vous inscrire sur ma liste de participants. L’atelier débutera lorsque minimum 4 personnes seront inscrites.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="p-4 bg-amber-50/50 rounded-xl border border-amber-200/60 space-y-2">
+          <h3 class="text-base font-bold text-amber-900">Ateliers de sophrologie pour ados, adultes, femmes enceintes</h3>
+          <p class="text-sm text-stone-600">
+            <strong>Atelier de gestion du stress et de l’anxiété – dès 18 ans :</strong> En collaboration avec la psychologue Aurélie Holvoet, cycles réguliers de 5 séances le lundi et/ou jeudi matin (9h à 11h). Tarif : 12,50 € pour les 5 séances (subventionné par l’INAMI – Réseau Mosaïque).
+          </p>
+          <p class="text-sm text-stone-600">
+            <strong>Je gère mon stress et mes douleurs par la sophrologie !</strong> Pour adolescents dès 16 ans et adultes, le lundi de 19h30 à 20h30.
+          </p>
+          <p class="text-sm text-stone-600">
+            <strong>Préparation à l'accouchement par la sophrologie :</strong> Pour les futures mamans et papas, à partir de +/- 16 semaines de grossesse.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 items-center bg-stone-50 p-5 rounded-xl border border-stone-200/80">
+          <div class="space-y-2">
+            <h3 class="text-base font-bold text-stone-900">Atelier découverte massages parents/enfants ou frère/sœur</h3>
+            <p class="text-sm text-stone-600">
+              Découverte des massages assis et habillés (MISA) en famille : parent-enfant, frère-sœur, etc. 
+            </p>
+            <p class="text-sm text-stone-600">
+              <strong>Objectifs :</strong> Diminuer les tensions, s’apaiser, retrouver le plaisir d’être ensemble.
+            </p>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-sm border border-stone-200">
+            <Image src={photoMassage} alt="Massages parents-enfants" class="w-full h-auto object-cover" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</CollaborateurLayout>

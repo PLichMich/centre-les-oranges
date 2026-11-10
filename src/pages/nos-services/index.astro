@@ -46,7 +46,7 @@ const bienEtre = praticiens.filter(([_, m]) => m.specialite.toLowerCase().includ
               <span class="text-xs uppercase font-bold tracking-wider text-stone-400 block mb-3">Praticiens de ce pôle :</span>
               <div class="flex flex-wrap gap-2">
                 {psychologues.map(([slug, membre]) => (
-                  <a href={`/${slug}`} class="px-3 py-1.5 bg-stone-100 hover:bg-amber-100 text-stone-800 text-xs font-semibold rounded-lg transition-colors border border-stone-200">
+                  <a href={membre.lien} class="px-3 py-1.5 bg-stone-100 hover:bg-amber-100 text-stone-800 text-xs font-semibold rounded-lg transition-colors border border-stone-200">
                     {membre.nom}
                   </a>
                 ))}
@@ -72,7 +72,7 @@ const bienEtre = praticiens.filter(([_, m]) => m.specialite.toLowerCase().includ
               <span class="text-xs uppercase font-bold tracking-wider text-stone-400 block mb-3">Praticiens de ce pôle :</span>
               <div class="flex flex-wrap gap-2">
                 {paramedicaux.map(([slug, membre]) => (
-                  <a href={`/${slug}`} class="px-3 py-1.5 bg-stone-100 hover:bg-emerald-100 text-stone-800 text-xs font-semibold rounded-lg transition-colors border border-stone-200">
+                  <a href={membre.lien} class="px-3 py-1.5 bg-stone-100 hover:bg-emerald-100 text-stone-800 text-xs font-semibold rounded-lg transition-colors border border-stone-200">
                     {membre.nom}
                   </a>
                 ))}
@@ -98,7 +98,7 @@ const bienEtre = praticiens.filter(([_, m]) => m.specialite.toLowerCase().includ
               <span class="text-xs uppercase font-bold tracking-wider text-stone-400 block mb-3">Praticiens de ce pôle :</span>
               <div class="flex flex-wrap gap-2">
                 {bienEtre.map(([slug, membre]) => (
-                  <a href={`/${slug}`} class="px-3 py-1.5 bg-stone-100 hover:bg-orange-100 text-stone-800 text-xs font-semibold rounded-lg transition-colors border border-stone-200">
+                  <a href={membre.lien} class="px-3 py-1.5 bg-stone-100 hover:bg-orange-100 text-stone-800 text-xs font-semibold rounded-lg transition-colors border border-stone-200">
                     {membre.nom}
                   </a>
                 ))}
@@ -119,12 +119,12 @@ const bienEtre = praticiens.filter(([_, m]) => m.specialite.toLowerCase().includ
               Activités collectives, prévention du burnout, et permanence de prélèvements sanguins.
             </p>
             <ul class="space-y-2.5 text-sm text-stone-700 mb-8">
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span><a href="/nos-services/ateliers-formations-a-venir" class="hover:text-blue-700 font-medium">Ateliers de groupe (Burn-out, émotions, enfants)</a></li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span><a href="/nos-services/kinesitherapeute/pilates" class="hover:text-blue-700 font-medium">Cours de Pilates & Yoga sur chaise</a></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span><a href="/nos-services/ateliers/ateliers-formations-a-venir" class="hover:text-blue-700 font-medium">Ateliers de groupe (Burn-out, émotions, enfants)</a></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span><a href="/nos-services/ateliers/pilates" class="hover:text-blue-700 font-medium">Cours de Pilates & Yoga sur chaise</a></li>
               <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span><a href="/centre-de-prelevements" class="hover:text-blue-700 font-medium">Centre de prélèvements CHU Tivoli (Sans RDV)</a></li>
             </ul>
           </div>
-          <a href="/nos-services/ateliers-formations-a-venir" class="inline-flex items-center justify-center w-full py-3 px-4 rounded-xl text-sm font-bold text-blue-900 bg-blue-50 hover:bg-blue-100 transition-colors">
+          <a href="/nos-services/ateliers/ateliers-formations-a-venir" class="inline-flex items-center justify-center w-full py-3 px-4 rounded-xl text-sm font-bold text-blue-900 bg-blue-50 hover:bg-blue-100 transition-colors">
             Voir l'agenda des ateliers &rarr;
           </a>
         </div>

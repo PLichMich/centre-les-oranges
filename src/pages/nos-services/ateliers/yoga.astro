@@ -1,0 +1,66 @@
+---
+// src/pages/nos-services/ateliers/yoga.astro
+import LayoutService from '../../../layouts/LayoutService.astro';
+import { Image } from 'astro:assets';
+import photoYoga from '../../../assets/activites/Yoga_sur_chaise.jpg';
+
+const serviceData = {
+  title: "Yoga & Yoga sur chaise à Binche | Centre Les Oranges",
+  description: "Séances de yoga sur chaise avec Fanny au Centre Thérapeutique Les Oranges à Péronnes-lez-Binche. Mobilité douce, fibromyalgie, gestion du stress et respiration.",
+  titreService: "Le Yoga & Yoga sur chaise",
+  sousTitre: "Une pratique douce et accessible pour mobiliser le corps sans douleur et apaiser l'esprit",
+  praticiens: ["fanny-mesdaght"]
+};
+---
+
+<LayoutService frontmatter={serviceData}>
+  <h2>Les bienfaits du yoga</h2>
+  <p>
+    Les postures (« asanas ») et les exercices respiratoires proposés durant les séances de yoga agissent de façon bénéfique et durable sur l'ensemble du corps et de l'esprit.
+  </p>
+  <p>La pratique régulière favorise notamment :</p>
+  <ul>
+    <li><strong>L'apaisement du stress</strong> et des tensions émotionnelles</li>
+    <li><strong>La mobilité articulaire</strong> et la souplesse en douceur</li>
+    <li><strong>Le soulagement des douleurs</strong> du cou, des épaules et du dos</li>
+    <li><strong>La stimulation des organes digestifs</strong> et de la respiration</li>
+    <li><strong>L'équilibre général</strong> et la concentration</li>
+  </ul>
+
+  <h2>Yoga sur chaise</h2>
+  
+  <div class="my-6 md:float-right md:ml-6 md:mb-4 max-w-xs">
+    <Image 
+      src={photoYoga} 
+      alt="Séance de yoga sur chaise au Centre Thérapeutique Les Oranges à Binche" 
+      class="rounded-2xl shadow-md border border-stone-200 object-cover w-full h-auto"
+    />
+  </div>
+
+  <p>
+    Ce cours adapté s'appuie sur une chaise stable pour réaliser les mouvements en toute sécurité. Il s'adresse tout particulièrement à vous si :
+  </p>
+  <ul>
+    <li>Il vous est difficile ou douloureux de vous asseoir au sol sur un tapis classique.</li>
+    <li>Vous vivez avec des raideurs articulaires, des douleurs chroniques ou de la fibromyalgie.</li>
+    <li>Vous souhaitez entretenir votre mobilité et faire bouger vos articulations sans forcer ni souffrir.</li>
+    <li>Vous ressentez le besoin d'un moment de détente pour souffler et réapprendre à respirer profondément.</li>
+    <li>Vous voulez créer de l'espace dans votre corps tout en partageant un cours collectif bienveillant.</li>
+  </ul>
+
+  <div class="clear-both"></div>
+
+  <h2>Horaires et tarifs</h2>
+  <div class="bg-stone-100 rounded-2xl p-6 my-6 border border-stone-200">
+    <ul class="space-y-2">
+      <li><strong>Horaire :</strong> Le vendredi de 11h00 à 12h00 (sur inscription préalable).</li>
+      <li><strong>Tarif :</strong> 12 € la séance, ou 110 € la carte d'abonnement de 10 séances.</li>
+      <li><strong>Lieu :</strong> Salle d'ateliers du Centre Thérapeutique Les Oranges, 191 Rue Joseph Wauters à 7134 Péronnes-lez-Binche.</li>
+    </ul>
+  </div>
+
+  <h2>Inscriptions et renseignements</h2>
+  <p>
+    Pour toute question relative à votre condition physique ou pour réserver votre place, vous pouvez joindre directement Fanny au <strong>0476/30.92.80</strong>.
+  </p>
+</LayoutService>
