@@ -58,6 +58,7 @@ export default defineConfig({
     '/gwendoline-dhoop-juriste-et-mediatrice': '/equipe/gwendoline-dhoop',
     '/luana-bernunzo-psychologue-clinicienne-pour-enfants-et-adolescents': '/equipe/luana-bernunzo',
     '/ludik-eva-psychologue-specialisee-en-pleine-conscience-hp-et-douleurs': '/equipe/eva-ludik',
+    '/gearlyne-nunez-neuropsychologue-binche-centre-les-oranges': '/equipe/gearlyne-nunez',
 
     // 2. LES PRATICIENS INACTIFS / REMPLACÉS
     '/estievenart-melanie-kinesitherapeute': '/nos-services/kinesitherapeute',

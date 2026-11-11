@@ -1,0 +1,105 @@
+---
+// src/pages/equipe/gearlyne-nunez.astro
+import CollaborateurLayout from '../../layouts/CollaborateurLayout.astro';
+import { equipeData } from '../../data/equipe';
+
+const praticien = equipeData["gearlyne-nunez"];
+---
+
+<CollaborateurLayout {...praticien}>
+  <div class="space-y-8 text-stone-700 leading-relaxed text-base">
+    
+    <!-- Section Présentation -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-4 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        </svg>
+        Présentation & Approche
+      </h2>
+      <div class="space-y-4 text-stone-600">
+        <p>
+          Neuropsychologue clinicienne (possédant le visa et l'agrément), je suis spécialisée dans l'évaluation, le diagnostic et l'accompagnement des troubles cognitifs et émotionnels au Centre Thérapeutique Les Oranges.
+        </p>
+        <p>
+          Mon objectif est d'offrir une évaluation précise et un accompagnement bienveillant pour aider les enfants, les adultes et les seniors à mieux comprendre leur fonctionnement et à surmonter les défis du quotidien.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section Domaines d'expertises -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-6 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012-2m-6 9l2 2 4-4"></path>
+        </svg>
+        Domaines d'expertises
+      </h2>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <!-- Bilans neuropsychologiques -->
+        <div class="bg-stone-50 p-5 rounded-xl border border-stone-200/60">
+          <h3 class="text-sm font-bold uppercase tracking-wider text-amber-900 mb-4 flex items-center gap-2">
+            <span>📋</span> Bilans Neuropsychologiques
+          </h3>
+          <p class="text-sm text-stone-600 mb-3 italic">Pour enfants, adultes et seniors :</p>
+          <ul class="space-y-3 text-stone-600 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span><strong>Le diagnostic clinique :</strong> Évaluation approfondie du TDAH (Troubles de l'attention), des Troubles du Spectre de l'Autisme (TSA), et du Haut Potentiel Intellectuel (HPI).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span><strong>La passation de tests de QI :</strong> Évaluations psychométriques standardisées.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span><strong>Le dépistage des démences :</strong> Tests cognitifs spécifiques pour évaluer la mémoire et les fonctions exécutives chez les personnes âgées.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Rééducation et Soutien -->
+        <div class="bg-stone-50 p-5 rounded-xl border border-stone-200/60">
+          <h3 class="text-sm font-bold uppercase tracking-wider text-amber-900 mb-4 flex items-center gap-2">
+            <span>🧠</span> Rééducation & Soutien
+          </h3>
+          <p class="text-sm text-stone-600 mb-3 italic">Prise en charge active au quotidien :</p>
+          <ul class="space-y-3 text-stone-600 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span><strong>Remédiation cognitive :</strong> Exercices ciblés pour stimuler l'attention, la mémoire et les fonctions exécutives, adaptés aux besoins spécifiques.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span><strong>Soutien psychologique des seniors :</strong> Espace d'écoute et d'accompagnement pour les personnes âgées face aux défis du vieillissement et des maladies neurodégénératives.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-0.5">•</span>
+              <span><strong>Soutien aux aidants :</strong> Accompagnement des proches aidants.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Consultations Multilingues -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200/80">
+      <h2 class="text-xl sm:text-2xl font-bold font-['Lora',serif] text-stone-900 mb-4 pb-2 border-b-2 border-amber-500 flex items-center gap-2">
+        <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+        </svg>
+        Consultations multilingues
+      </h2>
+      <p class="text-stone-600 leading-relaxed mb-4">
+        Afin de garantir un accompagnement confortable et adapté à votre langue maternelle, je propose mes consultations en trois langues :
+      </p>
+      <div class="flex gap-4">
+        <span class="inline-flex items-center px-3 py-1 bg-stone-100 text-stone-700 text-sm font-semibold rounded-full border border-stone-200 shadow-sm">🇫🇷 Français</span>
+        <span class="inline-flex items-center px-3 py-1 bg-stone-100 text-stone-700 text-sm font-semibold rounded-full border border-stone-200 shadow-sm">🇬🇧 English</span>
+        <span class="inline-flex items-center px-3 py-1 bg-stone-100 text-stone-700 text-sm font-semibold rounded-full border border-stone-200 shadow-sm">🇪🇸 Español</span>
+      </div>
+    </section>
+
+  </div>
+</CollaborateurLayout>

@@ -163,7 +163,7 @@ export const equipeData: Record<string, MembreEquipe> = {
     telephone: "0470/69.07.88",
     image: photoGearlyne,
     altSEO: "Portrait de Gearlyne Nuñez, neuropsychologue à Péronnes-lez-Binche près de La Louvière",
-    lien: "/nos-services/psychologie/neuropsychologie",
+    lien: "/equipe/gearlyne-nunez",
     lienPratique: "/nos-services/psychologie/neuropsychologie",
     texteLienPratique: "la neuropsychologie",
     actif: true,
